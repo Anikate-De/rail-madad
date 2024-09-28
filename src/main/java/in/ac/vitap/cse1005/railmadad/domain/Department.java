@@ -1,9 +1,9 @@
 package in.ac.vitap.cse1005.railmadad.domain;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -23,12 +23,14 @@ import lombok.Setter;
 @Builder
 @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
 public class Department {
-  @OneToMany(fetch = FetchType.LAZY, mappedBy = "department")
+  @OneToMany(mappedBy = "department")
   @Builder.Default
+  @JsonIgnore
   List<Category> managedCategories = List.of();
 
-  @OneToMany(fetch = FetchType.LAZY, mappedBy = "department")
+  @OneToMany(mappedBy = "department")
   @Builder.Default
+  @JsonIgnore
   List<Officer> officers = List.of();
 
   @Id

@@ -2,10 +2,12 @@ package in.ac.vitap.cse1005.railmadad.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import in.ac.vitap.cse1005.railmadad.domain.Customer;
-import in.ac.vitap.cse1005.railmadad.exceptions.EntityAlreadyExistsException;
 import in.ac.vitap.cse1005.railmadad.exceptions.IncompleteDetailsException;
+import in.ac.vitap.cse1005.railmadad.exceptions.PasswordMismatchException;
 import in.ac.vitap.cse1005.railmadad.exceptions.WeakPasswordException;
 import in.ac.vitap.cse1005.railmadad.service.CustomerService;
+import jakarta.persistence.EntityExistsException;
+import jakarta.persistence.EntityNotFoundException;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -27,14 +29,14 @@ public class CustomerController {
     this.objectMapper = objectMapper;
   }
 
-  @PostMapping(value = "/customer_signup", consumes = MediaType.APPLICATION_JSON_VALUE)
+  @PostMapping(value = "/customers/signup", consumes = MediaType.APPLICATION_JSON_VALUE)
   public ResponseEntity<Map<String, Object>> signup(@RequestBody Map<String, Object> request) {
     Customer customer = objectMapper.convertValue(request, Customer.class);
     String password = (String) request.get("password");
 
     try {
       customerService.signup(customer, password);
-    } catch (EntityAlreadyExistsException entityAlreadyExistsException) {
+    } catch (EntityExistsException entityExistsException) {
       return new ResponseEntity<>(
           Map.of("message", "Customer with the same phone number already exists."),
           HttpStatus.CONFLICT);
@@ -60,5 +62,34 @@ public class CustomerController {
 
     return new ResponseEntity<>(
         Map.of("message", "Customer signup successful"), HttpStatus.CREATED);
+  }
+
+  @PostMapping(value = "/customers/login", consumes = MediaType.APPLICATION_JSON_VALUE)
+  public ResponseEntity<Map<String, Object>> login(@RequestBody Map<String, Object> request) {
+    long phoneNumber = ((Integer) request.get("phoneNumber")).longValue();
+    String password = (String) request.get("password");
+
+    String token;
+    try {
+      token = customerService.login(phoneNumber, password);
+    } catch (IncompleteDetailsException incompleteDetailsException) {
+      return new ResponseEntity<>(
+          Map.of("message", "Incomplete details provided. Phone Number and Password are required."),
+          HttpStatus.BAD_REQUEST);
+    } catch (EntityNotFoundException entityNotFoundException) {
+      return new ResponseEntity<>(
+          Map.of("message", "Customer with the provided phone number does not exist."),
+          HttpStatus.NOT_FOUND);
+    } catch (PasswordMismatchException passwordMismatchException) {
+      return new ResponseEntity<>(
+          Map.of("message", "Incorrect password provided."), HttpStatus.UNAUTHORIZED);
+    } catch (Exception e) {
+      return new ResponseEntity<>(
+          Map.of("message", "An error occurred while processing the request."),
+          HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+    return new ResponseEntity<>(
+        Map.of("message", "Customer login successful", "token", token), HttpStatus.ACCEPTED);
   }
 }
