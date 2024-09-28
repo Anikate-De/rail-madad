@@ -3,7 +3,6 @@ package in.ac.vitap.cse1005.railmadad.domain;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -31,11 +30,11 @@ public class Category {
 
   private String name;
 
-  @OneToMany(mappedBy = "category", fetch = FetchType.LAZY)
+  @OneToMany(mappedBy = "category")
   @JsonIgnore
   private List<Complaint> complaints;
 
-  @ManyToOne(fetch = FetchType.LAZY)
+  @ManyToOne()
   @JoinColumn(name = "department_id")
   private Department department;
 }

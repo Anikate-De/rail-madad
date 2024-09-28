@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -29,16 +28,16 @@ import org.hibernate.annotations.CreationTimestamp;
 @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
 public class Officer {
   @JsonIgnore
-  @OneToMany(mappedBy = "officer", fetch = FetchType.LAZY)
+  @OneToMany(mappedBy = "officer")
   @Builder.Default
   List<Complaint> complaints = List.of();
 
   @JsonIgnore
-  @OneToMany(mappedBy = "officer", fetch = FetchType.LAZY)
+  @OneToMany(mappedBy = "officer")
   @Builder.Default
   List<Message> messages = List.of();
 
-  @ManyToOne(fetch = FetchType.LAZY)
+  @ManyToOne()
   @JoinColumn(name = "department_id")
   private Department department;
 
