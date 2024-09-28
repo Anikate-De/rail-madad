@@ -51,4 +51,31 @@ public class Customer {
   private Instant dateRegistered;
 
   private Instant lastLogin;
+
+  @Override
+  public String toString() {
+    return getClass().getSimpleName()
+        + "("
+        + "id = "
+        + id
+        + ", "
+        + "phoneNumber = "
+        + phoneNumber
+        + ", "
+        + "firstName = "
+        + firstName
+        + ", "
+        + "lastName = "
+        + lastName
+        + ", "
+        + "passwordHash = "
+        + passwordHash
+        + ", "
+        + "dateRegistered = "
+        + dateRegistered
+        + ", "
+        + "lastLogin = "
+        + lastLogin
+        + ")";
+  }
 }
