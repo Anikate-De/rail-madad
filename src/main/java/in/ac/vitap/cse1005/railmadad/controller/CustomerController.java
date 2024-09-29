@@ -66,12 +66,12 @@ public class CustomerController {
 
   @PostMapping(value = "/customers/login", consumes = MediaType.APPLICATION_JSON_VALUE)
   public ResponseEntity<Map<String, Object>> login(@RequestBody Map<String, Object> request) {
-    long phoneNumber = ((Integer) request.get("phoneNumber")).longValue();
+    Customer customer = objectMapper.convertValue(request, Customer.class);
     String password = (String) request.get("password");
 
     String token;
     try {
-      token = customerService.login(phoneNumber, password);
+      token = customerService.login(customer.getPhoneNumber(), password);
     } catch (IncompleteDetailsException incompleteDetailsException) {
       return new ResponseEntity<>(
           Map.of("message", "Incomplete details provided. Phone Number and Password are required."),

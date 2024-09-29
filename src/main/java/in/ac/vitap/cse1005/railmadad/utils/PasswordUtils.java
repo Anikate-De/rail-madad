@@ -10,7 +10,7 @@ public class PasswordUtils {
   BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
   public static void checkPasswordStrength(String password) {
-    if (!password.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}$")) {
+    if (!password.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*+=~])(?=\\S+$).{8,}$")) {
       throw new WeakPasswordException();
     }
   }
