@@ -1,7 +1,8 @@
 package in.ac.vitap.cse1005.railmadad.service;
 
-import static in.ac.vitap.cse1005.railmadad.utils.AuthTokenUtils.getIdFromToken;
+import static in.ac.vitap.cse1005.railmadad.utils.AuthTokenUtils.getUserClaimsFromToken;
 
+import in.ac.vitap.cse1005.railmadad.domain.UserClaims;
 import in.ac.vitap.cse1005.railmadad.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,9 +16,16 @@ public class AuthService {
     this.customerRepository = customerRepository;
   }
 
-  public String authenticateCustomer(String token) {
-    String customerId = getIdFromToken(token);
-    customerRepository.findById(customerId).orElseThrow();
-    return customerId;
+  public UserClaims authenticate(String token) {
+    UserClaims userClaims = getUserClaimsFromToken(token);
+    return switch (userClaims.getRole()) {
+      case CUSTOMER -> {
+        customerRepository.findById(userClaims.getId()).orElseThrow();
+        yield userClaims;
+      }
+      case OFFICER ->
+          // TODO: Implement officer authentication from repository
+          userClaims;
+    };
   }
 }

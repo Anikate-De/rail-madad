@@ -1,5 +1,7 @@
 package in.ac.vitap.cse1005.railmadad.utils;
 
+import in.ac.vitap.cse1005.railmadad.domain.UserClaims;
+import in.ac.vitap.cse1005.railmadad.domain.UserRole;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;
@@ -11,20 +13,25 @@ import lombok.experimental.UtilityClass;
 public class AuthTokenUtils {
   private static final SecretKey key = Jwts.SIG.HS256.key().build();
 
-  public static String generateTokenWithId(String id, long expirationTimeMillis) {
+  public static String generateTokenFromUserClaims(
+      UserClaims userClaims, long expirationTimeMillis) {
     return Jwts.builder()
-        .id(id)
+        .id(userClaims.getId())
+        .claim("role", userClaims.getRole().name())
         .expiration(new Date(System.currentTimeMillis() + expirationTimeMillis))
         .issuedAt(new Date(System.currentTimeMillis()))
         .signWith(key)
         .compact();
   }
 
-  public static String getIdFromToken(String token) {
+  public static UserClaims getUserClaimsFromToken(String token) {
     Claims claims = Jwts.parser().verifyWith(key).build().parseSignedClaims(token).getPayload();
     if (claims.getExpiration().before(new Date())) {
       throw new ExpiredJwtException(null, claims, "Token expired");
     }
-    return claims.getId();
+    return UserClaims.builder()
+        .id(claims.getId())
+        .role(UserRole.valueOf((String) claims.get("role")))
+        .build();
   }
 }

@@ -2,6 +2,7 @@ package in.ac.vitap.cse1005.railmadad.filter;
 
 import static in.ac.vitap.cse1005.railmadad.utils.ServletUtils.writeResponse;
 
+import in.ac.vitap.cse1005.railmadad.domain.UserClaims;
 import in.ac.vitap.cse1005.railmadad.service.AuthService;
 import io.jsonwebtoken.ExpiredJwtException;
 import jakarta.servlet.FilterChain;
@@ -16,12 +17,12 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 @Component
-public class CustomerAuthFilter extends OncePerRequestFilter {
+public class AuthFilter extends OncePerRequestFilter {
 
   private final AuthService authService;
 
   @Autowired
-  public CustomerAuthFilter(AuthService authService) {
+  public AuthFilter(AuthService authService) {
     this.authService = authService;
   }
 
@@ -39,9 +40,9 @@ public class CustomerAuthFilter extends OncePerRequestFilter {
       throws IOException {
 
     try {
-      String customerId =
-          authService.authenticateCustomer((servletRequest).getHeader("Authorization"));
-      servletRequest.setAttribute("id", customerId);
+      UserClaims userClaims = authService.authenticate((servletRequest).getHeader("Authorization"));
+      servletRequest.setAttribute("id", userClaims.getId());
+      servletRequest.setAttribute("role", userClaims.getRole());
 
       filterChain.doFilter(servletRequest, servletResponse);
 

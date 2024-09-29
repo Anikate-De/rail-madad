@@ -1,11 +1,13 @@
 package in.ac.vitap.cse1005.railmadad.service;
 
-import static in.ac.vitap.cse1005.railmadad.utils.AuthTokenUtils.generateTokenWithId;
+import static in.ac.vitap.cse1005.railmadad.utils.AuthTokenUtils.generateTokenFromUserClaims;
 import static in.ac.vitap.cse1005.railmadad.utils.PasswordUtils.checkPasswordStrength;
 import static in.ac.vitap.cse1005.railmadad.utils.PasswordUtils.hashPassword;
 import static in.ac.vitap.cse1005.railmadad.utils.PasswordUtils.matchPassword;
 
 import in.ac.vitap.cse1005.railmadad.domain.Customer;
+import in.ac.vitap.cse1005.railmadad.domain.UserClaims;
+import in.ac.vitap.cse1005.railmadad.domain.UserRole;
 import in.ac.vitap.cse1005.railmadad.exceptions.IncompleteDetailsException;
 import in.ac.vitap.cse1005.railmadad.exceptions.PasswordMismatchException;
 import in.ac.vitap.cse1005.railmadad.repository.CustomerRepository;
@@ -56,6 +58,8 @@ public class CustomerService {
       throw new PasswordMismatchException();
     }
 
-    return generateTokenWithId(customer.get().getId(), 60 * 60 * 1000);
+    return generateTokenFromUserClaims(
+        UserClaims.builder().id(customer.get().getId()).role(UserRole.CUSTOMER).build(),
+        60 * 60 * 1000);
   }
 }
