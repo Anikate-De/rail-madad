@@ -13,6 +13,7 @@ import in.ac.vitap.cse1005.railmadad.exceptions.PasswordMismatchException;
 import in.ac.vitap.cse1005.railmadad.repository.OfficerRepository;
 import jakarta.persistence.EntityExistsException;
 import jakarta.persistence.EntityNotFoundException;
+import java.time.Instant;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -57,6 +58,9 @@ public class OfficerService {
     if (!matchPassword(password, officer.get().getPasswordHash())) {
       throw new PasswordMismatchException();
     }
+
+    officerRepository.updateLastLoginById(
+        Instant.ofEpochMilli(System.currentTimeMillis()), officer.get().getId());
 
     return generateTokenFromUserClaims(
         UserClaims.builder()

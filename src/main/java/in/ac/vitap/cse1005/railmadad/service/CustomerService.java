@@ -13,6 +13,7 @@ import in.ac.vitap.cse1005.railmadad.exceptions.PasswordMismatchException;
 import in.ac.vitap.cse1005.railmadad.repository.CustomerRepository;
 import jakarta.persistence.EntityExistsException;
 import jakarta.persistence.EntityNotFoundException;
+import java.time.Instant;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -57,6 +58,9 @@ public class CustomerService {
     if (!matchPassword(password, customer.get().getPasswordHash())) {
       throw new PasswordMismatchException();
     }
+
+    customerRepository.updateLastLoginById(
+        Instant.ofEpochMilli(System.currentTimeMillis()), customer.get().getId());
 
     return generateTokenFromUserClaims(
         UserClaims.builder().id(customer.get().getId()).role(UserRole.CUSTOMER).build(),
