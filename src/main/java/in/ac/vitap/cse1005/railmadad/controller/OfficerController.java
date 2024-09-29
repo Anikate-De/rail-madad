@@ -59,12 +59,12 @@ public class OfficerController {
 
   @PostMapping(value = "/officers/login", consumes = MediaType.APPLICATION_JSON_VALUE)
   public ResponseEntity<Map<String, Object>> login(@RequestBody Map<String, Object> request) {
-    long id = ((Integer) request.get("id")).longValue();
+    Officer officer = objectMapper.convertValue(request, Officer.class);
     String password = (String) request.get("password");
 
     String token;
     try {
-      token = officerService.login(id, password);
+      token = officerService.login(officer.getId(), password);
     } catch (IncompleteDetailsException incompleteDetailsException) {
       return new ResponseEntity<>(
           Map.of("message", "Incomplete details provided. ID and Password are required."),
