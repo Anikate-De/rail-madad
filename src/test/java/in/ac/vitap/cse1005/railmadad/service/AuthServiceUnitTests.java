@@ -43,7 +43,7 @@ public class AuthServiceUnitTests {
     Mockito.when(customerRepository.findById(Mockito.anyString())).thenReturn(Optional.empty());
     String token =
         AuthTokenUtils.generateTokenFromUserClaims(
-            UserClaims.builder().id("random-uuid").role(UserRole.CUSTOMER).build(), 1000);
+            UserClaims.builder().id("random-uuid").role(UserRole.CUSTOMER).build(), 10000);
 
     Assert.assertThrows(NoSuchElementException.class, () -> authService.authenticate(token));
   }
@@ -52,7 +52,7 @@ public class AuthServiceUnitTests {
   public void testAuthenticate_WhenOfficerDNE() {
     String token =
         AuthTokenUtils.generateTokenFromUserClaims(
-            UserClaims.builder().id("1").role(UserRole.OFFICER).build(), 1000);
+            UserClaims.builder().id("1").role(UserRole.OFFICER).build(), 10000);
 
     Assert.assertThrows(NoSuchElementException.class, () -> authService.authenticate(token));
   }
