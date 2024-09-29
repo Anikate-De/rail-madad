@@ -18,17 +18,13 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: ${{ github.event.pull_request.head.ref }}
-      - name: Format Java files
-        uses: axel-op/googlejavaformat-action@v3
-        with:
-          skip-commit: true
-          args: "--set-exit-if-changed --dry-run"
-          version: "1.23.0"
       - name: Set up JDK 22
         uses: actions/setup-java@v4
         with:
           distribution: 'adopt'
           java-version: '22'
+      - name: Format Java files
+        run: mvn -f pom.xml spotless:check
       - name: Lint Java files
         run: mvn -f pom.xml checkstyle:check
       - name: Run Tests
