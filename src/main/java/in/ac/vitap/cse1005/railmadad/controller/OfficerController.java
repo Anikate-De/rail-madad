@@ -6,7 +6,6 @@ import in.ac.vitap.cse1005.railmadad.exceptions.IncompleteDetailsException;
 import in.ac.vitap.cse1005.railmadad.exceptions.PasswordMismatchException;
 import in.ac.vitap.cse1005.railmadad.exceptions.WeakPasswordException;
 import in.ac.vitap.cse1005.railmadad.service.OfficerService;
-import jakarta.persistence.EntityExistsException;
 import jakarta.persistence.EntityNotFoundException;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,9 +35,6 @@ public class OfficerController {
 
     try {
       officer = officerService.signup(officer, password);
-    } catch (EntityExistsException entityExistsException) {
-      return new ResponseEntity<>(
-          Map.of("message", "Officer with same ID already exists."), HttpStatus.CONFLICT);
     } catch (IncompleteDetailsException incompleteDetailsException) {
       return new ResponseEntity<>(
           Map.of("message", "Incomplete details provided. First name and Password are required."),

@@ -11,12 +11,10 @@ import in.ac.vitap.cse1005.railmadad.domain.model.UserClaims;
 import in.ac.vitap.cse1005.railmadad.exceptions.IncompleteDetailsException;
 import in.ac.vitap.cse1005.railmadad.exceptions.PasswordMismatchException;
 import in.ac.vitap.cse1005.railmadad.repository.OfficerRepository;
-import jakarta.persistence.EntityExistsException;
 import jakarta.persistence.EntityNotFoundException;
 import java.time.Instant;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -36,12 +34,8 @@ public class OfficerService {
     checkPasswordStrength(password);
     officer.setPasswordHash(hashPassword(password));
 
-    try {
-      officer = officerRepository.save(officer);
-      return officer;
-    } catch (DataIntegrityViolationException e) {
-      throw new EntityExistsException();
-    }
+    officer = officerRepository.save(officer);
+    return officer;
   }
 
   public String login(long id, String password) {
