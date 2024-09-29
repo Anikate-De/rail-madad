@@ -1,15 +1,12 @@
-package in.ac.vitap.cse1005.railmadad.domain;
+package in.ac.vitap.cse1005.railmadad.domain.entity;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import java.time.Instant;
 import java.util.List;
@@ -27,24 +24,19 @@ import org.hibernate.annotations.CreationTimestamp;
 @Setter
 @Builder
 @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
-public class Officer {
+public class Customer {
   @JsonIgnore
-  @OneToMany(mappedBy = "officer", fetch = FetchType.LAZY)
+  @OneToMany(mappedBy = "customer")
   @Builder.Default
   List<Complaint> complaints = List.of();
 
-  @JsonIgnore
-  @OneToMany(mappedBy = "officer", fetch = FetchType.LAZY)
-  @Builder.Default
-  List<Message> messages = List.of();
-
-  @ManyToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name = "department_id")
-  private Department department;
-
   @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private long id;
+  @GeneratedValue(strategy = GenerationType.UUID)
+  @JsonIgnore
+  private String id;
+
+  @Column(unique = true)
+  private long phoneNumber;
 
   @Column(nullable = false)
   private String firstName;
@@ -58,4 +50,31 @@ public class Officer {
   private Instant dateRegistered;
 
   private Instant lastLogin;
+
+  @Override
+  public String toString() {
+    return getClass().getSimpleName()
+        + "("
+        + "id = "
+        + id
+        + ", "
+        + "phoneNumber = "
+        + phoneNumber
+        + ", "
+        + "firstName = "
+        + firstName
+        + ", "
+        + "lastName = "
+        + lastName
+        + ", "
+        + "passwordHash = "
+        + passwordHash
+        + ", "
+        + "dateRegistered = "
+        + dateRegistered
+        + ", "
+        + "lastLogin = "
+        + lastLogin
+        + ")";
+  }
 }

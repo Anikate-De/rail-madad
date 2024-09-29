@@ -1,19 +1,21 @@
-package in.ac.vitap.cse1005.railmadad.domain;
+package in.ac.vitap.cse1005.railmadad.domain.entity;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import java.util.List;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import java.time.Instant;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
 
 @Entity
 @AllArgsConstructor
@@ -22,19 +24,24 @@ import lombok.Setter;
 @Setter
 @Builder
 @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
-public class Department {
-  @OneToMany(fetch = FetchType.LAZY, mappedBy = "department")
-  @Builder.Default
-  List<Category> managedCategories = List.of();
-
-  @OneToMany(fetch = FetchType.LAZY, mappedBy = "department")
-  @Builder.Default
-  List<Officer> officers = List.of();
-
+public class Message {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private long id;
 
   @Column(nullable = false)
-  private String name;
+  private String body;
+
+  @Column(nullable = false, updatable = false)
+  @CreationTimestamp
+  private Instant dateCommented;
+
+  @ManyToOne()
+  @JoinColumn(name = "complaint_id")
+  @JsonIgnore
+  private Complaint complaint;
+
+  @ManyToOne()
+  @JoinColumn(name = "officer_id")
+  private Officer officer;
 }

@@ -1,11 +1,11 @@
-package in.ac.vitap.cse1005.railmadad.domain;
+package in.ac.vitap.cse1005.railmadad.domain.entity;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import in.ac.vitap.cse1005.railmadad.domain.enums.ComplaintStatus;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -48,21 +48,21 @@ public class Complaint {
 
   @UpdateTimestamp private Instant lastUpdated;
 
-  @ManyToOne(fetch = FetchType.LAZY)
+  @ManyToOne()
   @JoinColumn(name = "customer_id")
   private Customer customer;
 
-  @ManyToOne(fetch = FetchType.LAZY)
+  @ManyToOne()
   @JoinColumn(name = "officer_id")
   private Officer officer;
 
-  @ManyToOne(fetch = FetchType.LAZY)
+  @ManyToOne()
   @JoinColumn(name = "category_id")
   private Category category;
 
-  @OneToMany(fetch = FetchType.LAZY, mappedBy = "complaint")
+  @OneToMany(mappedBy = "complaint")
   private List<Message> messages;
 
-  @OneToMany(fetch = FetchType.LAZY, mappedBy = "complaint")
+  @OneToMany(mappedBy = "complaint")
   private List<Media> mediaList;
 }
