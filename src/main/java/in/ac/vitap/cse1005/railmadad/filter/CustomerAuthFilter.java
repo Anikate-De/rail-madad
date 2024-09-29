@@ -1,7 +1,7 @@
 package in.ac.vitap.cse1005.railmadad.filter;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
+import static in.ac.vitap.cse1005.railmadad.utils.ServletUtils.writeResponse;
+
 import in.ac.vitap.cse1005.railmadad.service.AuthService;
 import io.jsonwebtoken.ExpiredJwtException;
 import jakarta.servlet.FilterChain;
@@ -38,28 +38,17 @@ public class CustomerAuthFilter extends OncePerRequestFilter {
       @NonNull FilterChain filterChain)
       throws IOException {
 
-    final ObjectMapper objectMapper = new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT);
-
     try {
       String customerId =
           authService.authenticateCustomer((servletRequest).getHeader("Authorization"));
-
       servletRequest.setAttribute("id", customerId);
 
       filterChain.doFilter(servletRequest, servletResponse);
 
     } catch (ExpiredJwtException expiredJwtException) {
-      servletResponse.setStatus(HttpStatus.UNAUTHORIZED.value());
-      servletResponse
-          .getWriter()
-          .write(objectMapper.writeValueAsString(Map.of("message", "Token expired.")));
-      servletResponse.setContentType("application/json");
+      writeResponse(servletResponse, HttpStatus.UNAUTHORIZED, Map.of("message", "Token expired."));
     } catch (Exception e) {
-      servletResponse.setStatus(HttpStatus.UNAUTHORIZED.value());
-      servletResponse
-          .getWriter()
-          .write(objectMapper.writeValueAsString(Map.of("message", "Unauthorized.")));
-      servletResponse.setContentType("application/json");
+      writeResponse(servletResponse, HttpStatus.UNAUTHORIZED, Map.of("message", "Unauthorized."));
     }
   }
 }

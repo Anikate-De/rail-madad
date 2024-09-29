@@ -17,7 +17,7 @@ public class AuthService {
 
   public String authenticateCustomer(String token) {
     String customerId = getIdFromToken(token);
-    customerRepository.findById(customerId);
+    customerRepository.findById(customerId).orElseThrow();
     return customerId;
   }
 }
