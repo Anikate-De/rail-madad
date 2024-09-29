@@ -4,16 +4,19 @@ import static in.ac.vitap.cse1005.railmadad.utils.AuthTokenUtils.getUserClaimsFr
 
 import in.ac.vitap.cse1005.railmadad.domain.model.UserClaims;
 import in.ac.vitap.cse1005.railmadad.repository.CustomerRepository;
+import in.ac.vitap.cse1005.railmadad.repository.OfficerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class AuthService {
   private final CustomerRepository customerRepository;
+  private final OfficerRepository officerRepository;
 
   @Autowired
-  public AuthService(CustomerRepository customerRepository) {
+  public AuthService(CustomerRepository customerRepository, OfficerRepository officerRepository) {
     this.customerRepository = customerRepository;
+    this.officerRepository = officerRepository;
   }
 
   public UserClaims authenticate(String token) {
@@ -23,9 +26,10 @@ public class AuthService {
         customerRepository.findById(userClaims.getId()).orElseThrow();
         yield userClaims;
       }
-      case OFFICER ->
-          // TODO: Implement officer authentication from repository
-          userClaims;
+      case OFFICER -> {
+        officerRepository.findById(Long.valueOf(userClaims.getId())).orElseThrow();
+        yield userClaims;
+      }
     };
   }
 }
