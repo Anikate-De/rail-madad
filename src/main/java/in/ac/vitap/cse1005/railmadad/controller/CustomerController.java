@@ -1,7 +1,7 @@
 package in.ac.vitap.cse1005.railmadad.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import in.ac.vitap.cse1005.railmadad.domain.Customer;
+import in.ac.vitap.cse1005.railmadad.domain.entity.Customer;
 import in.ac.vitap.cse1005.railmadad.exceptions.IncompleteDetailsException;
 import in.ac.vitap.cse1005.railmadad.exceptions.PasswordMismatchException;
 import in.ac.vitap.cse1005.railmadad.exceptions.WeakPasswordException;

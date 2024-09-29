@@ -1,6 +1,6 @@
 package in.ac.vitap.cse1005.railmadad.service;
 
-import in.ac.vitap.cse1005.railmadad.domain.Complaint;
+import in.ac.vitap.cse1005.railmadad.domain.entity.Complaint;
 import in.ac.vitap.cse1005.railmadad.repository.ComplaintRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;

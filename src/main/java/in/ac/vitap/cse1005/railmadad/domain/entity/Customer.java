@@ -1,4 +1,4 @@
-package in.ac.vitap.cse1005.railmadad.domain;
+package in.ac.vitap.cse1005.railmadad.domain.entity;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonIgnore;

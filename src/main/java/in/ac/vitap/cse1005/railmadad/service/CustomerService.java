@@ -5,9 +5,9 @@ import static in.ac.vitap.cse1005.railmadad.utils.PasswordUtils.checkPasswordStr
 import static in.ac.vitap.cse1005.railmadad.utils.PasswordUtils.hashPassword;
 import static in.ac.vitap.cse1005.railmadad.utils.PasswordUtils.matchPassword;
 
-import in.ac.vitap.cse1005.railmadad.domain.Customer;
-import in.ac.vitap.cse1005.railmadad.domain.UserClaims;
-import in.ac.vitap.cse1005.railmadad.domain.UserRole;
+import in.ac.vitap.cse1005.railmadad.domain.entity.Customer;
+import in.ac.vitap.cse1005.railmadad.domain.enums.UserRole;
+import in.ac.vitap.cse1005.railmadad.domain.model.UserClaims;
 import in.ac.vitap.cse1005.railmadad.exceptions.IncompleteDetailsException;
 import in.ac.vitap.cse1005.railmadad.exceptions.PasswordMismatchException;
 import in.ac.vitap.cse1005.railmadad.repository.CustomerRepository;

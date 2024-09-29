@@ -1,10 +1,9 @@
-package in.ac.vitap.cse1005.railmadad.domain;
+package in.ac.vitap.cse1005.railmadad.domain.entity;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -19,7 +18,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
 
 @Entity
 @AllArgsConstructor
@@ -28,40 +26,35 @@ import org.hibernate.annotations.UpdateTimestamp;
 @Setter
 @Builder
 @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
-public class Complaint {
+public class Officer {
+  @JsonIgnore
+  @OneToMany(mappedBy = "officer")
+  @Builder.Default
+  List<Complaint> complaints = List.of();
+
+  @JsonIgnore
+  @OneToMany(mappedBy = "officer")
+  @Builder.Default
+  List<Message> messages = List.of();
+
+  @ManyToOne()
+  @JoinColumn(name = "department_id")
+  private Department department;
+
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private long id;
 
-  private String title;
+  @Column(nullable = false)
+  private String firstName;
 
-  @Enumerated(EnumType.STRING)
-  @Builder.Default
-  private ComplaintStatus status = ComplaintStatus.PENDING;
+  private String lastName;
 
-  private String summary;
+  @JsonIgnore private String passwordHash;
 
   @Column(nullable = false, updatable = false)
   @CreationTimestamp
-  private Instant dateFiled;
+  private Instant dateRegistered;
 
-  @UpdateTimestamp private Instant lastUpdated;
-
-  @ManyToOne()
-  @JoinColumn(name = "customer_id")
-  private Customer customer;
-
-  @ManyToOne()
-  @JoinColumn(name = "officer_id")
-  private Officer officer;
-
-  @ManyToOne()
-  @JoinColumn(name = "category_id")
-  private Category category;
-
-  @OneToMany(mappedBy = "complaint")
-  private List<Message> messages;
-
-  @OneToMany(mappedBy = "complaint")
-  private List<Media> mediaList;
+  private Instant lastLogin;
 }

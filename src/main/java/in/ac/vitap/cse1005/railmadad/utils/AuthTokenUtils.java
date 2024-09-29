@@ -1,7 +1,7 @@
 package in.ac.vitap.cse1005.railmadad.utils;
 
-import in.ac.vitap.cse1005.railmadad.domain.UserClaims;
-import in.ac.vitap.cse1005.railmadad.domain.UserRole;
+import in.ac.vitap.cse1005.railmadad.domain.enums.UserRole;
+import in.ac.vitap.cse1005.railmadad.domain.model.UserClaims;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;

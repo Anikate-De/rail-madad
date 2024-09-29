@@ -2,7 +2,7 @@ package in.ac.vitap.cse1005.railmadad.service;
 
 import static in.ac.vitap.cse1005.railmadad.utils.AuthTokenUtils.getUserClaimsFromToken;
 
-import in.ac.vitap.cse1005.railmadad.domain.UserClaims;
+import in.ac.vitap.cse1005.railmadad.domain.model.UserClaims;
 import in.ac.vitap.cse1005.railmadad.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -2,7 +2,7 @@ package in.ac.vitap.cse1005.railmadad.filter;
 
 import static in.ac.vitap.cse1005.railmadad.utils.ServletUtils.writeResponse;
 
-import in.ac.vitap.cse1005.railmadad.domain.UserClaims;
+import in.ac.vitap.cse1005.railmadad.domain.model.UserClaims;
 import in.ac.vitap.cse1005.railmadad.service.AuthService;
 import io.jsonwebtoken.ExpiredJwtException;
 import jakarta.servlet.FilterChain;
