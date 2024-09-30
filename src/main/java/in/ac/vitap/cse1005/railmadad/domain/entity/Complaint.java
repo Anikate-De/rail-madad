@@ -34,6 +34,7 @@ public class Complaint {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private long id;
 
+  @Column(nullable = false)
   private String title;
 
   @Enumerated(EnumType.STRING)
@@ -61,8 +62,10 @@ public class Complaint {
   private Category category;
 
   @OneToMany(mappedBy = "complaint")
-  private List<Message> messages;
+  @Builder.Default
+  private List<Message> messages = List.of();
 
   @OneToMany(mappedBy = "complaint")
-  private List<Media> mediaList;
+  @Builder.Default
+  private List<Media> mediaList = List.of();
 }
