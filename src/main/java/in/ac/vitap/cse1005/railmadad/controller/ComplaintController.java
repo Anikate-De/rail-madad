@@ -6,6 +6,7 @@ import in.ac.vitap.cse1005.railmadad.exceptions.AccessDeniedException;
 import in.ac.vitap.cse1005.railmadad.exceptions.IncompleteDetailsException;
 import in.ac.vitap.cse1005.railmadad.service.ComplaintService;
 import jakarta.servlet.http.HttpServletRequest;
+import java.util.List;
 import java.util.Map;
 import java.util.NoSuchElementException;
 import lombok.extern.slf4j.Slf4j;
@@ -31,18 +32,15 @@ public class ComplaintController {
   }
 
   @GetMapping("/complaints")
-  public ResponseEntity<Map<String, Object>> getComplaints(HttpServletRequest request) {
+  public ResponseEntity<List<Complaint>> getComplaints(HttpServletRequest request) {
     String id = request.getAttribute("id").toString();
     UserRole role = UserRole.valueOf(request.getAttribute("role").toString());
 
     return switch (role) {
-      case CUSTOMER ->
-          new ResponseEntity<>(
-              Map.of("complaints", complaintService.getFiledComplaints(id)), HttpStatus.OK);
+      case CUSTOMER -> new ResponseEntity<>(complaintService.getFiledComplaints(id), HttpStatus.OK);
       case OFFICER ->
           new ResponseEntity<>(
-              Map.of("complaints", complaintService.getAssignedComplaints(Long.parseLong(id))),
-              HttpStatus.OK);
+              complaintService.getAssignedComplaints(Long.parseLong(id)), HttpStatus.OK);
     };
   }
 
