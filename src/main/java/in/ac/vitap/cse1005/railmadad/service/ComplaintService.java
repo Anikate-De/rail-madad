@@ -3,6 +3,8 @@ package in.ac.vitap.cse1005.railmadad.service;
 import in.ac.vitap.cse1005.railmadad.domain.entity.Complaint;
 import in.ac.vitap.cse1005.railmadad.domain.entity.Customer;
 import in.ac.vitap.cse1005.railmadad.domain.entity.Media;
+import in.ac.vitap.cse1005.railmadad.domain.enums.ComplaintStatus;
+import in.ac.vitap.cse1005.railmadad.exceptions.AccessDeniedException;
 import in.ac.vitap.cse1005.railmadad.exceptions.IncompleteDetailsException;
 import in.ac.vitap.cse1005.railmadad.repository.ComplaintRepository;
 import in.ac.vitap.cse1005.railmadad.repository.CustomerRepository;
@@ -53,5 +55,20 @@ public class ComplaintService {
     } catch (DataIntegrityViolationException e) {
       throw new IncompleteDetailsException();
     }
+  }
+
+  public Complaint updateComplaintStatus(Long complaintId, ComplaintStatus status, Long officerId) {
+    if (complaintId == null || status == null || officerId == null) {
+      throw new IncompleteDetailsException();
+    }
+
+    Complaint complaint = complaintRepository.findById(complaintId).orElseThrow();
+    if (complaint.getOfficer().getId() != officerId) {
+      throw new AccessDeniedException();
+    }
+
+    complaint.setStatus(status);
+
+    return complaintRepository.save(complaint);
   }
 }
