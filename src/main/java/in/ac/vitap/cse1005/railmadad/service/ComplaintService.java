@@ -31,8 +31,12 @@ public class ComplaintService {
     this.mediaRepository = mediaRepository;
   }
 
-  public List<Complaint> getComplaints() {
-    return (List<Complaint>) complaintRepository.findAll();
+  public List<Complaint> getFiledComplaints(String customerId) {
+    return complaintRepository.findByCustomer_Id(customerId);
+  }
+
+  public List<Complaint> getAssignedComplaints(Long officerId) {
+    return complaintRepository.findByOfficer_Id(officerId);
   }
 
   public Complaint postComplaint(String customerId, Complaint complaint) {
