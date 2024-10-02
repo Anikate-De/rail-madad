@@ -43,5 +43,6 @@ public class Message {
 
   @ManyToOne()
   @JoinColumn(name = "officer_id")
+  @JsonIgnore
   private Officer officer;
 }

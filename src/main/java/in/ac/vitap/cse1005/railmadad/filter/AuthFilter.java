@@ -10,12 +10,14 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Map;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
+@Slf4j
 @Component
 public class AuthFilter extends OncePerRequestFilter {
 
@@ -29,7 +31,7 @@ public class AuthFilter extends OncePerRequestFilter {
   @Override
   protected boolean shouldNotFilter(HttpServletRequest request) {
     String path = request.getServletPath();
-    return !path.matches("/complaints/*");
+    return !path.startsWith("/complaints");
   }
 
   @Override
@@ -49,6 +51,7 @@ public class AuthFilter extends OncePerRequestFilter {
     } catch (ExpiredJwtException expiredJwtException) {
       writeResponse(servletResponse, HttpStatus.UNAUTHORIZED, Map.of("message", "Token expired."));
     } catch (Exception e) {
+      log.error("Error while filtering auth: ", e);
       writeResponse(servletResponse, HttpStatus.UNAUTHORIZED, Map.of("message", "Unauthorized."));
     }
   }
