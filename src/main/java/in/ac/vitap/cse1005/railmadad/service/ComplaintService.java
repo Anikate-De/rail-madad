@@ -79,7 +79,7 @@ public class ComplaintService {
     }
 
     Complaint complaint = complaintRepository.findById(complaintId).orElseThrow();
-    if (complaint.getOfficer().getId() != officerId) {
+    if (complaint.getOfficer() == null || complaint.getOfficer().getId() != officerId) {
       throw new AccessDeniedException();
     }
 
@@ -101,7 +101,9 @@ public class ComplaintService {
     message.setComplaint(complaint.get());
 
     Optional<Officer> officer = officerRepository.findById(officerId);
-    if (officer.isEmpty() || complaint.get().getOfficer().getId() != officerId) {
+    if (officer.isEmpty()
+        || complaint.get().getOfficer() == null
+        || complaint.get().getOfficer().getId() != officerId) {
       throw new AccessDeniedException();
     }
 
