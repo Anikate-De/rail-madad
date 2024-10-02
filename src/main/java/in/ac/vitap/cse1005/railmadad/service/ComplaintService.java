@@ -3,13 +3,19 @@ package in.ac.vitap.cse1005.railmadad.service;
 import in.ac.vitap.cse1005.railmadad.domain.entity.Complaint;
 import in.ac.vitap.cse1005.railmadad.domain.entity.Customer;
 import in.ac.vitap.cse1005.railmadad.domain.entity.Media;
+import in.ac.vitap.cse1005.railmadad.domain.entity.Message;
+import in.ac.vitap.cse1005.railmadad.domain.entity.Officer;
 import in.ac.vitap.cse1005.railmadad.domain.enums.ComplaintStatus;
 import in.ac.vitap.cse1005.railmadad.exceptions.AccessDeniedException;
 import in.ac.vitap.cse1005.railmadad.exceptions.IncompleteDetailsException;
 import in.ac.vitap.cse1005.railmadad.repository.ComplaintRepository;
 import in.ac.vitap.cse1005.railmadad.repository.CustomerRepository;
 import in.ac.vitap.cse1005.railmadad.repository.MediaRepository;
+import in.ac.vitap.cse1005.railmadad.repository.MessageRepository;
+import in.ac.vitap.cse1005.railmadad.repository.OfficerRepository;
 import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
@@ -19,16 +25,22 @@ public class ComplaintService {
 
   private final ComplaintRepository complaintRepository;
   private final CustomerRepository customerRepository;
+  private final OfficerRepository officerRepository;
   private final MediaRepository mediaRepository;
+  private final MessageRepository messageRepository;
 
   @Autowired
   public ComplaintService(
       ComplaintRepository complaintRepository,
       CustomerRepository customerRepository,
-      MediaRepository mediaRepository) {
+      OfficerRepository officerRepository,
+      MediaRepository mediaRepository,
+      MessageRepository messageRepository) {
     this.complaintRepository = complaintRepository;
     this.customerRepository = customerRepository;
+    this.officerRepository = officerRepository;
     this.mediaRepository = mediaRepository;
+    this.messageRepository = messageRepository;
   }
 
   public List<Complaint> getFiledComplaints(String customerId) {
@@ -74,5 +86,27 @@ public class ComplaintService {
     complaint.setStatus(status);
 
     return complaintRepository.save(complaint);
+  }
+
+  public Message addMessage(Long complaintId, Message message, Long officerId) {
+    if (complaintId == null || message.getBody() == null) {
+      throw new IncompleteDetailsException();
+    }
+
+    Optional<Complaint> complaint = complaintRepository.findById(complaintId);
+    if (complaint.isEmpty()) {
+      throw new NoSuchElementException();
+    }
+
+    message.setComplaint(complaint.get());
+
+    Optional<Officer> officer = officerRepository.findById(officerId);
+    if (officer.isEmpty() || complaint.get().getOfficer().getId() != officerId) {
+      throw new AccessDeniedException();
+    }
+
+    message.setOfficer(officer.get());
+
+    return messageRepository.save(message);
   }
 }

@@ -1,10 +1,12 @@
 package in.ac.vitap.cse1005.railmadad.controller;
 
 import in.ac.vitap.cse1005.railmadad.domain.entity.Complaint;
+import in.ac.vitap.cse1005.railmadad.domain.entity.Message;
 import in.ac.vitap.cse1005.railmadad.domain.enums.UserRole;
 import in.ac.vitap.cse1005.railmadad.exceptions.AccessDeniedException;
 import in.ac.vitap.cse1005.railmadad.exceptions.IncompleteDetailsException;
 import in.ac.vitap.cse1005.railmadad.service.ComplaintService;
+import in.ac.vitap.cse1005.railmadad.service.CustomerService;
 import jakarta.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.Map;
@@ -27,7 +29,7 @@ public class ComplaintController {
   private final ComplaintService complaintService;
 
   @Autowired
-  public ComplaintController(ComplaintService complaintService) {
+  public ComplaintController(ComplaintService complaintService, CustomerService customerService) {
     this.complaintService = complaintService;
   }
 
@@ -106,5 +108,36 @@ public class ComplaintController {
     }
 
     return new ResponseEntity<>(Map.of("complaint", complaint), HttpStatus.CREATED);
+  }
+
+  @PostMapping("/complaints/{complaintId}/messages")
+  public ResponseEntity<Object> addMessage(
+      @PathVariable Long complaintId, @RequestBody Message message, HttpServletRequest request) {
+    String officerId = (String) request.getAttribute("id");
+    UserRole role = UserRole.valueOf(request.getAttribute("role").toString());
+
+    if (role == UserRole.CUSTOMER) {
+      return new ResponseEntity<>(
+          Map.of("message", "Only Officers are allowed to post messages."), HttpStatus.FORBIDDEN);
+    }
+
+    try {
+      message = complaintService.addMessage(complaintId, message, Long.valueOf(officerId));
+    } catch (IncompleteDetailsException incompleteDetailsException) {
+      return new ResponseEntity<>(
+          Map.of("message", "Complaint Id and Message body are required."), HttpStatus.BAD_REQUEST);
+    } catch (NoSuchElementException noSuchElementException) {
+      return new ResponseEntity<>(Map.of("message", "Complaint not found"), HttpStatus.NOT_FOUND);
+    } catch (AccessDeniedException accessDeniedException) {
+      return new ResponseEntity<>(
+          Map.of("message", "Access Denied, you are not the assigned Officer."),
+          HttpStatus.FORBIDDEN);
+    } catch (Exception e) {
+      log.error("Error while updating complaint status: ", e);
+      return new ResponseEntity<>(
+          Map.of("message", "Internal Server Error"), HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+    return new ResponseEntity<>(message, HttpStatus.CREATED);
   }
 }
