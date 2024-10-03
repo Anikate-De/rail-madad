@@ -1,0 +1,368 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    background-color: #e9ecef;
+    background-image: url('./assets/back.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'Poppins', sans-serif;
+
+
+}
+
+/* General layout */
+.wi {
+    width: 27%;
+}
+
+.ron{
+color:#b7143c;
+}
+
+.bar {
+    margin: 0;
+    width: 400px;
+    margin-left: 32%;
+}
+
+.borrad {
+    border-radius: 0;
+    width: 50px;
+}
+
+.navbar {
+    background-color: #ffffff;
+}
+.navbar .navbar-brand,
+.navbar .nav-link {
+    color: #b7143c;
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar .nav-link:hover {
+    color: #000000;
+}
+
+.mar {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+.mr {
+    margin-left: 37%;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+}
+
+/* Buttons */
+.btn.set {
+    background-color: #b7143c;
+    color: white;
+    border: none;
+}
+
+.btn.set:hover {
+    background-color: #b7143c;
+}
+
+.btn.btn-outline-success {
+    background-color: #b7143c;
+    color: #ffffff;
+    border: 2px solid #b7143c;
+}
+
+.btn.btn-outline-success:hover {
+    background-color: #ffffff;
+    color: #b7143c;
+}
+
+.btn.btn-outline-success:active,
+.btn.btn-outline-success:focus {
+    background-color: #b7143c;
+    color: white;
+    border: 2px solid #b7143c;
+    box-shadow: none;
+}
+
+.btn.btn-dark {
+    background-color: #b7143c;
+    color: white;
+    border: 2px solid #b7143c;
+}
+
+.btn.btn-dark:hover {
+    background-color: #ffffff;
+    color: #b7143c;
+}
+
+.btn.btn-dark:active,
+.btn.btn-dark:focus {
+    background-color: #b7143c;
+    color: white;
+    border: 2px solid #b7143c;
+    box-shadow: none;
+}
+
+/* Forms and inputs */
+input {
+    width: 85%;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.form {
+    margin-bottom: 0.5rem;
+}
+
+/* Miscellaneous styles */
+.gap {
+    margin: 0;
+}
+
+#madadlogo {
+    width: 80px;
+    height: auto;
+}
+.login-container {
+    background-color: rgb(20, 19, 19);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.341);
+    width: 300px;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgb(23, 22, 22);
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #007bff;
+}
+
+.captcha-group {
+    margin-bottom: 40px;
+}
+
+.captcha {
+    display:flexbox;
+    align-items: center;
+}
+button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+.right-label {
+    margin-left: auto;
+    font-weight: 600;
+    color: #b7143c;
+}
+
+.container {
+    margin-top: 40px;
+}
+
+.hidden {
+    display: none;
+}
+
+h3 {
+    color: #495057;
+}
+
+.pad {
+    margin: 10px;
+}
+
+/* Card */
+.card {
+    border: 1px solid #ddd;
+}
+
+.card-img-right {
+    width: 50%;
+    height: auto;
+}
+
+/* Footer */
+#footer {
+    background-color: #75002b;
+    padding: 0px;
+    width: 100%;
+    z-index: 1;
+}
+
+#footer p {
+    color: #fff;
+    font-size: 16px;
+    margin: 0;
+}
+
+.footerLinks {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footerLinks li {
+    display: inline-block;
+    padding: 0 12px;
+    position: relative;
+}
+.card {
+    border: 1px solid #ddd; /* Optional: add border for better visibility */
+}
+
+.card-img-right {
+    width: 50%; /* Ensure the image takes half the card width */
+    height: auto; /* Maintain aspect ratio */
+}
+.footerLinks li:not(:last-child):before {
+    content: "";
+    position: absolute;
+    right: -1px;
+    top: 50%;
+    height: 12px;
+    margin-top: -5px;
+    width: 1px;
+    background-color: #fff;
+}
+
+.footerLinks li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+}
+
+.footerLinks li a:hover {
+    text-decoration: underline;
+}
+
+/* Flex utility classes */
+.d-flex {
+    display: flex;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.align-items-center {
+    align-items: center;
+}
+/* Footer styles */
+#footer {
+    background-color: #75002b;
+    padding: 10px;
+    width: 100%;
+    z-index: 1;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+#footer p {
+    color: #fff;
+    font-size: 16px;
+    margin: 0;
+}
+
+/* Footer links */
+.footerLinks {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footerLinks li {
+    display: inline-block;
+    padding: 0 12px;
+    position: relative;
+}
+
+
+
+.footerLinks li:not(:last-child):before {
+    content: "";
+    position: absolute;
+    right: -1px;
+    top: 0%;
+    height: 6px;
+    margin-top: 0px;
+    width: 1px;
+    background-color: #fff;
+}
+
+.footerLinks li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+}
+
+.footerLinks li a:hover {
+    text-decoration: underline;
+}
+
+/* Flex utility classes for layout adjustments */
+.d-flex {
+    display: flex;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.align-items-center {
+    align-items: center;
+}
+

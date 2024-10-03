@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Add styles for the cropping area */
+      .crop-area {
+        width: 100px;
+        height: 100px;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 2px dashed gray;
+        aspect-ratio: 0.5/0.5; /* Maintain a square aspect ratio */
+      }
+      .crop-area img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: cover; /* Crop the image to fit */
+      }
+      .hidden {
+        display: none; /* Hide the crop area initially */
+      }
+      .separator {
+        border-top: 1px solid gray;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+      }
+    </style>
+  </head>
+
+  <body
+    class="min-h-screen flex items-center justify-center overflow-y-auto"
+    style="
+      background: linear-gradient(0deg, #7b0218fe 0%, #6b0421 59%, #4d090b 88%);
+    "
+  >
+    <div
+      class="max-w-[90vw] w-[90vw] bg-white shadow-lg rounded-lg flex overflow-y-auto"
+      style="min-height: 85vh; max-height: 85vh"
+    >
+      <!-- Profile Section -->
+      <div class="w-1/3 p-8 bg-white border-r flex flex-col justify-between">
+        <div class="mb-10 mt-6">
+          <h2 class="text-2xl font-bold text-gray-900">Aditi Verma</h2>
+          <p class="text-md text-gray-600">+91 98765 43210</p>
+          <p class="text-xs text-gray-500 mt-1">Last Login: 11:57:03</p>
+          <p class="text-xs text-gray-500 mt-1">Date Registered: 29-08-2024</p>
+        </div>
+
+        <!-- Complaint Summary -->
+        <div class="mb-16">
+          <h3 class="text-lg font-bold text-gray-900 mb-1">
+            Complaint Summary
+          </h3>
+          <p class="text-xs text-gray-500">Last Filed: 12-09-2024</p>
+          <p class="text-xs text-gray-500">Last Complaint Status: Pending</p>
+        </div>
+      </div>
+
+      <!-- Complaints Section -->
+      <div class="w-2/3 p-8 bg-white-50 overflow-y-auto" id="complaintsSection">
+        <!-- Add Complaint Button -->
+        <div class="flex flex-col items-center mt-4">
+          <img
+            src="/assets/pen-to-square-solid.svg"
+            alt="Add Complaint"
+            class="w-4 h-4 cursor-pointer"
+            id="addComplaintBtn"
+            onclick="toggleComplaintForm()"
+          />
+          <p class="text-xs text-gray-600 mt-1">ADD COMPLAINT</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="/js/userScript.js"></script>
+  </body>
+</html>

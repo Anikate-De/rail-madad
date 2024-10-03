@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style1.css">
+    <script src="/static/js/captcha.js" defer></script>
+    <script>
+        // Generate and display CAPTCHA
+        function loadCaptcha() {
+            const captcha = generateCaptcha();
+            document.getElementById('captcha').innerText = captcha;
+        }
+
+        // Validate CAPTCHA on form submit
+        function validateForm() {
+            const userInput = document.getElementById('captcha-input').value;
+            const generatedCaptcha = document.getElementById('captcha').innerText;
+            if (validateCaptcha(userInput, generatedCaptcha)) {
+                alert('Captcha is valid! Logging in...');
+                return true; // Proceed with login logic (e.g., form submission)
+            } else {
+                alert('Invalid CAPTCHA. Please try again.');
+                document.getElementById('captcha-input').value = ''; // Clear input
+                loadCaptcha(); // Generate new CAPTCHA
+                return false;
+            }
+        }
+
+        // Generate CAPTCHA on page load
+        window.onload = function() {
+            loadCaptcha();
+        };
+    </script>
+
+</head>
+<body>
+<form action="/officer_login" method="post">
+    <div>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <img id="madadlogo" src="./assets/logo.jpg">
+                <form class="form-floating">
+                    <div class="wrapped-text">
+                        <h1 class="gap" id="floatingInputValue">RailMadad</h1>
+                        <label class="gap" id="floatingInputValue2" for="floatingInputValue">For Inquiry, Assistance &</label>
+                        <h6 class="gap" for="floatingInputValue2">Grievance Redressal</h6>
+                    </div>
+                </form>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="block.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Reports</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">FAQ's</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button type="button" class="btn set btn-dark flex-fill">Search</button>
+                    </form>
+                    <form class="d-flex mar right-label" role="search">
+                        <img src="./assets/call.png">
+                        <h4>For Security or Medical Assistance</h4>
+                    </form>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container text-center">
+            <div class="d-flex bar">
+                <button type="button" class="btn set borrad btn-dark flex-fill" id="loginBtn" onclick="showForm('login')">Login</button>
+            </div>
+
+            <form action="/officer_login/login" method="post" id="loginForm">
+                <div class="mt-4">
+                    <h3>Login</h3>
+                    <div class="mb-3">
+                        <h5 for="formGroupExampleInput" class="form-label mr">Officer ID</h5>
+                        <input type="text" class="form-control" id="formGroupExampleInput3" placeholder="Enter Officer ID">
+                    </div>
+                    <div class="mb-3">
+                        <h5 for="formGroupExampleInput2" class="form-label mr">Password</h5>
+                        <input type="password" class="form-control" id="formGroupExampleInput2" placeholder="Enter password">
+                    </div>
+                    <div class="mb-3">
+                        <label for="captchaInput">CAPTCHA: <span id="captchaDisplay" style="font-weight:bold;"></span></label>
+                        <input type="text" id="captchaInput" placeholder="Enter CAPTCHA" required>
+                    </div>
+                    <div>
+                        <button type="button" class="btn set btn-dark flex-fill">Login</button>
+                    </div>
+                </div>
+            </form>
+
+
+
+        </div>
+    </div>
+
+    <footer id="footer">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="footerColLeft">
+                    <p class="copyright">Copyright ©2024 RAILMADAD. All Rights Reserved.</p>
+                </div>
+                <div class="footerColRight">
+                    <ul class="footerLinks">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="#" data-toggle="modal" data-target="#faqModal">FAQs</a></li>
+                        <li><a href="#" title="Railway Admin Login" data-toggle="modal" data-target="#adminModal">Railway Admin Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</form>
+<script src="/js/captcha.js" defer></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

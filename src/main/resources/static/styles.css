@@ -1,0 +1,219 @@
+/* General layout settings */
+body {
+    height: 100%;
+    margin: 0;
+}
+
+.back {
+    background-image: url('./assets/train.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #ffffff;
+}
+
+/* Logo in Navbar */
+#madadlogo {
+    width: 80px;
+    height: auto;
+}
+
+/* Navbar link styles */
+.navbar .navbar-brand,
+.navbar .nav-link {
+    color: #b7143c;
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar .nav-link:hover {
+    color: #000000;
+}
+
+/* Form and input styles */
+input {
+    width: 85%;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+/* Buttons */
+.btn {
+    padding: 12px 25px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn.set {
+    background-color: #b7143c;
+    color: white;
+    border: none;
+}
+
+.btn.set:hover {
+    background-color: #b7143c;
+}
+
+.btn.btn-outline-success {
+    background-color: #b7143c;
+    color: #ffffff;
+    border: 2px solid #b7143c;
+}
+
+.btn.btn-outline-success:hover {
+    background-color: #ffffff;
+    color: #b7143c;
+}
+
+/* Portal Container Styles */
+.portal-container {
+    text-align: center;
+    background-color: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+    margin: 100px auto;
+}
+
+/* Heading underlines */
+#under {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+#under::after {
+    content: "";
+    width: 100px;
+    height: 4px;
+    background-color: #00aaff;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+/* Option cards inside portal */
+.options-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.option-card {
+    background-color: #f9fafb;
+    border-radius: 10px;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.option-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.option-card img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+}
+
+.option-card h2 {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Footer styles */
+#footer {
+    background-color: #75002b;
+    padding: 10px;
+    width: 100%;
+    z-index: 1;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+#footer p {
+    color: #fff;
+    font-size: 16px;
+    margin: 0;
+}
+
+/* Footer links */
+.footerLinks {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footerLinks li {
+    display: inline-block;
+    padding: 0 12px;
+    position: relative;
+}
+
+.footerLinks li:not(:last-child):before {
+    content: "";
+    position: absolute;
+    right: -1px;
+    top: 50%;
+    height: 12px;
+    margin-top: -5px;
+    width: 1px;
+    background-color: #fff;
+}
+
+.footerLinks li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+}
+
+.footerLinks li a:hover {
+    text-decoration: underline;
+}
+
+/* Flex utility classes for layout adjustments */
+.d-flex {
+    display: flex;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+/* Custom right-aligned label */
+.right-label {
+    margin-left: auto;
+    font-weight: 600;
+    color: #b7143c;
+}
+
+/* Floating Input Value */
+#floatingInputValue {
+    color: #b7143c;
+    font-size: 30px;
+    font-weight: bold;
+}

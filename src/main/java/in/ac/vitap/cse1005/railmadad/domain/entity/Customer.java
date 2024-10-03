@@ -25,10 +25,11 @@ import org.hibernate.annotations.CreationTimestamp;
 @Builder
 @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
 public class Customer {
+
   @JsonIgnore
   @OneToMany(mappedBy = "customer")
   @Builder.Default
-  List<Complaint> complaints = List.of();
+  private List<Complaint> complaints = List.of();
 
   @Id
   @GeneratedValue(strategy = GenerationType.UUID)
@@ -36,45 +37,46 @@ public class Customer {
   private String id;
 
   @Column(unique = true)
-  private long phoneNumber;
+  private long phoneNumber; // The field for the customer's phone number
 
   @Column(nullable = false)
-  private String firstName;
+  private String firstName; // The field for the customer's first name
 
-  private String lastName;
+  private String lastName; // The field for the customer's last name
 
-  @JsonIgnore private String passwordHash;
+  @JsonIgnore
+  private String passwordHash; // The field for the hashed password
 
   @Column(nullable = false, updatable = false)
   @CreationTimestamp
-  private Instant dateRegistered;
+  private Instant dateRegistered; // The field for the date registered
 
-  private Instant lastLogin;
+  private Instant lastLogin; // The field for the last login timestamp
 
   @Override
   public String toString() {
     return getClass().getSimpleName()
-        + "("
-        + "id = "
-        + id
-        + ", "
-        + "phoneNumber = "
-        + phoneNumber
-        + ", "
-        + "firstName = "
-        + firstName
-        + ", "
-        + "lastName = "
-        + lastName
-        + ", "
-        + "passwordHash = "
-        + passwordHash
-        + ", "
-        + "dateRegistered = "
-        + dateRegistered
-        + ", "
-        + "lastLogin = "
-        + lastLogin
-        + ")";
+            + "("
+            + "id = "
+            + id
+            + ", "
+            + "phoneNumber = "
+            + phoneNumber
+            + ", "
+            + "firstName = "
+            + firstName
+            + ", "
+            + "lastName = "
+            + lastName
+            + ", "
+            + "passwordHash = "
+            + passwordHash
+            + ", "
+            + "dateRegistered = "
+            + dateRegistered
+            + ", "
+            + "lastLogin = "
+            + lastLogin
+            + ")";
   }
 }

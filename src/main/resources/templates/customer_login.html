@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style1.css">
+
+    <script defer>
+        // Function to toggle between login and create account forms
+        function showForm(formType) {
+            const loginForm = document.getElementById('loginForm');
+            const createAccountForm = document.getElementById('createAccountForm');
+
+            if (formType === 'login') {
+                loginForm.style.display = 'block';
+                createAccountForm.style.display = 'none';
+            } else {
+                loginForm.style.display = 'none';
+                createAccountForm.style.display = 'block';
+            }
+        }
+
+        function loadCaptcha() {
+            const captcha = generateCaptcha();
+            document.getElementById('captchaDisplay').innerText = captcha;
+        }
+
+        function validateForm() {
+            const userInput = document.getElementById('captchaInput').value;
+            const generatedCaptcha = document.getElementById('captchaDisplay').innerText;
+            if (validateCaptcha(userInput, generatedCaptcha)) {
+                return true; // Proceed with login logic (e.g., form submission)
+            } else {
+                alert('Invalid CAPTCHA. Please try again.');
+                document.getElementById('captchaInput').value = '';
+                loadCaptcha();
+                return false;
+            }
+        }
+
+        window.onload = function () {
+            showForm('login'); // Display login form by default
+        };
+    </script>
+   </head>
+
+<body>
+<form action="/customer_login" method="post">
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <img id="madadlogo" src="./assets/logo.jpg">
+            <form class="form-floating">
+                <div class="wrapped-text">
+                    <h1 class="gap ron" id="floatingInputValue">RailMadad</h1>
+                    <label class="gap" id="floatingInputValue2" for="floatingInputValue">For Inquiry, Assistance &</label>
+                    <h6 class="gap" for="floatingInputValue2">Grievance Redressal</h6>
+                </div>
+            </form>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="block.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Reports</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">FAQ's</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button type="button" class="btn set btn-dark flex-fill">Search</button>
+                </form>
+                <form class="d-flex mar right-label" role="search">
+                    <img src="./assets/call.png">
+                    <h4>For Security or Medical Assistance</h4>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container text-center">
+    <div class="d-flex bar">
+        <button type="button" class="btn set borrad btn-dark flex-fill" id="loginBtn" onclick="showForm('login')">Login</button>
+        <button type="button" class="btn set borrad btn-dark flex-fill" id="createAccountBtn" onclick="showForm('createAccount')">Create Account</button>
+    </div>
+
+    <!-- Login Form -->
+    <form action="/customer_login/login" method="post" id="loginForm" style="display: block;">
+        <div class="mt-4">
+            <h3>Login</h3>
+            <div class="mb-3">
+                <h5 for="formGroupExampleInput3" class="form-label">Phone Number</h5>
+                <input type="text" class="form-control" id="phone_number" placeholder="Enter phone number">
+            </div>
+            <div class="mb-3">
+                <h5 for="formGroupExampleInput2" class="form-label">Password</h5>
+                <input type="password" class="form-control" id="loginPassword" placeholder="Enter password">
+            </div>
+            <div class="mb-3">
+                <label for="captchaInput">CAPTCHA: <span id="captchaDisplay" style="font-weight:bold;"></span></label>
+                <input type="text" id="captchaInput" class="form-control" placeholder="Enter CAPTCHA" required>
+            </div>
+            <div>
+                <button type="submit" class="btn set btn-dark flex-fill" onclick="return validateForm()">Login</button>
+            </div>
+        </div>
+    </form>
+
+    <!-- Signup Form -->
+    <form action="/customer_login/signup" method="post" id="createAccountForm" style="display: none;">
+        <div class="mt-4">
+            <h3>Create Account</h3>
+            <div class="mb-3">
+                <h5 for="first_name" class="form-label">First Name</h5>
+                <input type="text" name="first_name" class="form-control" id="first_name" placeholder="Enter first name" required>
+            </div>
+            <div class="mb-3">
+                <h5 for="last_name" class="form-label">Last Name</h5>
+                <input type="text" name="last_name" class="form-control" id="last_name" placeholder="Enter last name" required>
+            </div>
+            <div class="mb-3">
+                <h5 for="phone_number" class="form-label">Phone Number</h5>
+                <input type="text" name="phone_number" class="form-control" placeholder="Enter phone number" required>
+            </div>
+            <div class="mb-3">
+                <h5 for="newPassword" class="form-label">Password</h5>
+                <input type="password" name="password" class="form-control" id="newPassword" placeholder="Enter password" required>
+            </div>
+            <div class="mb-3">
+                <h5 for="confirmPassword" class="form-label">Confirm Password</h5>
+                <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm password" required>
+            </div>
+            <div>
+                <button type="submit" class="btn set btn-dark flex-fill">Create Account</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+    <footer id="footer">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="footerColLeft">
+                    <p class="copyright">Copyright ©2024 RAILMADAD. All Rights Reserved.</p>
+                </div>
+                <div class="footerColRight">
+                    <ul class="footerLinks">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="#" data-toggle="modal" data-target="#faqModal">FAQs</a></li>
+                        <li><a href="#" title="Railway Admin Login" data-toggle="modal" data-target="#adminModal">Railway Admin Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</form>
+<script src="/js/captcha.js" defer></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
