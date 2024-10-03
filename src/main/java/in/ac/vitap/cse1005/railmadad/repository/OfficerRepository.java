@@ -2,6 +2,7 @@ package in.ac.vitap.cse1005.railmadad.repository;
 
 import in.ac.vitap.cse1005.railmadad.domain.entity.Officer;
 import java.time.Instant;
+import java.util.List;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
@@ -30,4 +31,18 @@ public interface OfficerRepository extends CrudRepository<Officer, Long> {
   @Modifying
   @Query("update Officer o set o.lastLogin = ?1 where o.id = ?2")
   int updateLastLoginById(@NonNull Instant lastLogin, @NonNull long id);
+
+  /**
+   * Finds officers by their department ID.
+   *
+   * <p>Example usage:
+   *
+   * <pre>{@code
+   * List<Officer> officers = officerRepository.findByDepartment_Id(123L);
+   * }</pre>
+   *
+   * @param id the ID of the department
+   * @return a list of officers associated with the specified department ID
+   */
+  List<Officer> findByDepartment_Id(@NonNull long id);
 }

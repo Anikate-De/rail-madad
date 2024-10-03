@@ -1,6 +1,7 @@
 package in.ac.vitap.cse1005.railmadad.repository;
 
 import in.ac.vitap.cse1005.railmadad.domain.entity.Complaint;
+import in.ac.vitap.cse1005.railmadad.domain.enums.ComplaintStatus;
 import java.util.List;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
@@ -40,4 +41,19 @@ public interface ComplaintRepository extends CrudRepository<Complaint, Long> {
    */
   @Query("select c from Complaint c where c.officer.id = ?1")
   List<Complaint> findByOfficer_Id(@NonNull long id);
+
+  /**
+   * Finds complaints by their status.
+   *
+   * <p>Example usage:
+   *
+   * <pre>{@code
+   * List<Complaint> pendingComplaints = complaintRepository.findByStatus(ComplaintStatus.PENDING);
+   * }</pre>
+   *
+   * @param status the status of the complaints to find
+   * @return a list of complaints with the specified status
+   */
+  @Query("select c from Complaint c where c.status = ?1")
+  List<Complaint> findByStatus(@NonNull ComplaintStatus status);
 }
