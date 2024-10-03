@@ -16,18 +16,35 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * Controller for handling officer-related operations.
+ *
+ * <p>This controller provides endpoints for officer signup and login.
+ */
 @RestController
 public class OfficerController {
 
   private final OfficerService officerService;
   private final ObjectMapper objectMapper;
 
+  /**
+   * Constructs an OfficerController with the specified OfficerService and ObjectMapper.
+   *
+   * @param officerService the service for officer operations
+   * @param objectMapper the object mapper for JSON conversion
+   */
   @Autowired
   public OfficerController(OfficerService officerService, ObjectMapper objectMapper) {
     this.officerService = officerService;
     this.objectMapper = objectMapper;
   }
 
+  /**
+   * Endpoint for officer signup.
+   *
+   * @param request the request body containing officer details and password
+   * @return a ResponseEntity with a message and the created officer
+   */
   @PostMapping(value = "/officers/signup", consumes = MediaType.APPLICATION_JSON_VALUE)
   public ResponseEntity<Map<String, Object>> signup(@RequestBody Map<String, Object> request) {
     Officer officer = objectMapper.convertValue(request, Officer.class);
@@ -57,6 +74,12 @@ public class OfficerController {
         Map.of("message", "Officer signup successful", "officer", officer), HttpStatus.CREATED);
   }
 
+  /**
+   * Endpoint for officer login.
+   *
+   * @param request the request body containing officer ID and password
+   * @return a ResponseEntity with a message and the authentication token
+   */
   @PostMapping(value = "/officers/login", consumes = MediaType.APPLICATION_JSON_VALUE)
   public ResponseEntity<Map<String, Object>> login(@RequestBody Map<String, Object> request) {
     Officer officer = objectMapper.convertValue(request, Officer.class);

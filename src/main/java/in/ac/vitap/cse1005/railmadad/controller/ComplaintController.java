@@ -6,7 +6,6 @@ import in.ac.vitap.cse1005.railmadad.domain.enums.UserRole;
 import in.ac.vitap.cse1005.railmadad.exceptions.AccessDeniedException;
 import in.ac.vitap.cse1005.railmadad.exceptions.IncompleteDetailsException;
 import in.ac.vitap.cse1005.railmadad.service.ComplaintService;
-import in.ac.vitap.cse1005.railmadad.service.CustomerService;
 import jakarta.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.Map;
@@ -22,17 +21,33 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * Controller for handling complaint-related operations.
+ *
+ * <p>This controller provides endpoints for creating, updating, and retrieving complaints.
+ */
 @Slf4j
 @RestController
 public class ComplaintController {
 
   private final ComplaintService complaintService;
 
+  /**
+   * Constructs a ComplaintController with the specified ComplaintService and CustomerService.
+   *
+   * @param complaintService the service for complaint operations
+   */
   @Autowired
-  public ComplaintController(ComplaintService complaintService, CustomerService customerService) {
+  public ComplaintController(ComplaintService complaintService) {
     this.complaintService = complaintService;
   }
 
+  /**
+   * Endpoint for retrieving complaints based on user role.
+   *
+   * @param request the HTTP request containing user details
+   * @return a ResponseEntity with the list of complaints
+   */
   @GetMapping("/complaints")
   public ResponseEntity<List<Complaint>> getComplaints(HttpServletRequest request) {
     String id = request.getAttribute("id").toString();
@@ -46,6 +61,13 @@ public class ComplaintController {
     };
   }
 
+  /**
+   * Endpoint for posting a new complaint.
+   *
+   * @param request the HTTP request containing user details
+   * @param complaint the complaint to be posted
+   * @return a ResponseEntity with the created complaint
+   */
   @PostMapping("/complaints")
   public ResponseEntity<Map<String, Object>> postComplaints(
       HttpServletRequest request, @RequestBody Complaint complaint) {
@@ -73,6 +95,14 @@ public class ComplaintController {
     return new ResponseEntity<>(Map.of("complaint", complaint), HttpStatus.CREATED);
   }
 
+  /**
+   * Endpoint for updating the status of a complaint.
+   *
+   * @param request the HTTP request containing user details
+   * @param complaint the complaint with updated status
+   * @param complaintId the ID of the complaint to be updated
+   * @return a ResponseEntity with the updated complaint
+   */
   @PutMapping("/complaints/{complaintId}")
   public ResponseEntity<Map<String, Object>> postComplaints(
       HttpServletRequest request,
@@ -110,6 +140,14 @@ public class ComplaintController {
     return new ResponseEntity<>(Map.of("complaint", complaint), HttpStatus.CREATED);
   }
 
+  /**
+   * Endpoint for adding a message to a complaint.
+   *
+   * @param complaintId the ID of the complaint to which the message is to be added
+   * @param message the message to be added
+   * @param request the HTTP request containing user details
+   * @return a ResponseEntity with the added message
+   */
   @PostMapping("/complaints/{complaintId}/messages")
   public ResponseEntity<Object> addMessage(
       @PathVariable Long complaintId, @RequestBody Message message, HttpServletRequest request) {

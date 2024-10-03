@@ -17,23 +17,47 @@ import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
+/**
+ * Filter for handling authentication of requests.
+ *
+ * <p>This filter intercepts requests to check for valid authentication tokens.
+ */
 @Slf4j
 @Component
 public class AuthFilter extends OncePerRequestFilter {
 
   private final AuthService authService;
 
+  /**
+   * Constructs an AuthFilter with the specified AuthService.
+   *
+   * @param authService the service for handling authentication
+   */
   @Autowired
   public AuthFilter(AuthService authService) {
     this.authService = authService;
   }
 
+  /**
+   * Determines whether the filter should not apply to the given request.
+   *
+   * @param request the HTTP request
+   * @return true if the filter should not apply, false otherwise
+   */
   @Override
   protected boolean shouldNotFilter(HttpServletRequest request) {
     String path = request.getServletPath();
     return !path.startsWith("/complaints");
   }
 
+  /**
+   * Filters the request to check for valid authentication.
+   *
+   * @param servletRequest the HTTP request
+   * @param servletResponse the HTTP response
+   * @param filterChain the filter chain
+   * @throws IOException if an I/O error occurs
+   */
   @Override
   protected void doFilterInternal(
       @NonNull HttpServletRequest servletRequest,

@@ -17,18 +17,35 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * Controller for handling customer-related operations.
+ *
+ * <p>This controller provides endpoints for customer signup and login.
+ */
 @RestController
 public class CustomerController {
 
   private final CustomerService customerService;
   private final ObjectMapper objectMapper;
 
+  /**
+   * Constructs a CustomerController with the specified CustomerService and ObjectMapper.
+   *
+   * @param customerService the service for customer operations
+   * @param objectMapper the object mapper for JSON conversion
+   */
   @Autowired
   public CustomerController(CustomerService customerService, ObjectMapper objectMapper) {
     this.customerService = customerService;
     this.objectMapper = objectMapper;
   }
 
+  /**
+   * Endpoint for customer signup.
+   *
+   * @param request the request body containing customer details and password
+   * @return a ResponseEntity with a message and the created customer
+   */
   @PostMapping(value = "/customers/signup", consumes = MediaType.APPLICATION_JSON_VALUE)
   public ResponseEntity<Map<String, Object>> signup(@RequestBody Map<String, Object> request) {
     Customer customer = objectMapper.convertValue(request, Customer.class);
@@ -64,6 +81,12 @@ public class CustomerController {
         Map.of("message", "Customer signup successful"), HttpStatus.CREATED);
   }
 
+  /**
+   * Endpoint for customer login.
+   *
+   * @param request the request body containing customer phone number and password
+   * @return a ResponseEntity with a message and the authentication token
+   */
   @PostMapping(value = "/customers/login", consumes = MediaType.APPLICATION_JSON_VALUE)
   public ResponseEntity<Map<String, Object>> login(@RequestBody Map<String, Object> request) {
     Customer customer = objectMapper.convertValue(request, Customer.class);
