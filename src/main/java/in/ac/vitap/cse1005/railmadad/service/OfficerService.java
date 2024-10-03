@@ -15,8 +15,8 @@ import in.ac.vitap.cse1005.railmadad.repository.OfficerRepository;
 import jakarta.persistence.EntityNotFoundException;
 import java.time.Instant;
 import java.util.Optional;
-import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Service;
 
 /** Service class for handling officer-related operations. */
@@ -50,7 +50,7 @@ public class OfficerService {
    * @throws IncompleteDetailsException if any of the required details are missing
    * @throws WeakPasswordException if the password is weak
    */
-  public Officer signup(@NotNull Officer officer, String password) {
+  public Officer signup(@NonNull Officer officer, String password) {
     if (officer.getFirstName() == null || password == null) {
       throw new IncompleteDetailsException();
     }
