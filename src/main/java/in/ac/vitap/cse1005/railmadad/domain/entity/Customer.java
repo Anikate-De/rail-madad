@@ -37,46 +37,45 @@ public class Customer {
   private String id;
 
   @Column(unique = true)
-  private long phoneNumber; // The field for the customer's phone number
+  private long phoneNumber;
 
   @Column(nullable = false)
-  private String firstName; // The field for the customer's first name
+  private String firstName;
 
-  private String lastName; // The field for the customer's last name
+  private String lastName;
 
-  @JsonIgnore
-  private String passwordHash; // The field for the hashed password
+  @JsonIgnore private String passwordHash;
 
   @Column(nullable = false, updatable = false)
   @CreationTimestamp
-  private Instant dateRegistered; // The field for the date registered
+  private Instant dateRegistered;
 
-  private Instant lastLogin; // The field for the last login timestamp
+  private Instant lastLogin;
 
   @Override
   public String toString() {
     return getClass().getSimpleName()
-            + "("
-            + "id = "
-            + id
-            + ", "
-            + "phoneNumber = "
-            + phoneNumber
-            + ", "
-            + "firstName = "
-            + firstName
-            + ", "
-            + "lastName = "
-            + lastName
-            + ", "
-            + "passwordHash = "
-            + passwordHash
-            + ", "
-            + "dateRegistered = "
-            + dateRegistered
-            + ", "
-            + "lastLogin = "
-            + lastLogin
-            + ")";
+        + "("
+        + "id = "
+        + id
+        + ", "
+        + "phoneNumber = "
+        + phoneNumber
+        + ", "
+        + "firstName = "
+        + firstName
+        + ", "
+        + "lastName = "
+        + lastName
+        + ", "
+        + "passwordHash = "
+        + passwordHash
+        + ", "
+        + "dateRegistered = "
+        + dateRegistered
+        + ", "
+        + "lastLogin = "
+        + lastLogin
+        + ")";
   }
 }

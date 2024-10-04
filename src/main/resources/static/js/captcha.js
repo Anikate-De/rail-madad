@@ -33,7 +33,7 @@ function handleLogin() {
             password: document.getElementById('loginPassword').value
         };
 
-        const response = await fetch('/customer_login/login', {
+        const response = await fetch('/customers/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -45,7 +45,7 @@ function handleLogin() {
 
         if (response.ok) {
             alert(result.message);
-            window.location.href = '/customer_login/user_dashboard'; // Redirect to dashboard
+            window.location.href = '/customers/user_dashboard'; // Redirect to dashboard
         } else {
             alert(result.message);
         }
@@ -64,7 +64,7 @@ function handleSignup() {
             confirmPassword: document.getElementById('confirmPassword').value
         };
 
-        const response = await fetch('/customer_login/signup', {
+        const response = await fetch('/customers/signup', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -75,7 +75,7 @@ function handleSignup() {
         const result = await response.json();
         alert(result.message);
         if (response.ok) {
-            window.location.href = '/customer_login';
+            window.location.href = '/customers';
         } else {
             alert(result.message);
         }
@@ -84,7 +84,7 @@ function handleSignup() {
 
 document.addEventListener('DOMContentLoaded', () => {
     if (document.cookie.split(';').some((item) => item.trim().startsWith('auth_token='))) {
-        window.location.href = '/customer_login/user_dashboard';
+        window.location.href = '/customers/user_dashboard';
     } else {
         handleLogin();
     }

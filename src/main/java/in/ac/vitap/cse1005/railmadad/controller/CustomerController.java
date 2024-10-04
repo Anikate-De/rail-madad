@@ -8,13 +8,13 @@ import in.ac.vitap.cse1005.railmadad.exceptions.WeakPasswordException;
 import in.ac.vitap.cse1005.railmadad.service.CustomerService;
 import jakarta.persistence.EntityExistsException;
 import jakarta.persistence.EntityNotFoundException;
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletResponse;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import jakarta.servlet.http.Cookie;
-import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -32,7 +32,7 @@ public class CustomerController {
     this.objectMapper = objectMapper;
   }
 
-  @PostMapping(value = "/customer_login/signup", consumes = MediaType.APPLICATION_JSON_VALUE)
+  @PostMapping(value = "/customers/signup", consumes = MediaType.APPLICATION_JSON_VALUE)
   public ResponseEntity<Map<String, Object>> signup(@RequestBody Map<String, Object> request) {
     Customer customer = objectMapper.convertValue(request, Customer.class);
     String password = (String) request.get("password");
@@ -67,16 +67,15 @@ public class CustomerController {
         Map.of("message", "Customer signup successful"), HttpStatus.CREATED);
   }
 
-  @PostMapping(value = "/customer_login/login", consumes = MediaType.APPLICATION_JSON_VALUE)
-  public ResponseEntity<Map<String, Object>> login(@RequestBody Map<String, Object> request,HttpServletResponse response) {
+  @PostMapping(value = "/customers/login", consumes = MediaType.APPLICATION_JSON_VALUE)
+  public ResponseEntity<Map<String, Object>> login(
+      @RequestBody Map<String, Object> request, HttpServletResponse response) {
     Customer customer = objectMapper.convertValue(request, Customer.class);
     String password = (String) request.get("password");
 
     String token;
     try {
       token = customerService.login(customer.getPhoneNumber(), password);
-      System.out.println("Token generated: " + token);
-
     } catch (IncompleteDetailsException incompleteDetailsException) {
       return new ResponseEntity<>(
           Map.of("message", "Incomplete details provided. Phone Number and Password are required."),
@@ -97,8 +96,6 @@ public class CustomerController {
     cookie.setMaxAge(60);
     cookie.setPath("/");
     response.addCookie(cookie);
-    System.out.println("Cookie set: " + cookie.getName() + " = " + cookie.getValue());
-
     return new ResponseEntity<>(
         Map.of("message", "Customer login successful", "token", token), HttpStatus.ACCEPTED);
   }
