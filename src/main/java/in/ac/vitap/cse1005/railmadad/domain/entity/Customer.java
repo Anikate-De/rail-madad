@@ -31,13 +31,7 @@ import org.hibernate.annotations.CreationTimestamp;
 @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
 public class Customer {
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
   /** The list of complaints associated with this customer. */
->>>>>>> 1f3b590ad445aa0b31d22b728c5846533ec57cfc
-=======
->>>>>>> 2f9f14ccb30bffd462dfc0982db947df524e822b
   @JsonIgnore
   @OneToMany(mappedBy = "customer")
   @Builder.Default
