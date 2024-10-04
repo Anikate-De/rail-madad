@@ -18,6 +18,11 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * Represents media associated with a complaint in the system.
+ *
+ * <p>This entity is used to store media information in the database.
+ */
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
@@ -26,18 +31,23 @@ import lombok.Setter;
 @Builder
 @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
 public class Media {
+
+  /** The unique identifier for the media. */
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private long id;
 
+  /** The type of the media. */
   @Enumerated(EnumType.STRING)
   @Builder.Default
   private MediaType mediaType = MediaType.TEXT;
 
+  /** The data of the media. */
   @Column(nullable = false)
   private byte[] data;
 
-  @ManyToOne()
+  /** The complaint to which this media belongs. */
+  @ManyToOne
   @JoinColumn(name = "complaint_id")
   @JsonIgnore
   private Complaint complaint;

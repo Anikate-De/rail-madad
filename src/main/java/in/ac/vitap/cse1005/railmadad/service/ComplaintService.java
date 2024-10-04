@@ -20,6 +20,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
+/** Service class for handling complaint-related operations. */
 @Service
 public class ComplaintService {
 
@@ -29,6 +30,15 @@ public class ComplaintService {
   private final MediaRepository mediaRepository;
   private final MessageRepository messageRepository;
 
+  /**
+   * Constructs a ComplaintService with the specified repositories.
+   *
+   * @param complaintRepository the repository for complaint data
+   * @param customerRepository the repository for customer data
+   * @param officerRepository the repository for officer data
+   * @param mediaRepository the repository for media data
+   * @param messageRepository the repository for message data
+   */
   @Autowired
   public ComplaintService(
       ComplaintRepository complaintRepository,
@@ -43,14 +53,41 @@ public class ComplaintService {
     this.messageRepository = messageRepository;
   }
 
+  /**
+   * Retrieves the list of complaints filed by a specific customer.
+   *
+   * @param customerId the ID of the customer
+   * @return the list of complaints filed by the customer
+   */
   public List<Complaint> getFiledComplaints(String customerId) {
     return complaintRepository.findByCustomer_Id(customerId);
   }
 
+  /**
+   * Retrieves the list of complaints assigned to a specific officer.
+   *
+   * @param officerId the ID of the officer
+   * @return the list of complaints assigned to the officer
+   */
   public List<Complaint> getAssignedComplaints(Long officerId) {
     return complaintRepository.findByOfficer_Id(officerId);
   }
 
+  /**
+   * Posts a new complaint for a specific customer.
+   *
+   * <p>Example usage:
+   *
+   * <pre>{@code
+   * Complaint complaint = new Complaint();
+   * complaintService.postComplaint(customerId, complaint);
+   * }</pre>
+   *
+   * @param customerId the ID of the customer
+   * @param complaint the complaint to be posted
+   * @return the saved complaint
+   * @throws IncompleteDetailsException if the complaint details are incomplete
+   */
   public Complaint postComplaint(String customerId, Complaint complaint) {
     Customer customer = customerRepository.findById(customerId).orElseThrow();
     complaint.setCustomer(customer);
@@ -73,6 +110,22 @@ public class ComplaintService {
     }
   }
 
+  /**
+   * Updates the status of a specific complaint.
+   *
+   * <p>Example usage:
+   *
+   * <pre>{@code
+   * complaintService.updateComplaintStatus(complaintId, ComplaintStatus.RESOLVED, officerId);
+   * }</pre>
+   *
+   * @param complaintId the ID of the complaint
+   * @param status the new status of the complaint
+   * @param officerId the ID of the officer updating the status
+   * @return the updated complaint
+   * @throws IncompleteDetailsException if any of the parameters are null
+   * @throws AccessDeniedException if the officer is not authorized to update the complaint
+   */
   public Complaint updateComplaintStatus(Long complaintId, ComplaintStatus status, Long officerId) {
     if (complaintId == null || status == null || officerId == null) {
       throw new IncompleteDetailsException();
@@ -88,6 +141,24 @@ public class ComplaintService {
     return complaintRepository.save(complaint);
   }
 
+  /**
+   * Adds a message to a specific complaint.
+   *
+   * <p>Example usage:
+   *
+   * <pre>{@code
+   * Message message = new Message();
+   * complaintService.addMessage(complaintId, message, officerId);
+   * }</pre>
+   *
+   * @param complaintId the ID of the complaint
+   * @param message the message to be added
+   * @param officerId the ID of the officer adding the message
+   * @return the saved message
+   * @throws IncompleteDetailsException if the complaint ID or message body is null
+   * @throws NoSuchElementException if the complaint is not found
+   * @throws AccessDeniedException if the officer is not authorized to add the message
+   */
   public Message addMessage(Long complaintId, Message message, Long officerId) {
     if (complaintId == null || message.getBody() == null) {
       throw new IncompleteDetailsException();

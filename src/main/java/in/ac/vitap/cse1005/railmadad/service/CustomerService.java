@@ -10,6 +10,7 @@ import in.ac.vitap.cse1005.railmadad.domain.enums.UserRole;
 import in.ac.vitap.cse1005.railmadad.domain.model.UserClaims;
 import in.ac.vitap.cse1005.railmadad.exceptions.IncompleteDetailsException;
 import in.ac.vitap.cse1005.railmadad.exceptions.PasswordMismatchException;
+import in.ac.vitap.cse1005.railmadad.exceptions.WeakPasswordException;
 import in.ac.vitap.cse1005.railmadad.repository.CustomerRepository;
 import jakarta.persistence.EntityExistsException;
 import jakarta.persistence.EntityNotFoundException;
@@ -19,16 +20,38 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
+/** Service class for handling customer-related operations. */
 @Service
 public class CustomerService {
 
   private final CustomerRepository customerRepository;
 
+  /**
+   * Constructs a CustomerService with the specified repository.
+   *
+   * @param customerRepository the repository for customer data
+   */
   @Autowired
   public CustomerService(CustomerRepository customerRepository) {
     this.customerRepository = customerRepository;
   }
 
+  /**
+   * Signs up a new customer with the provided details.
+   *
+   * <p>Example usage:
+   *
+   * <pre>{@code
+   * Customer customer = new Customer();
+   * customerService.signup(customer, "password");
+   * }</pre>
+   *
+   * @param customer the customer to be signed up
+   * @param password the password for the customer
+   * @throws IncompleteDetailsException if any of the required details are missing
+   * @throws EntityExistsException if the customer already exists
+   * @throws WeakPasswordException if the password is weak
+   */
   public void signup(Customer customer, String password) {
     if (customer.getFirstName() == null || customer.getPhoneNumber() == 0L || password == null) {
       throw new IncompleteDetailsException();
@@ -44,6 +67,22 @@ public class CustomerService {
     }
   }
 
+  /**
+   * Logs in a customer with the provided phone number and password.
+   *
+   * <p>Example usage:
+   *
+   * <pre>{@code
+   * String token = customerService.login(1234567890L, "password");
+   * }</pre>
+   *
+   * @param phoneNumber the phone number of the customer
+   * @param password the password of the customer
+   * @return a JWT token for the authenticated customer
+   * @throws IncompleteDetailsException if any of the required details are missing
+   * @throws EntityNotFoundException if the customer is not found
+   * @throws PasswordMismatchException if the password does not match
+   */
   public String login(long phoneNumber, String password) {
     if (phoneNumber == 0 || password == null) {
       throw new IncompleteDetailsException();
