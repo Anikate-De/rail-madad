@@ -22,6 +22,11 @@ import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
+/**
+ * Represents a complaint in the system.
+ *
+ * <p>This entity is used to store complaint information in the database.
+ */
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
@@ -30,41 +35,53 @@ import org.hibernate.annotations.UpdateTimestamp;
 @Builder
 @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
 public class Complaint {
+
+  /** The unique identifier for the complaint. */
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private long id;
 
+  /** The title of the complaint. */
   @Column(nullable = false)
   private String title;
 
+  /** The status of the complaint. */
   @Enumerated(EnumType.STRING)
   @Builder.Default
   private ComplaintStatus status = ComplaintStatus.PENDING;
 
+  /** A summary of the complaint. */
   private String summary;
 
+  /** The date the complaint was filed. */
   @Column(nullable = false, updatable = false)
   @CreationTimestamp
   private Instant dateFiled;
 
+  /** The last updated timestamp of the complaint. */
   @UpdateTimestamp private Instant lastUpdated;
 
-  @ManyToOne()
+  /** The customer who filed the complaint. */
+  @ManyToOne
   @JoinColumn(name = "customer_id")
   private Customer customer;
 
-  @ManyToOne()
+  /** The officer handling the complaint. */
+  @ManyToOne
   @JoinColumn(name = "officer_id")
   private Officer officer;
 
-  @ManyToOne()
+  /** The category to which this complaint belongs. */
+  @ManyToOne
   @JoinColumn(name = "category_id")
   private Category category;
 
+  /** The list of messages associated with this complaint. */
   @OneToMany(mappedBy = "complaint")
   @Builder.Default
   private List<Message> messages = List.of();
 
+  /** The list of media associated with this complaint. */
   @OneToMany(mappedBy = "complaint")
   @Builder.Default
   private List<Media> mediaList = List.of();
