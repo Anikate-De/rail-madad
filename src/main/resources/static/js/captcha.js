@@ -59,7 +59,7 @@ function handleSignup() {
         const data = {
             firstName: document.getElementById('first_name').value,
             lastName: document.getElementById('last_name').value,
-            phoneNumber: document.getElementById('phone_number').value,
+            phoneNumber: document.getElementById('mobile_number').value,
             password: document.getElementById('newPassword').value,
             confirmPassword: document.getElementById('confirmPassword').value
         };
