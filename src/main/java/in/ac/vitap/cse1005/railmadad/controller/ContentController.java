@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class ContentController {
   @GetMapping("/")
-  public String block() {
-    return "block";
+  public String home() {
+    return "home";
   }
 
   @GetMapping("/customers")

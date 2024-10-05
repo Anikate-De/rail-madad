@@ -53,7 +53,6 @@ public class CustomerController {
   public ResponseEntity<Map<String, Object>> signup(@RequestBody Map<String, Object> request) {
     Customer customer = objectMapper.convertValue(request, Customer.class);
     String password = (String) request.get("password");
-    System.out.println("Received signup request: " + customer);
     try {
       customerService.signup(customer, password);
     } catch (EntityExistsException entityExistsException) {
