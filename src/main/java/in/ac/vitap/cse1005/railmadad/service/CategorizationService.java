@@ -129,7 +129,7 @@ public class CategorizationService {
                     "%s %s".formatted(complaint.getTitle(), complaint.getSummary()),
                     index,
                     analyzer);
-          } catch (Exception _) {
+          } catch (Exception e) {
             categoryEnum = ComplaintCategory.MISCELLANEOUS;
           }
 
