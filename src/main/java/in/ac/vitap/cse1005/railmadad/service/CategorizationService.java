@@ -9,6 +9,7 @@ import in.ac.vitap.cse1005.railmadad.repository.CategoryRepository;
 import in.ac.vitap.cse1005.railmadad.repository.ComplaintRepository;
 import in.ac.vitap.cse1005.railmadad.repository.OfficerRepository;
 import in.ac.vitap.cse1005.railmadad.utils.ContentCategorizationUtils;
+import in.ac.vitap.cse1005.railmadad.utils.LogWriterUtils;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Comparator;
@@ -165,13 +166,17 @@ public class CategorizationService {
           complaintRepository.save(complaint);
           countComplaintsCategorized.getAndIncrement();
 
-          // TODO: Shift this log to a saved log file
-          log.info(
-              "Complaint with Title: {}; Summary: {} categorized into {}; Assigned to Officer with ID: {}",
-              complaint.getTitle(),
-              complaint.getSummary(),
-              categoryEnum.getCategoryName(),
-              officer.getId());
+          String logMessage =
+              "Complaint with Title: "
+                  + complaint.getTitle()
+                  + "; Summary: "
+                  + complaint.getSummary()
+                  + " categorized into "
+                  + categoryEnum.getCategoryName()
+                  + "; Assigned to Officer with ID: "
+                  + officer.getId();
+          LogWriterUtils.writeLog("logs/complaint_categorization", logMessage);
+          log.info(logMessage);
         });
 
     log.info(
