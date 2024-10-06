@@ -55,4 +55,17 @@ public class OfficerRepositoryIntegrationTests {
     AssertionsForClassTypes.assertThat(received.get().getLastLogin())
         .isBetween(lastLogin.minusMillis(100), lastLogin.plusMillis(100));
   }
+
+  @Test
+  public void testFindByDepartmentId() {
+    Officer officer1 = Officer.builder().firstName("John").build();
+    Officer officer2 = Officer.builder().firstName("Jane").build();
+
+    underTest.save(officer1);
+    underTest.save(officer2);
+
+    List<Officer> officers = underTest.findByDepartment_Id(1L);
+
+    assertThat(officers).isEmpty();
+  }
 }
