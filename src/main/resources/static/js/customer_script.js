@@ -212,7 +212,6 @@ function toggleComplaint(element) {
 function handleImageUpload(event, index) {
     const files = event.target.files;
     const cropArea = document.getElementById(`cropArea${index}`);
-    const imageContainerMock = document.getElementById("imageContainerMock");
 
     // Clear previous images
     cropArea.innerHTML = "";
