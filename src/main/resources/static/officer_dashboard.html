@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Officer Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .crop-area {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px dashed gray;
+            aspect-ratio: 0.5/0.5;
+        }
+
+        .crop-area img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+        }
+
+        .separator {
+            border-top: 1px solid gray;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+
+<body
+        class="min-h-screen flex items-center justify-center overflow-y-auto"
+        style="
+      background: linear-gradient(0deg, #1b0d6d 0%, #001641 50%, #160e4e 92%);
+    "
+>
+<div
+        class="max-w-[90vw] w-[90vw] bg-white shadow-lg rounded-lg flex overflow-y-auto"
+        style="min-height: 85vh; max-height: 85vh"
+>
+    <!-- Profile Section -->
+    <div class="w-1/3 p-8 bg-white border-r flex flex-col justify-between">
+        <div class="mb-10 mt-6">
+            <h2 class="text-2xl font-bold text-gray-900">Rajesh Gupta</h2>
+            <p class="text-md text-gray-600">Officer ID: 12</p>
+            <p class="text-xs text-gray-500 mt-1">Last Login: 11:57:03</p>
+            <p class="text-xs text-gray-500 mt-1">Date Registered: 29-08-2024</p>
+        </div>
+
+        <!-- Complaint Summary -->
+        <div class="mb-16">
+            <h3 class="text-lg font-bold text-gray-900 mb-1">
+                Complaint Summary
+            </h3>
+            <p class="text-xs text-gray-500">Last Filed: 12-09-2024</p>
+            <p class="text-xs text-gray-500">
+                Last Assigned Complaint Status:
+                <span id="lastComplaintStatus">Pending</span>
+            </p>
+        </div>
+    </div>
+
+    <!-- Complaint Section -->
+    <div class="w-2/3 p-8 bg-white-50 overflow-y-auto" id="complaintSection">
+        <div class="bg-blue-50 p-6 rounded-lg shadow-sm mb-6 relative">
+            <div class="absolute top-8 right-28 flex space-x-10">
+                <div class="flex flex-col items-center">
+                    <div
+                            class="w-2 h-2 bg-red-500 rounded-full"
+                            id="pendingDot"
+                    ></div>
+                    <p class="text-xs font-bold text-gray-500 mt-2 uppercase">
+                        Pending
+                    </p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div
+                            class="w-2 h-2 bg-gray-500 rounded-full"
+                            id="inProgressDot"
+                    ></div>
+                    <p class="text-xs text-gray-500 mt-2 uppercase">In Progress</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div
+                            class="w-2 h-2 bg-gray-500 rounded-full"
+                            id="resolvedDot"
+                    ></div>
+                    <p class="text-xs text-gray-500 mt-2 uppercase">Resolved</p>
+                </div>
+            </div>
+            <div
+                    class="absolute top-8 right-6 cursor-pointer toggle-arrow"
+                    onclick="toggleComplaint(this)"
+            >
+                <img
+                        alt="Up Arrow"
+                        class="w-4 h-4"
+                        src="assets/chevron_up_solid_icon.svg"
+                />
+            </div>
+            <h3 class="text-lg font-bold mb-4">Missing Blanket</h3>
+            <div class="complaint-details">
+                <p class="text-sm text-gray-600 mb-4">
+                    Blanket was missing from my seat
+                </p>
+                <h4 class="text-md font-semibold mb-2">Image Received</h4>
+                <div class="flex items-center space-x-2 mb-4">
+                    <div class="crop-area" id="cropArea1">
+                        <img
+                                alt="Image Placeholder"
+                                class="w-full h-full object-cover"
+                                src="assets/image_placeholder.jpg"
+                        />
+                    </div>
+                </div>
+
+                <div class="separator"></div>
+
+                <div class="mb-4">
+                    <label
+                            class="block text-sm font-medium text-gray-700"
+                            for="statusDropdown"
+                    >Update Status:</label
+                    >
+                    <select
+                            class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
+                            id="statusDropdown"
+                    >
+                        <option value="Pending">Pending</option>
+                        <option value="In Progress">In Progress</option>
+                        <option value="Resolved">Resolved</option>
+                    </select>
+                </div>
+                <div class="messages-section">
+                    <div class="flex justify-between items-center mb-2">
+                        <p class="text-sm font-bold">Messages:</p>
+                        <button
+                                class="px-2 py-1 text-black rounded-md hover:bg-blue-200 transition duration-300 flex items-center"
+                                id="addMessageBtn"
+                        >
+                            <img
+                                    alt="Add Message"
+                                    class="w-4 h-4 mr-1"
+                                    src="assets/message_regular_icon.svg"
+                            />
+                            Add Message
+                        </button>
+                    </div>
+                    <div class="space-y-2 mb-4" id="messageList"></div>
+
+                    <div class="hidden" id="messageInput">
+                        <label for="officerMessage"></label><textarea
+                            class="block w-full p-2 mb-3 border border-gray-300 rounded"
+                            id="officerMessage"
+                            placeholder="Type your message here"
+                            rows="3"
+                    >
+                </textarea>
+                        <p class="text-xs text-gray-500 mt-2">
+                            Time: <span id="time">03:57:03</span>
+
+                            OfficerID:
+                            <span id="officerID">12</span>
+                        </p>
+
+                        <div class="flex justify-end space-x-4">
+                            <button
+                                    class="px-4 py-2 bg-gray-400 text-white font-semibold rounded hover:bg-gray-500 transition duration-300"
+                                    id="cancelBtn"
+                            >
+                                Cancel
+                            </button>
+                            <button
+                                    class="px-4 py-2 bg-blue-900 text-white font-semibold rounded hover:bg-[#160e4e] transition duration-300"
+                                    id="sendBtn"
+                            >
+                                Send
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/officer_script.js"></script>
+</body>
+</html>
