@@ -8,11 +8,10 @@ import in.ac.vitap.cse1005.railmadad.exceptions.WeakPasswordException;
 import in.ac.vitap.cse1005.railmadad.service.CustomerService;
 import jakarta.persistence.EntityExistsException;
 import jakarta.persistence.EntityNotFoundException;
-import java.util.Map;
-import java.util.Optional;
-
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletResponse;
+import java.util.Map;
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -92,14 +91,14 @@ public class CustomerController {
    * @return a ResponseEntity with a message and the authentication token
    */
   @PostMapping(value = "/customers/login", consumes = MediaType.APPLICATION_JSON_VALUE)
-  public ResponseEntity<Map<String, Object>> login(@RequestBody Map<String, Object> request, HttpServletResponse response) {
+  public ResponseEntity<Map<String, Object>> login(
+      @RequestBody Map<String, Object> request, HttpServletResponse response) {
     Customer customer = objectMapper.convertValue(request, Customer.class);
     String password = (String) request.get("password");
 
     String token;
     try {
       token = customerService.login(customer.getPhoneNumber(), password);
-      System.out.println(token);
     } catch (IncompleteDetailsException incompleteDetailsException) {
       return new ResponseEntity<>(
           Map.of("message", "Incomplete details provided. Phone Number and Password are required."),
@@ -131,25 +130,23 @@ public class CustomerController {
     try {
       Optional<Customer> customerOptional = customerService.getIdbyToken(token);
       if (customerOptional.isEmpty()) {
-        return new ResponseEntity<>(
-                Map.of("message", "Customer not found"), HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(Map.of("message", "Customer not found"), HttpStatus.NOT_FOUND);
       }
 
       Customer customer = customerOptional.get();
-      Map<String, Object> responseBody = Map.of(
+      Map<String, Object> responseBody =
+          Map.of(
               "id", customer.getId(),
               "phoneNumber", customer.getPhoneNumber(),
               "firstName", customer.getFirstName(),
               "lastName", customer.getLastName(),
               "dateRegistered", customer.getDateRegistered(),
-              "lastLogin", customer.getLastLogin()
-      );
+              "lastLogin", customer.getLastLogin());
       return new ResponseEntity<>(responseBody, HttpStatus.OK);
 
     } catch (Exception e) {
       return new ResponseEntity<>(
-              Map.of("message", e.getMessage()),
-              HttpStatus.INTERNAL_SERVER_ERROR);
+          Map.of("message", e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
     }
   }
 }
