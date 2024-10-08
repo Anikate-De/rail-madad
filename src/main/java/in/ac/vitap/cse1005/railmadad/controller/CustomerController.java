@@ -2,17 +2,20 @@ package in.ac.vitap.cse1005.railmadad.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import in.ac.vitap.cse1005.railmadad.domain.entity.Customer;
+import in.ac.vitap.cse1005.railmadad.domain.enums.UserRole;
 import in.ac.vitap.cse1005.railmadad.exceptions.IncompleteDetailsException;
 import in.ac.vitap.cse1005.railmadad.exceptions.PasswordMismatchException;
 import in.ac.vitap.cse1005.railmadad.exceptions.WeakPasswordException;
 import in.ac.vitap.cse1005.railmadad.service.CustomerService;
 import jakarta.persistence.EntityExistsException;
 import jakarta.persistence.EntityNotFoundException;
+import jakarta.servlet.http.HttpServletRequest;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -114,5 +117,27 @@ public class CustomerController {
 
     return new ResponseEntity<>(
         Map.of("message", "Customer login successful", "token", token), HttpStatus.ACCEPTED);
+  }
+
+  @GetMapping("/customers")
+  public ResponseEntity<Map<String, Object>> getCustomers(HttpServletRequest request) {
+    String id = request.getAttribute("id").toString();
+    UserRole role = UserRole.valueOf(request.getAttribute("role").toString());
+
+    if (role == UserRole.OFFICER) {
+      return new ResponseEntity<>(
+          Map.of("message", "Only customers can request details."), HttpStatus.FORBIDDEN);
+    }
+
+    Customer customer;
+    try {
+      customer = customerService.getCustomer(id);
+    } catch (Exception e) {
+      return new ResponseEntity<>(
+          Map.of("message", "An internal Server Error Occurred."),
+          HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+    return new ResponseEntity<>(Map.of("customer", customer), HttpStatus.OK);
   }
 }

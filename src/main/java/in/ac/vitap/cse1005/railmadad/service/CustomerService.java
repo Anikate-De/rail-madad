@@ -15,6 +15,7 @@ import in.ac.vitap.cse1005.railmadad.repository.CustomerRepository;
 import jakarta.persistence.EntityExistsException;
 import jakarta.persistence.EntityNotFoundException;
 import java.time.Instant;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -104,5 +105,9 @@ public class CustomerService {
     return generateTokenFromUserClaims(
         UserClaims.builder().id(customer.get().getId()).role(UserRole.CUSTOMER).build(),
         60 * 60 * 1000);
+  }
+
+  public Customer getCustomer(String id) {
+    return customerRepository.findById(id).orElseThrow(NoSuchElementException::new);
   }
 }

@@ -47,7 +47,7 @@ public class AuthFilter extends OncePerRequestFilter {
   @Override
   protected boolean shouldNotFilter(HttpServletRequest request) {
     String path = request.getServletPath();
-    return !path.startsWith("/complaints");
+    return !(path.startsWith("/complaints") || path.endsWith("/complaints"));
   }
 
   /**
