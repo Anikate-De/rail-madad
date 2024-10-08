@@ -107,6 +107,19 @@ public class CustomerService {
         60 * 60 * 1000);
   }
 
+  /**
+   * Retrieves a customer by their ID.
+   *
+   * <p>Example usage:
+   *
+   * <pre>{@code
+   * Customer customer = customerRepository.getCustomer("customerId");
+   * }</pre>
+   *
+   * @param id the ID of the customer to retrieve
+   * @return the Customer if found
+   * @throws NoSuchElementException if no customer with the given ID is found
+   */
   public Customer getCustomer(String id) {
     return customerRepository.findById(id).orElseThrow(NoSuchElementException::new);
   }

@@ -119,6 +119,16 @@ public class CustomerController {
         Map.of("message", "Customer login successful", "token", token), HttpStatus.ACCEPTED);
   }
 
+  /**
+   * Retrieves customer details for the authenticated user.
+   *
+   * <p>Only users with the "CUSTOMER" role can access their details. If the user is an "OFFICER," a
+   * 403 Forbidden response is returned. In case of an internal error, a 500 error is returned.
+   *
+   * @param request the HTTP request containing the user's ID and role
+   * @return a ResponseEntity with customer details if successful, or an error message if the
+   *     request fails
+   */
   @GetMapping("/customers")
   public ResponseEntity<Map<String, Object>> getCustomers(HttpServletRequest request) {
     String id = request.getAttribute("id").toString();
