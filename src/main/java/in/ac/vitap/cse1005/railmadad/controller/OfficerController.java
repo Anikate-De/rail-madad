@@ -1,18 +1,15 @@
 package in.ac.vitap.cse1005.railmadad.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import in.ac.vitap.cse1005.railmadad.domain.entity.Customer;
 import in.ac.vitap.cse1005.railmadad.domain.entity.Officer;
 import in.ac.vitap.cse1005.railmadad.exceptions.IncompleteDetailsException;
 import in.ac.vitap.cse1005.railmadad.exceptions.PasswordMismatchException;
 import in.ac.vitap.cse1005.railmadad.exceptions.WeakPasswordException;
 import in.ac.vitap.cse1005.railmadad.service.OfficerService;
 import jakarta.persistence.EntityNotFoundException;
-import java.util.Map;
-import java.util.Optional;
-
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletResponse;
+import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -20,8 +17,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-
-import static in.ac.vitap.cse1005.railmadad.utils.AuthTokenUtils.getUserClaimsFromToken;
 
 /**
  * Controller for handling officer-related operations.
@@ -88,7 +83,8 @@ public class OfficerController {
    * @return a ResponseEntity with a message and the authentication token
    */
   @PostMapping(value = "/officers/login", consumes = MediaType.APPLICATION_JSON_VALUE)
-  public ResponseEntity<Map<String, Object>> login(@RequestBody Map<String, Object> request, HttpServletResponse response) {
+  public ResponseEntity<Map<String, Object>> login(
+      @RequestBody Map<String, Object> request, HttpServletResponse response) {
     Officer officer = objectMapper.convertValue(request, Officer.class);
     String password = (String) request.get("password");
 
