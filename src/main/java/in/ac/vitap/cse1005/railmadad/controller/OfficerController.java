@@ -107,7 +107,7 @@ public class OfficerController {
           HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
-    Cookie cookie = new Cookie("offi_token", token);
+    Cookie cookie = new Cookie("token", token);
     cookie.setMaxAge(60);
     cookie.setPath("/");
     response.addCookie(cookie);

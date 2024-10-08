@@ -115,7 +115,7 @@ public class CustomerController {
           HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
-    Cookie cookie = new Cookie("cust_token", token);
+    Cookie cookie = new Cookie("token", token);
     cookie.setMaxAge(60);
     cookie.setPath("/");
     response.addCookie(cookie);
