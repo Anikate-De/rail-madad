@@ -18,9 +18,9 @@ function handleLogin() {
         const result = await response.json();
         alert(result.message);
         if (response.ok) {
-            window.location.href = "/customerDashboard"; // Redirect to dashboard
+            window.location.href = '/customerDashboard';
         } else {
-
+            alert(result.message);
         }
     });
 }
@@ -46,9 +46,9 @@ function handleSignup() {
         });
 
         const result = await response.json();
-        alert(result.message);
         if (response.ok) {
-            window.location.href = '/customers';
+            alert(result.message);
+            window.location.href = "/customerDashboard";
         } else {
             alert(result.message);
         }
@@ -56,10 +56,8 @@ function handleSignup() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    if (document.cookie.split(';').some((item) => item.trim().startsWith('auth_token='))) {
+    if (document.cookie.split(';').some((item) => item.trim().startsWith('cust_token='))) {
         window.location.href = '/customerDashboard';
-    } else {
-        handleLogin();
     }
 
     const loginBtn = document.getElementById('loginBtn');

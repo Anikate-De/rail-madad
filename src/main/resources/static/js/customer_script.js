@@ -230,3 +230,54 @@ function handleImageUpload(event, index) {
         reader.readAsDataURL(file);
     }
 }
+function getTokenFromCookies() {
+    const token = document.cookie
+    .split('; ')
+    .find(row => row.startsWith('cust_token='))
+    ?.split('=')[1];
+
+    return token;
+}
+
+async function fetchCustomerInfo() {
+    const token = getTokenFromCookies();
+    if (!token) {
+        console.error('No token found');
+        return;
+    }
+
+    console.log('Token:', token);
+    try {
+        const response = await fetch('/customers/info', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: token
+        });
+
+        console.log('Response Status:', response.status);
+        if (!response.ok) {
+            const errorText = await response.text()
+            console.error('Error response:', errorText);
+            throw new Error('Network response was not ok');
+        }
+
+        const customerInfo = await response.json();
+        updateCustomerDashboard(customerInfo);
+    } catch (error) {
+        console.error('Error fetching customer info:', error);
+    }
+}
+
+function updateCustomerDashboard(customerInfo) {
+    document.querySelector('h2').textContent = `${customerInfo.firstName} ${customerInfo.lastName}`;
+    document.querySelector('p.text-md').textContent = `+91 ${customerInfo.phoneNumber}`;
+    document.querySelector('p.text-xs:last-of-type').textContent = `Last Login: ${new Date(customerInfo.lastLogin).toLocaleString()}`;
+    document.querySelector('p.text-xs:nth-of-type(2)').textContent = `Date Registered: ${new Date(customerInfo.dateRegistered).toLocaleString()}`;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    fetchCustomerInfo();
+});
+

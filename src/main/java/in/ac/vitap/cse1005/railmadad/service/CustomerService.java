@@ -1,6 +1,7 @@
 package in.ac.vitap.cse1005.railmadad.service;
 
 import static in.ac.vitap.cse1005.railmadad.utils.AuthTokenUtils.generateTokenFromUserClaims;
+import static in.ac.vitap.cse1005.railmadad.utils.AuthTokenUtils.getUserClaimsFromToken;
 import static in.ac.vitap.cse1005.railmadad.utils.PasswordUtils.checkPasswordStrength;
 import static in.ac.vitap.cse1005.railmadad.utils.PasswordUtils.hashPassword;
 import static in.ac.vitap.cse1005.railmadad.utils.PasswordUtils.matchPassword;
@@ -104,5 +105,11 @@ public class CustomerService {
     return generateTokenFromUserClaims(
         UserClaims.builder().id(customer.get().getId()).role(UserRole.CUSTOMER).build(),
         60 * 60 * 1000);
+  }
+
+  public Optional<Customer> getIdbyToken(String token) {
+    String customerId = getUserClaimsFromToken(token).getId();
+    Optional<Customer> customerInfo = customerRepository.findById(customerId);
+    return customerInfo;
   }
 }
