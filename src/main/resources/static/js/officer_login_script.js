@@ -27,7 +27,7 @@ function handleLogin() {
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    if (document.cookie.split(';').some((item) => item.trim().startsWith('offi_token='))) {
+    if (document.cookie.split(';').some((item) => item.trim().startsWith('token='))) {
         window.location.href = '/officerDashboard';
     }
 });

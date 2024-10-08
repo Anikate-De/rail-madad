@@ -11,7 +11,6 @@ import jakarta.persistence.EntityNotFoundException;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletResponse;
 import java.util.Map;
-import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -123,30 +122,5 @@ public class CustomerController {
 
     return new ResponseEntity<>(
         Map.of("message", "Customer login successful", "token", token), HttpStatus.ACCEPTED);
-  }
-
-  @PostMapping(value = "/customers/info", consumes = MediaType.APPLICATION_JSON_VALUE)
-  public ResponseEntity<Map<String, Object>> info(@RequestBody String token) {
-    try {
-      Optional<Customer> customerOptional = customerService.getIdbyToken(token);
-      if (customerOptional.isEmpty()) {
-        return new ResponseEntity<>(Map.of("message", "Customer not found"), HttpStatus.NOT_FOUND);
-      }
-
-      Customer customer = customerOptional.get();
-      Map<String, Object> responseBody =
-          Map.of(
-              "id", customer.getId(),
-              "phoneNumber", customer.getPhoneNumber(),
-              "firstName", customer.getFirstName(),
-              "lastName", customer.getLastName(),
-              "dateRegistered", customer.getDateRegistered(),
-              "lastLogin", customer.getLastLogin());
-      return new ResponseEntity<>(responseBody, HttpStatus.OK);
-
-    } catch (Exception e) {
-      return new ResponseEntity<>(
-          Map.of("message", e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
-    }
   }
 }
