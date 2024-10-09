@@ -1,6 +1,8 @@
 package in.ac.vitap.cse1005.railmadad.domain.entity;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.datatype.jsr310.ser.InstantSerializer;
 import in.ac.vitap.cse1005.railmadad.domain.enums.ComplaintStatus;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -56,10 +58,13 @@ public class Complaint {
   /** The date the complaint was filed. */
   @Column(nullable = false, updatable = false)
   @CreationTimestamp
+  @JsonSerialize(using = InstantSerializer.class)
   private Instant dateFiled;
 
   /** The last updated timestamp of the complaint. */
-  @UpdateTimestamp private Instant lastUpdated;
+  @UpdateTimestamp
+  @JsonSerialize(using = InstantSerializer.class)
+  private Instant lastUpdated;
 
   /** The customer who filed the complaint. */
   @ManyToOne

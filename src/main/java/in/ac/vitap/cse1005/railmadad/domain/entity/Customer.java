@@ -2,6 +2,9 @@ package in.ac.vitap.cse1005.railmadad.domain.entity;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.datatype.jsr310.ser.InstantSerializer;
+import in.ac.vitap.cse1005.railmadad.domain.model.User;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -29,7 +32,7 @@ import org.hibernate.annotations.CreationTimestamp;
 @Setter
 @Builder
 @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
-public class Customer {
+public class Customer implements User {
 
   /** The list of complaints associated with this customer. */
   @JsonIgnore
@@ -60,9 +63,11 @@ public class Customer {
   /** The date the customer registered. */
   @Column(nullable = false, updatable = false)
   @CreationTimestamp
+  @JsonSerialize(using = InstantSerializer.class)
   private Instant dateRegistered;
 
   /** The last login timestamp of the customer. */
+  @JsonSerialize(using = InstantSerializer.class)
   private Instant lastLogin;
 
   @Override

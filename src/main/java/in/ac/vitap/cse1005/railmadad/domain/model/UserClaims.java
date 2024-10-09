@@ -4,6 +4,7 @@ import in.ac.vitap.cse1005.railmadad.domain.enums.UserRole;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.Setter;
 
 /**
  * Represents the claims of a user in the system.
@@ -22,10 +23,14 @@ import lombok.Getter;
 @Builder
 @AllArgsConstructor
 @Getter
+@Setter
 public class UserClaims {
 
   /** The unique identifier for the user. */
   private String id;
+
+  /** The user object. */
+  private User user;
 
   /** The role of the user. */
   private UserRole role;
