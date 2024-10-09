@@ -2,20 +2,19 @@ package in.ac.vitap.cse1005.railmadad.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import in.ac.vitap.cse1005.railmadad.domain.entity.Customer;
-import in.ac.vitap.cse1005.railmadad.domain.enums.UserRole;
 import in.ac.vitap.cse1005.railmadad.exceptions.IncompleteDetailsException;
 import in.ac.vitap.cse1005.railmadad.exceptions.PasswordMismatchException;
 import in.ac.vitap.cse1005.railmadad.exceptions.WeakPasswordException;
 import in.ac.vitap.cse1005.railmadad.service.CustomerService;
 import jakarta.persistence.EntityExistsException;
 import jakarta.persistence.EntityNotFoundException;
-import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletResponse;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -91,7 +90,8 @@ public class CustomerController {
    * @return a ResponseEntity with a message and the authentication token
    */
   @PostMapping(value = "/customers/login", consumes = MediaType.APPLICATION_JSON_VALUE)
-  public ResponseEntity<Map<String, Object>> login(@RequestBody Map<String, Object> request) {
+  public ResponseEntity<Map<String, Object>> login(
+      @RequestBody Map<String, Object> request, HttpServletResponse response) {
     Customer customer = objectMapper.convertValue(request, Customer.class);
     String password = (String) request.get("password");
 
@@ -115,39 +115,12 @@ public class CustomerController {
           HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
+    Cookie cookie = new Cookie("token", token);
+    cookie.setMaxAge(60);
+    cookie.setPath("/");
+    response.addCookie(cookie);
+
     return new ResponseEntity<>(
         Map.of("message", "Customer login successful", "token", token), HttpStatus.ACCEPTED);
-  }
-
-  /**
-   * Retrieves customer details for the authenticated user.
-   *
-   * <p>Only users with the "CUSTOMER" role can access their details. If the user is an "OFFICER," a
-   * 403 Forbidden response is returned. In case of an internal error, a 500 error is returned.
-   *
-   * @param request the HTTP request containing the user's ID and role
-   * @return a ResponseEntity with customer details if successful, or an error message if the
-   *     request fails
-   */
-  @GetMapping("/customers")
-  public ResponseEntity<Map<String, Object>> getCustomers(HttpServletRequest request) {
-    String id = request.getAttribute("id").toString();
-    UserRole role = UserRole.valueOf(request.getAttribute("role").toString());
-
-    if (role == UserRole.OFFICER) {
-      return new ResponseEntity<>(
-          Map.of("message", "Only customers can request details."), HttpStatus.FORBIDDEN);
-    }
-
-    Customer customer;
-    try {
-      customer = customerService.getCustomer(id);
-    } catch (Exception e) {
-      return new ResponseEntity<>(
-          Map.of("message", "An internal Server Error Occurred."),
-          HttpStatus.INTERNAL_SERVER_ERROR);
-    }
-
-    return new ResponseEntity<>(Map.of("customer", customer), HttpStatus.OK);
   }
 }
