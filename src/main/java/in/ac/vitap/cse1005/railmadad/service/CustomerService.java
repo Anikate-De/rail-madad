@@ -102,11 +102,7 @@ public class CustomerService {
         Instant.ofEpochMilli(System.currentTimeMillis()), customer.get().getId());
 
     return generateTokenFromUserClaims(
-        UserClaims.builder()
-            .id(customer.get().getId())
-            .role(UserRole.CUSTOMER)
-            .user(customer.get())
-            .build(),
+        UserClaims.builder().id(customer.get().getId()).role(UserRole.CUSTOMER).build(),
         60 * 60 * 1000);
   }
 }

@@ -2,7 +2,6 @@ package in.ac.vitap.cse1005.railmadad.service;
 
 import static in.ac.vitap.cse1005.railmadad.utils.AuthTokenUtils.getUserClaimsFromToken;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import in.ac.vitap.cse1005.railmadad.domain.model.UserClaims;
 import in.ac.vitap.cse1005.railmadad.repository.CustomerRepository;
 import in.ac.vitap.cse1005.railmadad.repository.OfficerRepository;
@@ -15,7 +14,6 @@ import org.springframework.stereotype.Service;
 public class AuthService {
   private final CustomerRepository customerRepository;
   private final OfficerRepository officerRepository;
-  private final ObjectMapper objectMapper;
 
   /**
    * Constructs an AuthService with the specified repositories.
@@ -24,13 +22,9 @@ public class AuthService {
    * @param officerRepository the repository for officer data
    */
   @Autowired
-  public AuthService(
-      CustomerRepository customerRepository,
-      OfficerRepository officerRepository,
-      ObjectMapper objectMapper) {
+  public AuthService(CustomerRepository customerRepository, OfficerRepository officerRepository) {
     this.customerRepository = customerRepository;
     this.officerRepository = officerRepository;
-    this.objectMapper = objectMapper;
   }
 
   /**
@@ -48,7 +42,7 @@ public class AuthService {
    * @throws NoSuchElementException if the user is not found in the respective repository
    */
   public UserClaims authenticate(String token) {
-    UserClaims userClaims = getUserClaimsFromToken(token, objectMapper);
+    UserClaims userClaims = getUserClaimsFromToken(token);
     return switch (userClaims.getRole()) {
       case CUSTOMER -> {
         userClaims.setUser(customerRepository.findById(userClaims.getId()).orElseThrow());

@@ -2,8 +2,6 @@ package in.ac.vitap.cse1005.railmadad.domain.entity;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.fasterxml.jackson.datatype.jsr310.ser.InstantSerializer;
 import in.ac.vitap.cse1005.railmadad.domain.model.User;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -72,10 +70,8 @@ public class Officer implements User {
   /** The date the officer registered. */
   @Column(nullable = false, updatable = false)
   @CreationTimestamp
-  @JsonSerialize(using = InstantSerializer.class)
   private Instant dateRegistered;
 
   /** The last login timestamp of the officer. */
-  @JsonSerialize(using = InstantSerializer.class)
   private Instant lastLogin;
 }

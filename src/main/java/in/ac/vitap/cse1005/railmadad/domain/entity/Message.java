@@ -2,8 +2,6 @@ package in.ac.vitap.cse1005.railmadad.domain.entity;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.fasterxml.jackson.datatype.jsr310.ser.InstantSerializer;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -45,7 +43,6 @@ public class Message {
   /** The date the message was commented. */
   @Column(nullable = false, updatable = false)
   @CreationTimestamp
-  @JsonSerialize(using = InstantSerializer.class)
   private Instant dateCommented;
 
   /** The complaint to which this message belongs. */
