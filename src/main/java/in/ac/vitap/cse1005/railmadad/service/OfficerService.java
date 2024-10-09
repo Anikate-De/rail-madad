@@ -100,6 +100,7 @@ public class OfficerService {
         UserClaims.builder()
             .id(String.valueOf(officer.get().getId()))
             .role(UserRole.OFFICER)
+            .user(officer.get())
             .build(),
         60 * 60 * 1000);
   }

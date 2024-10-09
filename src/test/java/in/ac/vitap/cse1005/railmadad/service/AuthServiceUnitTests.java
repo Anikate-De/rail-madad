@@ -1,5 +1,6 @@
 package in.ac.vitap.cse1005.railmadad.service;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import in.ac.vitap.cse1005.railmadad.domain.entity.Customer;
 import in.ac.vitap.cse1005.railmadad.domain.entity.Officer;
 import in.ac.vitap.cse1005.railmadad.domain.enums.UserRole;
@@ -23,6 +24,7 @@ public class AuthServiceUnitTests {
 
   @Mock private CustomerRepository customerRepository;
   @Mock private OfficerRepository officerRepository;
+  @Mock private ObjectMapper objectMapper;
   @InjectMocks private AuthService authService;
 
   @Test
@@ -34,7 +36,12 @@ public class AuthServiceUnitTests {
   public void testAuthenticate_WithExpiredToken() {
     String token =
         AuthTokenUtils.generateTokenFromUserClaims(
-            UserClaims.builder().id("1").role(UserRole.OFFICER).build(), 0);
+            UserClaims.builder()
+                .id("1")
+                .role(UserRole.OFFICER)
+                .user(Officer.builder().id(1).build())
+                .build(),
+            0);
     Assert.assertThrows(ExpiredJwtException.class, () -> authService.authenticate(token));
   }
 
@@ -43,7 +50,12 @@ public class AuthServiceUnitTests {
     Mockito.when(customerRepository.findById(Mockito.anyString())).thenReturn(Optional.empty());
     String token =
         AuthTokenUtils.generateTokenFromUserClaims(
-            UserClaims.builder().id("random-uuid").role(UserRole.CUSTOMER).build(), 10000);
+            UserClaims.builder()
+                .id("random-uuid")
+                .role(UserRole.CUSTOMER)
+                .user(Customer.builder().id("random-uuid").build())
+                .build(),
+            10000);
 
     Assert.assertThrows(NoSuchElementException.class, () -> authService.authenticate(token));
   }
@@ -52,7 +64,12 @@ public class AuthServiceUnitTests {
   public void testAuthenticate_WhenOfficerDNE() {
     String token =
         AuthTokenUtils.generateTokenFromUserClaims(
-            UserClaims.builder().id("1").role(UserRole.OFFICER).build(), 10000);
+            UserClaims.builder()
+                .id("1")
+                .role(UserRole.OFFICER)
+                .user(Officer.builder().id(1).build())
+                .build(),
+            10000);
 
     Assert.assertThrows(NoSuchElementException.class, () -> authService.authenticate(token));
   }
@@ -65,7 +82,12 @@ public class AuthServiceUnitTests {
 
     String token =
         AuthTokenUtils.generateTokenFromUserClaims(
-            UserClaims.builder().id(customer.getId()).role(UserRole.CUSTOMER).build(), 1000);
+            UserClaims.builder()
+                .id(customer.getId())
+                .role(UserRole.CUSTOMER)
+                .user(Customer.builder().id(customer.getId()).build())
+                .build(),
+            1000);
 
     UserClaims userClaims = authService.authenticate(token);
     Assert.assertEquals(customer.getId(), userClaims.getId());
@@ -79,7 +101,11 @@ public class AuthServiceUnitTests {
 
     String token =
         AuthTokenUtils.generateTokenFromUserClaims(
-            UserClaims.builder().id(String.valueOf(officer.getId())).role(UserRole.OFFICER).build(),
+            UserClaims.builder()
+                .id(String.valueOf(officer.getId()))
+                .role(UserRole.OFFICER)
+                .user(Officer.builder().id(officer.getId()).build())
+                .build(),
             1000);
 
     UserClaims userClaims = authService.authenticate(token);
