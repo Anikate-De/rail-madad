@@ -1,5 +1,8 @@
 package in.ac.vitap.cse1005.railmadad.service;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 import in.ac.vitap.cse1005.railmadad.domain.entity.Customer;
 import in.ac.vitap.cse1005.railmadad.domain.entity.Officer;
 import in.ac.vitap.cse1005.railmadad.domain.enums.UserRole;
@@ -10,7 +13,6 @@ import in.ac.vitap.cse1005.railmadad.utils.AuthTokenUtils;
 import io.jsonwebtoken.ExpiredJwtException;
 import java.util.NoSuchElementException;
 import java.util.Optional;
-import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -27,7 +29,7 @@ public class AuthServiceUnitTests {
 
   @Test
   public void testAuthenticate_WithInvalidToken() {
-    Assert.assertThrows(Exception.class, () -> authService.authenticate("invalid-token"));
+    assertThrows(Exception.class, () -> authService.authenticate("invalid-token"));
   }
 
   @Test
@@ -35,7 +37,7 @@ public class AuthServiceUnitTests {
     String token =
         AuthTokenUtils.generateTokenFromUserClaims(
             UserClaims.builder().id("1").role(UserRole.OFFICER).build(), 0);
-    Assert.assertThrows(ExpiredJwtException.class, () -> authService.authenticate(token));
+    assertThrows(ExpiredJwtException.class, () -> authService.authenticate(token));
   }
 
   @Test
@@ -45,7 +47,7 @@ public class AuthServiceUnitTests {
         AuthTokenUtils.generateTokenFromUserClaims(
             UserClaims.builder().id("random-uuid").role(UserRole.CUSTOMER).build(), 10000);
 
-    Assert.assertThrows(NoSuchElementException.class, () -> authService.authenticate(token));
+    assertThrows(NoSuchElementException.class, () -> authService.authenticate(token));
   }
 
   @Test
@@ -54,7 +56,7 @@ public class AuthServiceUnitTests {
         AuthTokenUtils.generateTokenFromUserClaims(
             UserClaims.builder().id("1").role(UserRole.OFFICER).build(), 10000);
 
-    Assert.assertThrows(NoSuchElementException.class, () -> authService.authenticate(token));
+    assertThrows(NoSuchElementException.class, () -> authService.authenticate(token));
   }
 
   @Test
@@ -68,8 +70,8 @@ public class AuthServiceUnitTests {
             UserClaims.builder().id(customer.getId()).role(UserRole.CUSTOMER).build(), 1000);
 
     UserClaims userClaims = authService.authenticate(token);
-    Assert.assertEquals(customer.getId(), userClaims.getId());
-    Assert.assertEquals(UserRole.CUSTOMER, userClaims.getRole());
+    assertEquals(customer.getId(), userClaims.getId());
+    assertEquals(UserRole.CUSTOMER, userClaims.getRole());
   }
 
   @Test
@@ -83,7 +85,7 @@ public class AuthServiceUnitTests {
             1000);
 
     UserClaims userClaims = authService.authenticate(token);
-    Assert.assertEquals(String.valueOf(officer.getId()), userClaims.getId());
-    Assert.assertEquals(UserRole.OFFICER, userClaims.getRole());
+    assertEquals(String.valueOf(officer.getId()), userClaims.getId());
+    assertEquals(UserRole.OFFICER, userClaims.getRole());
   }
 }
