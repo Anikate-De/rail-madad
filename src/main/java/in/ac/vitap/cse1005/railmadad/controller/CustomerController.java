@@ -8,6 +8,8 @@ import in.ac.vitap.cse1005.railmadad.exceptions.WeakPasswordException;
 import in.ac.vitap.cse1005.railmadad.service.CustomerService;
 import jakarta.persistence.EntityExistsException;
 import jakarta.persistence.EntityNotFoundException;
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletResponse;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -88,7 +90,8 @@ public class CustomerController {
    * @return a ResponseEntity with a message and the authentication token
    */
   @PostMapping(value = "/customers/login", consumes = MediaType.APPLICATION_JSON_VALUE)
-  public ResponseEntity<Map<String, Object>> login(@RequestBody Map<String, Object> request) {
+  public ResponseEntity<Map<String, Object>> login(
+      @RequestBody Map<String, Object> request, HttpServletResponse response) {
     Customer customer = objectMapper.convertValue(request, Customer.class);
     String password = (String) request.get("password");
 
@@ -111,6 +114,11 @@ public class CustomerController {
           Map.of("message", "An error occurred while processing the request."),
           HttpStatus.INTERNAL_SERVER_ERROR);
     }
+
+    Cookie cookie = new Cookie("token", token);
+    cookie.setMaxAge(60);
+    cookie.setPath("/");
+    response.addCookie(cookie);
 
     return new ResponseEntity<>(
         Map.of("message", "Customer login successful", "token", token), HttpStatus.ACCEPTED);

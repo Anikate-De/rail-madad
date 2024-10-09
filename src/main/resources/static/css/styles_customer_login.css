@@ -10,13 +10,10 @@ body {
     height: 100%;
     margin: 0;
     background-color: #e9ecef;
-    background-image: url('./assets/back.jpg'); /* Replace with your image path */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     font-family: 'Poppins', sans-serif;
-
-
 }
 
 /* General layout */
@@ -24,6 +21,9 @@ body {
     width: 27%;
 }
 
+.ron{
+color:#b7143c;
+}
 
 .bar {
     margin: 0;
@@ -45,6 +45,26 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+h1 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+h1::after {
+    content: "";
+    width: 140px;
+    height: 3px;
+    background-color: #00aaff;
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+
 .navbar .nav-link:hover {
     color: #000000;
 }
@@ -62,26 +82,11 @@ body {
     align-items: center;
 }
 
-/* Custom carousel */
-.custom-carousel {
-    max-width: 100%;
-    margin: auto;
-}
-
-.custom-carousel .carousel-inner img {
-    height: 550px;
-    object-fit: cover;
-}
-
 /* Buttons */
 .btn.set {
     background-color: #b7143c;
     color: white;
     border: none;
-}
-
-.ron{
-color:#b7143c;
 }
 
 .btn.set:hover {
@@ -245,6 +250,26 @@ h3 {
     width: 50%;
     height: auto;
 }
+.card {
+    border: 1px solid #ddd; /* Optional: add border for better visibility */
+}
+
+.card-img-right {
+    width: 50%; /* Ensure the image takes half the card width */
+    height: auto; /* Maintain aspect ratio */
+}
+/* Flex utility classes */
+.d-flex {
+    display: flex;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.align-items-center {
+    align-items: center;
+}
 
 /* Footer */
 #footer {
@@ -296,8 +321,7 @@ h3 {
 .footerLinks li a:hover {
     text-decoration: underline;
 }
-
-/* Flex utility classes */
+/* Flex utility classes for layout adjustments */
 .d-flex {
     display: flex;
 }
@@ -309,29 +333,4 @@ h3 {
 .align-items-center {
     align-items: center;
 }
-.card {
-    border: 1px solid #ddd; /* Optional: add border for better visibility */
-}
 
-.card-img-right {
-    width: 50%; /* Ensure the image takes half the card width */
-    height: auto; /* Maintain aspect ratio */
-}
-h1 {
-    font-size: 32px;
-    color: #333;
-    margin-bottom: 30px;
-    position: relative;
-}
-
-h1::after {
-    content: "";
-    width: 140px;
-    height: 3px;
-    background-color: #00aaff;
-    position: absolute;
-    bottom: 0px;
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 2px;
-}

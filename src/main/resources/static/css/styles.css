@@ -1,6 +1,7 @@
 body {
     height: 100%;
     margin: 0;
+    font-family: 'Poppins', sans-serif;
 }
 
 .wi{
@@ -26,31 +27,6 @@ width: 27%;
     background-color: #b7143c; /* Optional: a darker shade on hover */
 }
 
-
-.bar {
-    margin: 0; /* Remove any default margin */
-    width:400px;
-    margin-left: 32%;
-}
-
-.borrad {
-    border-radius: 0;
-    width: 50px;
-}
-
-
-
-.navbar {
-    background-color: #ffffff;
-
-}
-
-input {
-    width: 85%;
-    max-width: 300px;
-    margin: 0 auto;
-}
-
 .form {
     margin-bottom: 0.5rem;
 }
@@ -58,7 +34,6 @@ input {
 .gap {
     margin: 0;
 }
-
 
 #madadlogo {
     width: 80px;
@@ -71,46 +46,8 @@ input {
     font: poppins;
 }
 
-.mar {
-    margin-left: auto;
-    display: flex;
-    align-items: center;
-}
-
-.mr {
-    margin-left: 37%;
-    margin-right: auto;
-    display: flex;
-    align-items: center;
-}
-
-.custom-carousel {
-    max-width: 100%; /* Set the desired max width */
-    margin: auto; /* Center the carousel */
-}
-
-.custom-carousel .carousel-inner img {
-    height: 550px; /* Set the desired height for images */
-    object-fit: cover; /* Maintain aspect ratio and cover the area */
-}
-
-.set{
-border-radius:0px;}
-
-#floatingInputValue{
-    color: #b7143c;
-    font-size:30px;
-    font-weight: bold;
-}
-
 .navbar .nav-link:hover {
     color: #000000;
-}
-
-.right-label {
-    margin-left: auto; /* Push the label to the right */
-    font-weight: 600; /* Make the text bold */
-    color: #b7143c; /* Custom color for the label */
 }
 
 .container {
@@ -121,66 +58,8 @@ border-radius:0px;}
     display: none;
 }
 
-h3 {
-    color: #495057;
-}
-
-
-
-.loginForm{
-    color:#ffffff;
-}
-
-.btn.btn-dark {
-    background-color: #b7143c;
-    color: #b7143c;
-    border: 2px solid #b7143c;
-}
-
-
-
-.btn.btn-dark:hover {
-    background-color: #ffffff;
-    color: #b7143c;
-}
-
 .pad{
     margin: 10px;
-}
-
-.btn.btn-dark:active,
-.btn.btn-dark:focus {
-    background-color: #b7143c;
-    color: white;
-    border: 2px solid #b7143c;
-    box-shadow: none;
-}
-.btn.set {
-    background-color: b7143;
-    color: white;
-    border: none;
-}
-.btn.set:hover {
-    background-color: b7143;
-}
-
-
-.btn.btn-outline-success{
-    background-color: #b7143c;
-    color: #ffffff;
-    border: 2px solid #b7143c;
-}
-
-.btn.btn-outline-success:hover {
-    background-color: #ffffff;
-    color: #b7143c;
-}
-.btn.btn-outline-success:active,
-.btn.btn-outline-success:focus {
-    background-color: #b7143c;
-    color: white;
-    border: 2px solid #b7143c;
-    box-shadow: none;
 }
 
 .portal-container {
@@ -193,6 +72,12 @@ h3 {
     width: 90%;
 }
 
+#floatingInputValue {
+    color: #b7143c;
+    font-size: 30px;
+    font-weight: bold;
+}
+
 h1 {
     font-size: 32px;
     color: #333;
@@ -202,11 +87,11 @@ h1 {
 
 h1::after {
     content: "";
-    width: 100px;
-    height: 4px;
+    width: 140px;
+    height: 3px;
     background-color: #00aaff;
     position: absolute;
-    bottom: -10px;
+    bottom: 0px;
     left: 50%;
     transform: translateX(-50%);
     border-radius: 2px;
@@ -261,6 +146,9 @@ h1::after {
     padding: 0 px; /* Reduced padding */
     width: 100%;
     z-index: 1;
+    position: fixed;
+    bottom: 0;
+    left: 0;
 }
 
 #footer p {
@@ -282,8 +170,9 @@ h1::after {
 }
 .portal-container {
     text-align: center; /* Center the content horizontally */
-    margin: 0 auto; /* Center the container vertically */
-    max-width: 800px; /* Set a maximum width for better responsiveness */
+    margin: 100px auto; /* Center the container vertically */
+    max-width: 650px; /* Set a maximum width for better responsiveness */
+
 }
 
 .options-container {
@@ -304,8 +193,6 @@ h1::after {
     width: 50%; /* Ensure the image takes half the card width */
     height: auto; /* Maintain aspect ratio */
 }
-
-
 
 .footerLinks li:not(:last-child):before {
     content: "";
