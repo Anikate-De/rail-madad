@@ -3,6 +3,7 @@ package in.ac.vitap.cse1005.railmadad.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
+@SuppressWarnings("SpringMVCViewInspection")
 @Controller
 public class ContentController {
   @GetMapping("/")
