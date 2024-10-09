@@ -23,7 +23,11 @@ public class AuthTokenUtils {
    * <p>Example usage:
    *
    * <pre>{@code
-   * UserClaims userClaims = UserClaims.builder().id("123").role(UserRole.CUSTOMER).user(new Customer()).build();
+   * UserClaims userClaims = UserClaims.builder()
+   *    .id("1")
+   *    .role(UserRole.CUSTOMER)
+   *    .user(new Customer())
+   *    .build();
    * String token = AuthTokenUtils.generateTokenFromUserClaims(userClaims, 3600000);
    * }</pre>
    *
