@@ -4,9 +4,8 @@ target/
 logs/
 
 ### Environment Variables ###
-.env
-*.env
-!example.env
+.env*
+!.env.example
 
 ### STS ###
 .apt_generated
