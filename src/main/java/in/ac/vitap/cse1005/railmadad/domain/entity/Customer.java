@@ -2,6 +2,7 @@ package in.ac.vitap.cse1005.railmadad.domain.entity;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import in.ac.vitap.cse1005.railmadad.domain.model.User;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -29,7 +30,7 @@ import org.hibernate.annotations.CreationTimestamp;
 @Setter
 @Builder
 @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
-public class Customer {
+public class Customer implements User {
 
   /** The list of complaints associated with this customer. */
   @JsonIgnore

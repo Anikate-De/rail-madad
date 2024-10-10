@@ -45,11 +45,12 @@ public class AuthService {
     UserClaims userClaims = getUserClaimsFromToken(token);
     return switch (userClaims.getRole()) {
       case CUSTOMER -> {
-        customerRepository.findById(userClaims.getId()).orElseThrow();
+        userClaims.setUser(customerRepository.findById(userClaims.getId()).orElseThrow());
         yield userClaims;
       }
       case OFFICER -> {
-        officerRepository.findById(Long.valueOf(userClaims.getId())).orElseThrow();
+        userClaims.setUser(
+            officerRepository.findById(Long.valueOf(userClaims.getId())).orElseThrow());
         yield userClaims;
       }
     };

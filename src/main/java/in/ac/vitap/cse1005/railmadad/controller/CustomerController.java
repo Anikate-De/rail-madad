@@ -2,6 +2,7 @@ package in.ac.vitap.cse1005.railmadad.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import in.ac.vitap.cse1005.railmadad.domain.entity.Customer;
+import in.ac.vitap.cse1005.railmadad.domain.enums.UserRole;
 import in.ac.vitap.cse1005.railmadad.exceptions.IncompleteDetailsException;
 import in.ac.vitap.cse1005.railmadad.exceptions.PasswordMismatchException;
 import in.ac.vitap.cse1005.railmadad.exceptions.WeakPasswordException;
@@ -9,12 +10,15 @@ import in.ac.vitap.cse1005.railmadad.service.CustomerService;
 import jakarta.persistence.EntityExistsException;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.util.Map;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,6 +28,7 @@ import org.springframework.web.bind.annotation.RestController;
  *
  * <p>This controller provides endpoints for customer signup and login.
  */
+@Slf4j
 @RestController
 public class CustomerController {
 
@@ -74,6 +79,7 @@ public class CustomerController {
                   + " character. It must not contain any whitespaces."),
           HttpStatus.BAD_REQUEST);
     } catch (Exception e) {
+      log.error("Error during customer signup.", e);
       return new ResponseEntity<>(
           Map.of("message", "An error occurred while processing the request."),
           HttpStatus.INTERNAL_SERVER_ERROR);
@@ -110,6 +116,7 @@ public class CustomerController {
       return new ResponseEntity<>(
           Map.of("message", "Incorrect password provided."), HttpStatus.UNAUTHORIZED);
     } catch (Exception e) {
+      log.error("Error during customer login.", e);
       return new ResponseEntity<>(
           Map.of("message", "An error occurred while processing the request."),
           HttpStatus.INTERNAL_SERVER_ERROR);
@@ -122,5 +129,32 @@ public class CustomerController {
 
     return new ResponseEntity<>(
         Map.of("message", "Customer login successful", "token", token), HttpStatus.ACCEPTED);
+  }
+
+  /**
+   * Endpoint for retrieving customer details.
+   *
+   * @param request the HttpServletRequest containing customer ID and role
+   * @return a ResponseEntity with the customer details or an error message
+   */
+  @GetMapping("/customer")
+  public ResponseEntity<Map<String, Object>> getCustomers(HttpServletRequest request) {
+    UserRole role = UserRole.valueOf(request.getAttribute("role").toString());
+
+    if (role == UserRole.OFFICER) {
+      return new ResponseEntity<>(
+          Map.of("message", "Only customers can request details."), HttpStatus.FORBIDDEN);
+    }
+
+    Customer customer;
+    try {
+      customer = (Customer) request.getAttribute("user");
+    } catch (Exception e) {
+      return new ResponseEntity<>(
+          Map.of("message", "An internal Server Error Occurred."),
+          HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+    return new ResponseEntity<>(Map.of("customer", customer), HttpStatus.OK);
   }
 }

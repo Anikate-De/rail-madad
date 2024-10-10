@@ -2,6 +2,7 @@ package in.ac.vitap.cse1005.railmadad.domain.entity;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import in.ac.vitap.cse1005.railmadad.domain.model.User;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -32,7 +33,7 @@ import org.hibernate.annotations.CreationTimestamp;
 @Setter
 @Builder
 @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
-public class Officer {
+public class Officer implements User {
 
   /** The list of complaints handled by this officer. */
   @JsonIgnore
