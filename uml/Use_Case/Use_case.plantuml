@@ -1,0 +1,35 @@
+@startuml
+!theme vibrant
+actor "IRCTC Passenger"
+actor "IRCTC ComplaintOfficer"
+
+"IRCTC Passenger" --> (Login)
+"IRCTC Passenger" --> (Register / Create Account)
+
+(Login) --> (See Messages from Officer)
+(Login) --> (RegisterComplaint)
+
+(RegisterComplaint) --> (SubmitComplaint)
+
+(Register / Create Account) --> (SubmitComplaint)
+
+(ViewAssignedComplaints) --> (ProcessComplaint)
+
+"IRCTC ComplaintOfficer" --> (ViewAssignedComplaints)
+"IRCTC ComplaintOfficer" --> (ProcessComplaint)
+"IRCTC ComplaintOfficer" --> (UpdateStatus)
+"IRCTC ComplaintOfficer" --> (Resolved)
+
+(ProcessComplaint) --> (UpdateStatus)
+(ProcessComplaint) --> (Resolved)
+
+"Schedule Categorization Service" --> (IssueFixed)
+"Schedule Categorization Service" --> (KeywordAnalysis)
+"Schedule Categorization Service" --> (CategorizeComplaint)
+
+(KeywordAnalysis) --> (CategorizeComplaint)
+(CategorizeComplaint) --> (AssignToOfficer)
+
+(IssueFixed) --> (Resolved)
+
+@enduml
