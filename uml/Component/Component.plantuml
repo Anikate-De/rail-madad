@@ -1,0 +1,23 @@
+@startuml
+!theme vibrant
+
+[Customer Portal] <<Component>> 
+[Complaint Service] <<Component>>
+[Media Service] <<Component>>
+[Schedule Categorization Service] <<Component>>
+[Department Service] <<Component>>
+[Officer Portal] <<Component>>
+[Authentication Service] <<Component>>
+
+[Customer Portal] --> [Complaint Service] : Registers Complaint
+[Customer Portal] --> [Authentication Service] : Authenticates Login
+
+[Complaint Service] --> [Media Service] : Stores Media
+[Complaint Service] --> [Schedule Categorization Service] : Sends Complaints for Categorization
+
+[Schedule Categorization Service] --> [Department Service] : Assigns to Department
+
+[Officer Portal] --> [Complaint Service] : Views Assigned Complaints
+[Officer Portal] --> [Authentication Service] : Authenticates Login
+
+@enduml

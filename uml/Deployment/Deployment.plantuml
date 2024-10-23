@@ -1,0 +1,44 @@
+@startuml
+!theme vibrant
+
+skinparam rectangle {
+  BackgroundColor White
+  BorderColor Black
+}
+
+rectangle "User Device" {
+  rectangle "Web Browser" as userBrowser
+}
+
+rectangle "SCRLWY Officer Device" {
+  rectangle "Web Browser" as officerBrowser
+}
+
+rectangle "Application Server" {
+  rectangle "Spring Boot" as springBoot {
+    rectangle "Spring Web_Controllers"
+    rectangle "Authentication Gateway"
+    rectangle "Data JPA"
+  }
+}
+
+rectangle "Database Server" as dataBase {
+  rectangle "Supabase" {
+  rectangle "Authentication Database"
+  rectangle "Complaint Database"
+  }
+}
+
+rectangle "Web Services" {
+  rectangle "complaint_Registering"
+  rectangle "Batch Processing Script"
+}
+
+userBrowser ..> springBoot : <<http>>
+officerBrowser ..> springBoot : <<http>>
+
+springBoot ..> dataBase : <<JDBC Connection>>
+
+"complaint_Registering" ..> springBoot : <<REST API>> calls
+
+@enduml

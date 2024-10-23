@@ -1,0 +1,19 @@
+@startuml
+!theme vibrant
+
+start
+:Submitted;
+:Keyword Analysis Complete;
+:Under Review;
+:Assign to Officer;
+
+repeat
+  :InProgress;
+  if (Issue Fixed?) then (yes)
+    :Resolved;
+    stop
+  else (no)
+  endif
+repeat while (Reassigned?)
+
+@enduml

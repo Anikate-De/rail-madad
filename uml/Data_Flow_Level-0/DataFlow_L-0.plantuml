@@ -1,0 +1,20 @@
+@startuml
+!theme vibrant
+actor "IRCTC Passenger"
+actor "IRCTC Complaint Officer"
+
+"IRCTC Passenger" --> (Web Application)
+"IRCTC Complaint Officer" --> (Web Application)
+
+(Web Application) --> (Complaint Registration Service)
+(Web Application) --> (User Authentication Service)
+(Complaint Registration Service) --> (Scheduled Categorization Service)
+
+(User Authentication Service) --> (Database)
+(Scheduled Categorization Service) --> (Database)
+
+(Complaint Registration Service) --> "Database"
+
+node "Database" {
+}
+@enduml
