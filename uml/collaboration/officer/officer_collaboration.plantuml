@@ -1,48 +1,25 @@
 @startuml
 !theme vibrant
-object IRCTC_Officer {
-    IRCTC Officer
-}
+skinparam componentstyle rectangle
 
-object Complaint_Portal {
-    Complaint Portal
-}
+[IRCTC Officer] --> [Complaint Portal] : Create new Account
+[Complaint Portal] --> [Authentication Gateway] : Add new Entity to Auth Records
+[Authentication Gateway] --> [Authentication Database] : Insertion SQL
+[Authentication Database] --> [Authentication Gateway] : Insertion Successful
+[Authentication Gateway] --> [Complaint Portal] : Insertion Successful
+[Complaint Portal] --> [IRCTC Officer] : Account Created
 
-object Authentication_Gateway {
-    Authentication Gateway
-}
+[IRCTC Officer] --> [Complaint Portal] : Check assigned Complaints
+[Complaint Portal] --> [Complaint Gateway] : Fetch Complaints assigned to Officer
+[Complaint Gateway] --> [Complaint Database] : Selection SQL
+[Complaint Database] --> [Complaint Gateway] : Complaints returned
+[Complaint Gateway] --> [Complaint Portal] : Complaint returned
+[Complaint Portal] --> [IRCTC Officer] : List of Assigned Complaints
 
-object Complaint_Gateway {
-    Complaint Gateway
-}
-
-object Authentication_Database {
-    Authentication Database
-}
-
-object Complaint_Database {
-    Complaint Database
-}
-
-IRCTC_Officer --> Complaint_Portal : Create a new Officer Account
-Complaint_Portal --> Authentication_Gateway : Add a new Officer Entity to Authentication Records
-Authentication_Gateway --> Authentication_Database : INSERT Officer & Department Details INTO Database
-Authentication_Database --> Authentication_Gateway : Officer Insertion Successful
-Authentication_Gateway --> Complaint_Portal : Officer Insertion Successful
-Complaint_Portal --> IRCTC_Officer : Account Created
-
-IRCTC_Officer --> Complaint_Portal : Check the assigned Complaints
-Complaint_Portal --> Complaint_Gateway : Fetch the Collection of Complaints assigned to the Officer
-Complaint_Gateway --> Complaint_Database : SELECT the Complaint Entities
-Complaint_Database --> Complaint_Gateway : Complaint Entity returned
-Complaint_Gateway --> Complaint_Portal : Optional List of Complaint Entities returned
-Complaint_Portal --> IRCTC_Officer : List of Assigned Complaints
-
-IRCTC_Officer --> Complaint_Portal : Update Complaint Status and messages
-Complaint_Portal --> Complaint_Gateway : Update the Complaint and add new status and messages
-Complaint_Gateway --> Complaint_Database : UPDATE the Complaint Entity SET new status and list of messages
-Complaint_Database --> Complaint_Gateway : Update Successful
-Complaint_Gateway --> Complaint_Portal : Status and Messages added to Complaint
-Complaint_Portal --> IRCTC_Officer : Complaint Updated Successfully
-
+[IRCTC Officer] --> [Complaint Portal] : Update Complaint Status and messages
+[Complaint Portal] --> [Complaint Gateway] : Update the Complaint
+[Complaint Gateway] --> [Complaint Database] : Update SQL
+[Complaint Database] --> [Complaint Gateway] : Update Successful
+[Complaint Gateway] --> [Complaint Portal] : Status and Messages added
+[Complaint Portal] --> [IRCTC Officer] : Complaint Updated
 @enduml
