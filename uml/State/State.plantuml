@@ -8,11 +8,12 @@ start
 :Assign to Officer;
 
 repeat
-  :InProgress;
+  :In Progress;
   if (Issue Fixed?) then (yes)
     :Resolved;
     stop
   else (no)
+    :Reassign to Officer;
   endif
 repeat while (Reassigned?)
 

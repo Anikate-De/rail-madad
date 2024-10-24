@@ -39,6 +39,6 @@ officerBrowser ..> springBoot : <<http>>
 
 springBoot ..> dataBase : <<JDBC Connection>>
 
-"complaint_Registering" ..> springBoot : <<REST API>> calls
+"Complaint_Registering" ..> springBoot : <<REST API>> calls
 
 @enduml

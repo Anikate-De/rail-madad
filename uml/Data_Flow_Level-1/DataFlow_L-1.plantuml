@@ -18,11 +18,10 @@ actor "IRCTC Complaint Officer"
 node "User Database" {
 }
 
-(Complaint Repository) --> (Complaint Officer interface)
+(Complaint Repository) --> (Complaint Officer Interface)  // Capitalized "Interface" for consistency
 (Web Application) --> (Scheduled Categorization Service)
 
-
-(Complaint Officer interface) --> (Status Update Service)
+(Complaint Officer Interface) --> (Status Update Service)
 (Scheduled Categorization Service) --> (Complaint Assignment)
 
 (Status Update Service) --> "Complaint Database"
