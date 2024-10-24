@@ -1,258 +1,146 @@
 <svg xmlns="http://www.w3.org/2000/svg" contentStyleType="text/css"
-     height="523px" preserveAspectRatio="none" style="width:966px;height:523px;background:#FFFFFF;" version="1.1"
-     viewBox="0 0 966 523" width="966px" zoomAndPan="magnify">
+     height="445px" preserveAspectRatio="none" style="width:632px;height:445px;background:#FFFFFF;" version="1.1"
+     viewBox="0 0 632 445" width="632px" zoomAndPan="magnify">
     <defs/>
-    <g><!--entity IRCTC Customer-->
-        <g id="elem_IRCTC Customer">
-            <rect fill="#F1F1F1" height="38.6211" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;"
-                  width="127.3447" x="401" y="7"/>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="107.3447"
-                  x="411" y="32.1074">IRCTC Customer
+    <g><!--entity Customer Portal-->
+        <g id="elem_Customer Portal">
+            <rect fill="#F1F1F1" height="48.6211" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;"
+                  width="141.1445" x="73.02" y="7"/>
+            <rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="194.1645" y="12"/>
+            <rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="192.1645" y="14"/>
+            <rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="192.1645" y="18"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="101.1445"
+                  x="88.02" y="42.1074">Customer Portal
             </text>
-        </g><!--entity Complaint Portal-->
-        <g id="elem_Complaint Portal">
-            <rect fill="#F1F1F1" height="38.6211" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;"
-                  width="123.4893" x="403" y="125"/>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="103.4893"
-                  x="413" y="150.1074">Complaint Portal
+        </g><!--entity Complaint Service-->
+        <g id="elem_Complaint Service">
+            <rect fill="#F1F1F1" height="48.6211" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;"
+                  width="153.5996" x="107.52" y="135"/>
+            <rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="241.1196" y="140"/>
+            <rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="239.1196" y="142"/>
+            <rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="239.1196" y="146"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="113.5996"
+                  x="122.52" y="170.1074">Complaint Service
             </text>
-        </g><!--entity Authentication Gateway-->
-        <g id="elem_Authentication Gateway">
-            <rect fill="#F1F1F1" height="38.6211" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;"
-                  width="167.8682" x="50.5" y="243"/>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="147.8682"
-                  x="60.5" y="268.1074">Authentication Gateway
-            </text>
-        </g><!--entity Authentication Database-->
-        <g id="elem_Authentication Database">
-            <rect fill="#F1F1F1" height="38.6211" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;"
-                  width="172.5508" x="96" y="361"/>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="152.5508"
-                  x="106" y="386.1074">Authentication Database
-            </text>
-        </g><!--entity Complaint Gateway-->
-        <g id="elem_Complaint Gateway">
-            <rect fill="#F1F1F1" height="38.6211" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;"
-                  width="142.165" x="609.5" y="243"/>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="122.165"
-                  x="619.5" y="268.1074">Complaint Gateway
-            </text>
-        </g><!--entity Complaint Database-->
-        <g id="elem_Complaint Database">
-            <rect fill="#F1F1F1" height="38.6211" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;"
-                  width="146.8477" x="616" y="361"/>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="126.8477"
-                  x="626" y="386.1074">Complaint Database
+        </g><!--entity Media Service-->
+        <g id="elem_Media Service">
+            <rect fill="#F1F1F1" height="48.6211" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;"
+                  width="128.7031" x="61.02" y="263"/>
+            <rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="169.7231" y="268"/>
+            <rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="167.7231" y="270"/>
+            <rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="167.7231" y="274"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="88.7031"
+                  x="76.02" y="298.1074">Media Service
             </text>
         </g><!--entity Scheduled Categorization Service-->
         <g id="elem_Scheduled Categorization Service">
-            <rect fill="#F1F1F1" height="38.6211" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;"
-                  width="230.9023" x="574" y="479"/>
+            <rect fill="#F1F1F1" height="48.6211" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;"
+                  width="250.9023" x="225.02" y="263"/>
+            <rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="455.9223" y="268"/>
+            <rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="453.9223" y="270"/>
+            <rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="453.9223" y="274"/>
             <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="210.9023"
-                  x="584" y="504.1074">Scheduled Categorization Service
+                  x="240.02" y="298.1074">Scheduled Categorization Service
             </text>
-        </g><!--link IRCTC Customer to Complaint Portal-->
-        <g id="link_IRCTC Customer_Complaint Portal">
-            <path d="M400.72,30.45 C291.02,36.17 76.14,50.53 53.5,76 C6,129.44 271.121,140.4794 396.971,142.7994 "
-                  fill="none" id="IRCTC Customer-to-Complaint Portal" style="stroke:#454645;stroke-width:1.0;"/>
+        </g><!--entity Department Service-->
+        <g id="elem_Department Service">
+            <rect fill="#F1F1F1" height="48.6211" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;"
+                  width="163.7168" x="268.52" y="391"/>
+            <rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="412.2368" y="396"/>
+            <rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="410.2368" y="398"/>
+            <rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="410.2368" y="402"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="123.7168"
+                  x="283.52" y="426.1074">Department Service
+            </text>
+        </g><!--entity Officer Portal-->
+        <g id="elem_Officer Portal">
+            <rect fill="#F1F1F1" height="48.6211" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;"
+                  width="121.6895" x="323.52" y="7"/>
+            <rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="425.2095" y="12"/>
+            <rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="423.2095" y="14"/>
+            <rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="423.2095" y="18"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="81.6895"
+                  x="338.52" y="42.1074">Officer Portal
+            </text>
+        </g><!--entity Authentication Service-->
+        <g id="elem_Authentication Service">
+            <rect fill="#F1F1F1" height="48.6211" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;"
+                  width="179.3027" x="376.02" y="135"/>
+            <rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="535.3227" y="140"/>
+            <rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="533.3227" y="142"/>
+            <rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="533.3227" y="146"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="139.3027"
+                  x="391.02" y="170.1074">Authentication Service
+            </text>
+        </g><!--link Customer Portal to Complaint Service-->
+        <g id="link_Customer Portal_Complaint Service">
+            <path d="M72.87,49.08 C37.6,60.9 6,79.28 24.52,105 C43.61,131.5 70.5625,143.7702 101.5225,150.6402 "
+                  fill="none" id="Customer Portal-to-Complaint Service" style="stroke:#454645;stroke-width:1.0;"/>
             <polygon fill="#454645"
-                     points="402.97,142.91,394.0453,138.7448,397.9708,142.8178,393.8978,146.7434,402.97,142.91"
+                     points="107.38,151.94,99.4602,146.0853,102.4987,150.8569,97.7272,153.8953,107.38,151.94"
                      style="stroke:#454645;stroke-width:1.0;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="117.0635"
-                  x="54.5" y="91.0283">Create new Account
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="117.0444"
+                  x="25.52" y="101.0283">Registers Complaint
             </text>
-        </g><!--link Complaint Portal to IRCTC Customer-->
-        <g id="link_Complaint Portal_IRCTC Customer">
-            <path d="M422.49,124.84 C410.63,117.37 399.15,107.51 392.5,95 C382.04,75.34 395.5699,61.2331 416.5399,49.1631 "
-                  fill="none" id="Complaint Portal-to-IRCTC Customer" style="stroke:#454645;stroke-width:1.0;"/>
+        </g><!--link Customer Portal to Authentication Service-->
+        <g id="link_Customer Portal_Authentication Service">
+            <path d="M149.22,56.01 C154.4,72.27 163.72,93.05 179.52,105 C195.24,116.88 292.0663,133.2602 369.9563,144.9402 "
+                  fill="none" id="Customer Portal-to-Authentication Service" style="stroke:#454645;stroke-width:1.0;"/>
             <polygon fill="#454645"
-                     points="421.74,46.17,411.9444,47.1929,417.4066,48.6643,415.9352,54.1264,421.74,46.17"
+                     points="375.89,145.83,367.5827,140.5396,370.9453,145.0885,366.3963,148.4511,375.89,145.83"
                      style="stroke:#454645;stroke-width:1.0;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="96.8335"
-                  x="393.5" y="91.0283">Account Created
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="114.1943"
+                  x="180.52" y="101.0283">Authenticates Login
             </text>
-        </g><!--link IRCTC Customer to Complaint Portal-->
-        <g id="link_IRCTC Customer_Complaint Portal">
-            <path d="M400.95,32.65 C342.53,38.86 262.11,51.65 242.5,76 C197.53,131.85 316.4209,142.5654 396.7109,143.9654 "
-                  fill="none" id="IRCTC Customer-to-Complaint Portal-1" style="stroke:#454645;stroke-width:1.0;"/>
+        </g><!--link Complaint Service to Media Service-->
+        <g id="link_Complaint Service_Media Service">
+            <path d="M173.43,184.2 C162.88,206.73 149.6442,234.9861 139.1142,257.4761 " fill="none"
+                  id="Complaint Service-to-Media Service" style="stroke:#454645;stroke-width:1.0;"/>
             <polygon fill="#454645"
-                     points="402.71,144.07,393.7811,139.9137,397.7108,143.9828,393.6416,147.9125,402.71,144.07"
+                     points="136.57,262.91,144.0089,256.4553,138.6902,258.3818,136.7637,253.063,136.57,262.91"
                      style="stroke:#454645;stroke-width:1.0;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="138.0044"
-                  x="243.5" y="91.0283">Register new Complaint
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="76.5908"
+                  x="160.52" y="229.0283">Stores Media
             </text>
-        </g><!--link Complaint Portal to IRCTC Customer-->
-        <g id="link_Complaint Portal_IRCTC Customer">
-            <path d="M479.42,124.85 C485.35,116.28 491.47,105.67 494.5,95 C499.37,77.85 493.602,64.3092 484.112,51.0492 "
-                  fill="none" id="Complaint Portal-to-IRCTC Customer-1" style="stroke:#454645;stroke-width:1.0;"/>
-            <polygon fill="#454645" points="480.62,46.17,482.6052,55.8167,483.53,50.236,489.1107,51.1608,480.62,46.17"
-                     style="stroke:#454645;stroke-width:1.0;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="125.0044"
-                  x="496.5" y="91.0283">Complaint Registered
-            </text>
-        </g><!--link Complaint Portal to IRCTC Customer-->
-        <g id="link_Complaint Portal_IRCTC Customer">
-            <path d="M526.08,139.34 C585.07,132.9 660.96,116.64 630.5,76 C617.89,59.18 575.3134,47.4372 533.9834,39.1672 "
-                  fill="none" id="Complaint Portal-to-IRCTC Customer-2" style="stroke:#454645;stroke-width:1.0;"/>
-            <polygon fill="#454645" points="528.1,37.99,536.1402,43.6781,533.0028,38.971,537.7099,35.8336,528.1,37.99"
-                     style="stroke:#454645;stroke-width:1.0;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="153.9053"
-                  x="637.5" y="91.0283">Check Status of Complaint
-            </text>
-        </g><!--link Complaint Portal to IRCTC Customer-->
-        <g id="link_Complaint Portal_IRCTC Customer">
-            <path d="M526.33,140.9 C632.92,135.24 836.48,118.73 799.5,76 C765.12,36.29 621.4295,28.4691 534.2095,27.3191 "
-                  fill="none" id="Complaint Portal-to-IRCTC Customer-3" style="stroke:#454645;stroke-width:1.0;"/>
-            <polygon fill="#454645" points="528.21,27.24,537.1565,31.3583,533.2096,27.3059,537.262,23.359,528.21,27.24"
-                     style="stroke:#454645;stroke-width:1.0;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="149.5825"
-                  x="804.5" y="91.0283">Latest Complaint returned
-            </text>
-        </g><!--link Complaint Portal to Authentication Gateway-->
-        <g id="link_Complaint Portal_Authentication Gateway">
-            <path d="M402.95,148.83 C299.41,155.08 99.58,170.1 78.5,194 C64.19,210.21 78.0747,225.7691 97.6447,239.4691 "
-                  fill="none" id="Complaint Portal-to-Authentication Gateway" style="stroke:#454645;stroke-width:1.0;"/>
+        </g><!--link Complaint Service to Scheduled Categorization Service-->
+        <g id="link_Complaint Service_Scheduled Categorization Service">
+            <path d="M215.75,184.2 C245.42,206.73 285.0308,236.7924 314.6608,259.2824 " fill="none"
+                  id="Complaint Service-to-Scheduled Categorization Service" style="stroke:#454645;stroke-width:1.0;"/>
             <polygon fill="#454645"
-                     points="102.56,242.91,97.4811,234.4717,98.4639,240.0425,92.8931,241.0254,102.56,242.91"
+                     points="319.44,262.91,314.6896,254.2825,315.4573,259.887,309.8528,260.6548,319.44,262.91"
                      style="stroke:#454645;stroke-width:1.0;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="183.5425"
-                  x="79.5" y="209.0283">Add new Entity to Auth Records
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="211.7197"
+                  x="277.52" y="229.0283">Sends Complaints for Categorization
             </text>
-        </g><!--link Authentication Gateway to Complaint Portal-->
-        <g id="link_Authentication Gateway_Complaint Portal">
-            <path d="M187.24,242.96 C248.87,221.3 344.5895,187.6498 406.1795,165.9998 " fill="none"
-                  id="Authentication Gateway-to-Complaint Portal" style="stroke:#454645;stroke-width:1.0;"/>
+        </g><!--link Scheduled Categorization Service to Department Service-->
+        <g id="link_Scheduled Categorization Service_Department Service">
+            <path d="M350.52,312.2 C350.52,334.73 350.52,362.42 350.52,384.91 " fill="none"
+                  id="Scheduled Categorization Service-to-Department Service" style="stroke:#454645;stroke-width:1.0;"/>
+            <polygon fill="#454645" points="350.52,390.91,354.52,381.91,350.52,385.91,346.52,381.91,350.52,390.91"
+                     style="stroke:#454645;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="131.5044"
+                  x="351.52" y="357.0283">Assigns to Department
+            </text>
+        </g><!--link Officer Portal to Complaint Service-->
+        <g id="link_Officer Portal_Complaint Service">
+            <path d="M362,56.14 C346.56,71.43 325.04,91.01 303.52,105 C285.95,116.42 271.043,124.1561 252.133,132.4661 "
+                  fill="none" id="Officer Portal-to-Complaint Service" style="stroke:#454645;stroke-width:1.0;"/>
             <polygon fill="#454645"
-                     points="411.84,164.01,402.0228,163.221,407.1229,165.6681,404.6758,170.7683,411.84,164.01"
+                     points="246.64,134.88,256.4888,134.9212,251.2175,132.8684,253.2702,127.5971,246.64,134.88"
                      style="stroke:#454645;stroke-width:1.0;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="116.3335"
-                  x="320.5" y="209.0283">Insertion Successful
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="160.4053"
+                  x="327.52" y="101.0283">Views Assigned Complaints
             </text>
-        </g><!--link Authentication Gateway to Authentication Database-->
-        <g id="link_Authentication Gateway_Authentication Database">
-            <path d="M123.56,282.04 C116.81,296.05 110.78,315.47 118.5,331 C124.58,343.24 130.4512,349.7885 141.4712,357.4385 "
-                  fill="none" id="Authentication Gateway-to-Authentication Database"
-                  style="stroke:#454645;stroke-width:1.0;"/>
+        </g><!--link Officer Portal to Authentication Service-->
+        <g id="link_Officer Portal_Authentication Service">
+            <path d="M445.83,44.73 C468.55,52.56 492.05,65.31 505.52,86 C515.8,101.78 509.0837,115.9311 496.1737,130.3411 "
+                  fill="none" id="Officer Portal-to-Authentication Service" style="stroke:#454645;stroke-width:1.0;"/>
             <polygon fill="#454645"
-                     points="146.4,360.86,141.2878,352.4418,142.2927,358.0087,136.7258,359.0136,146.4,360.86"
+                     points="492.17,134.81,501.1547,130.7758,495.5064,131.086,495.1963,125.4376,492.17,134.81"
                      style="stroke:#454645;stroke-width:1.0;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="79.4854"
-                  x="119.5" y="327.0283">Insertion SQL
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="114.1943"
+                  x="510.52" y="101.0283">Authenticates Login
             </text>
-        </g><!--link Authentication Database to Authentication Gateway-->
-        <g id="link_Authentication Database_Authentication Gateway">
-            <path d="M195.89,360.76 C204.09,346.81 211.59,327.57 203.5,312 C197.02,299.53 190.7325,292.857 179.1025,285.307 "
-                  fill="none" id="Authentication Database-to-Authentication Gateway"
-                  style="stroke:#454645;stroke-width:1.0;"/>
-            <polygon fill="#454645"
-                     points="174.07,282.04,179.4408,290.2956,178.2638,284.7625,183.7968,283.5855,174.07,282.04"
-                     style="stroke:#454645;stroke-width:1.0;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="116.3335"
-                  x="208.5" y="327.0283">Insertion Successful
-            </text>
-        </g><!--link Complaint Portal to Complaint Gateway-->
-        <g id="link_Complaint Portal_Complaint Gateway">
-            <path d="M457.54,164.18 C453.33,179.02 450.63,199.46 461.5,213 C479.9,235.93 546.8304,247.9851 603.5204,254.5951 "
-                  fill="none" id="Complaint Portal-to-Complaint Gateway" style="stroke:#454645;stroke-width:1.0;"/>
-            <polygon fill="#454645"
-                     points="609.48,255.29,601.0038,250.2746,604.5136,254.7109,600.0773,258.2208,609.48,255.29"
-                     style="stroke:#454645;stroke-width:1.0;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="174.8716"
-                  x="462.5" y="209.0283">Add new Entity to the Records
-            </text>
-        </g><!--link Complaint Gateway to Complaint Portal-->
-        <g id="link_Complaint Gateway_Complaint Portal">
-            <path d="M674.24,242.74 C668.2,227.44 657.57,206.4 641.5,194 C608.45,168.5 568.8077,157.3289 532.1777,151.5889 "
-                  fill="none" id="Complaint Gateway-to-Complaint Portal" style="stroke:#454645;stroke-width:1.0;"/>
-            <polygon fill="#454645"
-                     points="526.25,150.66,534.5222,156.0051,531.1897,151.4341,535.7607,148.1015,526.25,150.66"
-                     style="stroke:#454645;stroke-width:1.0;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="110.5571"
-                  x="659.5" y="209.0283">Complaint returned
-            </text>
-        </g><!--link Complaint Gateway to Complaint Portal-->
-        <g id="link_Complaint Gateway_Complaint Portal">
-            <path d="M742.07,242.94 C771.02,231.08 795.78,214.15 778.5,194 C746.68,156.89 614.3882,148.0669 532.3182,146.0569 "
-                  fill="none" id="Complaint Gateway-to-Complaint Portal-1" style="stroke:#454645;stroke-width:1.0;"/>
-            <polygon fill="#454645"
-                     points="526.32,145.91,535.2194,150.1292,531.3185,146.0324,535.4152,142.1316,526.32,145.91"
-                     style="stroke:#454645;stroke-width:1.0;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="110.5571"
-                  x="784.5" y="209.0283">Complaint returned
-            </text>
-        </g><!--link Complaint Gateway to Complaint Database-->
-        <g id="link_Complaint Gateway_Complaint Database">
-            <path d="M609.46,267.44 C547.31,273.65 471.58,289.69 503.5,331 C517.53,349.15 564.2257,360.7895 609.9357,368.5995 "
-                  fill="none" id="Complaint Gateway-to-Complaint Database" style="stroke:#454645;stroke-width:1.0;"/>
-            <polygon fill="#454645"
-                     points="615.85,369.61,607.6522,364.1514,610.9214,368.7679,606.3049,372.0371,615.85,369.61"
-                     style="stroke:#454645;stroke-width:1.0;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="79.4854"
-                  x="504.5" y="327.0283">Insertion SQL
-            </text>
-        </g><!--link Complaint Database to Complaint Gateway-->
-        <g id="link_Complaint Database_Complaint Gateway">
-            <path d="M702.97,360.73 C710.97,347.27 718.62,328.64 713.5,312 C710.2,301.29 707.2762,295.6102 700.8662,287.1602 "
-                  fill="none" id="Complaint Database-to-Complaint Gateway" style="stroke:#454645;stroke-width:1.0;"/>
-            <polygon fill="#454645"
-                     points="697.24,282.38,699.4925,291.9678,700.2618,286.3635,705.8661,287.1329,697.24,282.38"
-                     style="stroke:#454645;stroke-width:1.0;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="116.3335"
-                  x="715.5" y="327.0283">Insertion Successful
-            </text>
-        </g><!--link Complaint Gateway to Complaint Database-->
-        <g id="link_Complaint Gateway_Complaint Database">
-            <path d="M646.01,282.18 C627.71,294.73 610.81,312.36 620.5,331 C626.98,343.47 633.2687,350.141 644.8887,357.691 "
-                  fill="none" id="Complaint Gateway-to-Complaint Database-1" style="stroke:#454645;stroke-width:1.0;"/>
-            <polygon fill="#454645"
-                     points="649.92,360.96,644.5525,352.7023,645.7273,358.2358,640.1938,359.4106,649.92,360.96"
-                     style="stroke:#454645;stroke-width:1.0;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="83.1035"
-                  x="621.5" y="327.0283">Selection SQL
-            </text>
-        </g><!--link Complaint Database to Complaint Gateway-->
-        <g id="link_Complaint Database_Complaint Gateway">
-            <path d="M763.01,371.47 C812.85,362.89 865.48,345.67 840.5,312 C820.01,284.38 790.1194,272.9102 757.5694,267.5202 "
-                  fill="none" id="Complaint Database-to-Complaint Gateway-1" style="stroke:#454645;stroke-width:1.0;"/>
-            <polygon fill="#454645"
-                     points="751.65,266.54,759.8756,271.9566,756.5828,267.3568,761.1826,264.064,751.65,266.54"
-                     style="stroke:#454645;stroke-width:1.0;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="110.5571"
-                  x="847.5" y="327.0283">Complaint returned
-            </text>
-        </g><!--link Complaint Database to Scheduled Categorization Service-->
-        <g id="link_Complaint Database_Scheduled Categorization Service">
-            <path d="M615.99,380.96 C534.79,382.96 420.88,394.98 464.5,449 C479.03,466.99 520.4904,477.7136 568.0504,485.0636 "
-                  fill="none" id="Complaint Database-to-Scheduled Categorization Service"
-                  style="stroke:#454645;stroke-width:1.0;"/>
-            <polygon fill="#454645"
-                     points="573.98,485.98,565.6965,480.6524,569.0387,485.2164,564.4747,488.5585,573.98,485.98"
-                     style="stroke:#454645;stroke-width:1.0;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="180.6479"
-                  x="465.5" y="445.0283">Get all un-assigned Complaints
-            </text>
-        </g><!--link Scheduled Categorization Service to Complaint Database-->
-        <g id="link_Scheduled Categorization Service_Complaint Database">
-            <path d="M773.75,478.95 C802.8,468.31 824.67,452.49 809.5,430 C798.57,413.79 786.7887,405.2087 768.6287,398.0187 "
-                  fill="none" id="Scheduled Categorization Service-to-Complaint Database"
-                  style="stroke:#454645;stroke-width:1.0;"/>
-            <polygon fill="#454645"
-                     points="763.05,395.81,769.9455,402.8422,767.6989,397.6506,772.8905,395.404,763.05,395.81"
-                     style="stroke:#454645;stroke-width:1.0;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="71.5444"
-                  x="814.5" y="445.0283">Update SQL
-            </text>
-        </g><!--link Complaint Database to Scheduled Categorization Service-->
-        <g id="link_Complaint Database_Scheduled Categorization Service">
-            <path d="M686.14,400.32 C684.71,409.28 683.21,420.16 682.5,430 C681.31,446.57 682.5622,459.4419 684.8222,472.9819 "
-                  fill="none" id="Complaint Database-to-Scheduled Categorization Service-1"
-                  style="stroke:#454645;stroke-width:1.0;"/>
-            <polygon fill="#454645"
-                     points="685.81,478.9,688.2737,469.3643,684.9868,473.9682,680.3829,470.6814,685.81,478.9"
-                     style="stroke:#454645;stroke-width:1.0;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="117.7871"
-                  x="683.5" y="445.0283">Complaints Updated
-            </text>
-        </g><!--SRC=[jPH1Ri8m44NtESNq05o0HIMKLWY9HKlQ5M8ns4EmS6naZq7qz7LIQ5ha9BGIM-VFp_VxappmbYg2WrexD9pvdJ9xT5Y1iDNU6ZBi-QG970b6KshAikLiaR_ba0VFjYAtWj7e4PPvr6jKXk75EaQzWZ7aZf0931rX8eGDyGK9NJC-2J68OIMGbJKmZND7FDKc4oaRX-Vub4_05cejB4XO9ttMEPcoVKB6DNggVMV6asjEYzTvrgqSYFV39WX1tc-27WYLGfMswO1rNS3uWlTCNFwbf0MLoZEv1lAteFFTxN5lH_7wRKM9cIkldc9IekuaGno7csZF775m9jAylOTMUC7QbD5vXq9iIGPD4l8OhBHEVNnjJ47ke4J3OqeCg3K4CqBlLMbgzSKmqXtsw87zlfVr9zfF-fQKRQApv-zx3t7RajX1mSZ1Wzsaz_2MvIb8np_LFvUdl_exhyuysdjEUNm2]-->
+        </g><!--SRC=[bL5BRi903DtFASm1k02BIeWkGQ16OeDOJ1CdM4h6o7P0wkax0GG39D3kPco_Zvz7jiC6uK3VueCvjvcrQjoWm8h5VBsD5MxsjQTWaA4SACTOMs11Flbd-GwBjiO2PjwmOg4VRyGX6Vd4lHThy8vdMPRnaOXDssWe6EKFy6TZC1v_G8yvcC0NLgI6ed1j3-47z299qa65ELSKN5yOPvxxG28yCvQ8EzM7OMzpwvWm5Cac2YNBmxZxmmNEWZrNw7PLfIee6CDjm3sTvqNaQyAZNdWw3rUt0oJ_o_qN]-->
     </g>
 </svg>
