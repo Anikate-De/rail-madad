@@ -3,12 +3,10 @@ package in.ac.vitap.cse1005.railmadad.repository;
 import in.ac.vitap.cse1005.railmadad.domain.entity.Complaint;
 import in.ac.vitap.cse1005.railmadad.domain.enums.ComplaintStatus;
 import java.util.List;
-import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
 /** Repository interface for handling CRUD operations on Complaint entities. */
 @Repository
@@ -58,9 +56,4 @@ public interface ComplaintRepository extends CrudRepository<Complaint, Long> {
    */
   @Query("select c from Complaint c where c.status = ?1")
   List<Complaint> findByStatus(@NonNull ComplaintStatus status);
-
-  @Modifying
-  @Transactional
-  @Query("UPDATE Complaint c SET c.status = ?1 WHERE c.id = ?2 AND c.officer.id = ?3")
-  int updateComplaintStatus(ComplaintStatus status, Long complaintId, Long officerId);
 }
