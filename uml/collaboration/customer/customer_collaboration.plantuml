@@ -1,56 +1,29 @@
 @startuml
 !theme vibrant
-object IRCTC_Customer {
-    IRCTC Customer
-}
+skinparam componentstyle rectangle
 
-object Complaint_Portal {
-    Complaint Portal
-}
+[IRCTC Customer] --> [Complaint Portal] : Create new Account
+[Complaint Portal] --> [Authentication Gateway] : Add new Entity to Auth Records
+[Authentication Gateway] --> [Authentication Database] : Insertion SQL
+[Authentication Database] --> [Authentication Gateway] : Insertion Successful
+[Authentication Gateway] --> [Complaint Portal] : Insertion Successful
+[Complaint Portal] --> [IRCTC Customer] : Account Created
 
-object Authentication_Gateway {
-    Authentication Gateway
-}
+[IRCTC Customer] --> [Complaint Portal] : Register new Complaint
+[Complaint Portal] --> [Complaint Gateway] : Add new Entity to the Records
+[Complaint Gateway] --> [Complaint Database] : Insertion SQL
+[Complaint Database] --> [Complaint Gateway] : Insertion Successful
+[Complaint Gateway] --> [Complaint Portal] : Complaint returned
+[Complaint Portal] --> [IRCTC Customer] : Complaint Registered
 
-object Complaint_Gateway {
-    Complaint Gateway
-}
+[Complaint Database] --> [Scheduled Categorization Service] : Get all un-assigned Complaints
+[Scheduled Categorization Service] --> [Complaint Database] : Update SQL
+[Complaint Database] --> [Scheduled Categorization Service] : Complaints Updated
 
-object Authentication_Database {
-    Authentication Database
-}
-
-object Complaint_Database {
-    Complaint Database
-}
-
-object Batch_Processing_Unit {
-    Batch Processing Unit
-}
-
-IRCTC_Customer --> Complaint_Portal : Create a new Customer Account
-Complaint_Portal --> Authentication_Gateway : Add a new Customer Entity to Authentication Records
-Authentication_Gateway --> Authentication_Database : INSERT Customer Details INTO Database
-Authentication_Database --> Authentication_Gateway : Customer Insertion Successful
-Authentication_Gateway --> Complaint_Portal : Customer Insertion Successful
-Complaint_Portal --> IRCTC_Customer : Account Created
-
-IRCTC_Customer --> Complaint_Portal : Register a new Complaint
-Complaint_Portal --> Complaint_Gateway : Add a new Complaint Entity to the Records
-Complaint_Gateway --> Complaint_Database : INSERT Complaint Details INTO Database
-Complaint_Database --> Complaint_Gateway : Complaint Insertion Successful
-Complaint_Gateway --> Complaint_Portal : Complaint Entity with updated fields returned
-Complaint_Portal --> IRCTC_Customer : Complaint Registered
-
-Complaint_Database --> Batch_Processing_Unit : SELECT all un-assigned Complaint Entities
-Batch_Processing_Unit --> Complaint_Database : Process content, categorize, assign department & officer, modify list
-Batch_Processing_Unit --> Complaint_Database : UPDATE un-assigned Complaint Entities SET Department and Officers
-Complaint_Database --> Batch_Processing_Unit : Complaint Records Updated
-
-Complaint_Portal --> IRCTC_Customer : Check the Status of the Complaint
-Complaint_Gateway --> Complaint_Database : SELECT the Complaint Entity
-Complaint_Database --> Complaint_Gateway : Complaint Entity returned
-Complaint_Gateway --> Complaint_Portal : Complaint Entity with updated fields returned
-Complaint_Portal --> IRCTC_Customer : Latest Complaint with updated status and messages returned
+[Complaint Portal] --> [IRCTC Customer] : Check Status of Complaint
+[Complaint Gateway] --> [Complaint Database] : Selection SQL
+[Complaint Database] --> [Complaint Gateway] : Complaint returned
+[Complaint Gateway] --> [Complaint Portal] : Complaint returned
+[Complaint Portal] --> [IRCTC Customer] : Latest Complaint returned
 
 @enduml
