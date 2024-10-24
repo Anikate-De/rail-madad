@@ -1,25 +1,29 @@
 @startuml
 !theme vibrant
 start
-:Login;
-if (Passenger/Complaint Officer) then (Passenger)
-  :Register Complaint;
-  :Submit Complaint;
-  :Keyword Analysis;
-  :Categorized Complaint;
-  :Assign Priority;
-  :Assign To Officer;
-else (Complaint Officer)
+if (Scheduled Categorization Service) then (Yes)
+    :Keyword Analysis;
+    :Complaint Categorization;
+    :Department Assignment;
+    :Officer Assignment;
+else (No)
+  :Login;
+if (Passenger / Officer) then (Passenger)
+  while (New Complaint?) is (Yes)
+    :File New Complaint;
+  endwhile
+  :Check Past Complaints;
+  :Check Complaint Status;
+  :Check Messages;
+else (Officer)
   :View Assigned Complaints;
-  :Process Complaint;
-  if (Resolve?) then (No)
-    :Cannot Resolve;
-    :Escalate;
-    :Assign To Officer;
-  else (Yes)
-    :Issue Fixed;
-    :Resolved;
-    stop
+  while (Complaint Resolved?) is (No)
+    :Check Complaint Details;
+    :Add Messages;
+    :Process Complaint;
+  endwhile
+  :Update Complaint Status;
   endif
 endif
+stop
 @enduml
