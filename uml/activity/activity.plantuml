@@ -1,0 +1,25 @@
+@startuml
+!theme vibrant
+start
+:Login;
+if (Passenger/Complaint Officer) then (Passenger)
+  :Register Complaint;
+  :Submit Complaint;
+  :Keyword Analysis;
+  :Categorized Complaint;
+  :Assign Priority;
+  :Assign To Officer;
+else (Complaint Officer)
+  :View Assigned Complaints;
+  :Process Complaint;
+  if (Resolve?) then (No)
+    :Cannot Resolve;
+    :Escalate;
+    :Assign To Officer;
+  else (Yes)
+    :Issue Fixed;
+    :Resolved;
+    stop
+  endif
+endif
+@enduml

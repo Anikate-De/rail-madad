@@ -1,0 +1,126 @@
+@startuml
+!theme vibrant
+object department1 {
+  departmentID = 201
+  name = "Customer Service"
+  head = "Head of Customer Service"
+}
+
+object department2 {
+  departmentID = 202
+  name = "Financial Services"
+  head = "Head of Financial Services"
+}
+
+object officer1 {
+  officerID = 501
+  departmentID = 201
+  name = "Officer John"
+  email = "officer.john@railway.com"
+  password = "officerPass"
+}
+
+object officer2 {
+  officerID = 502
+  departmentID = 201
+  name = "Officer Sarah"
+  email = "officer.sarah@railway.com"
+  password = "officerPass2"
+}
+
+object officer3 {
+  officerID = 503
+  departmentID = 202
+  name = "Officer Mike"
+  email = "officer.mike@railway.com"
+  password = "officerPass3"
+}
+
+object admin1 {
+  adminID = 1
+  name = "John Doe"
+  email = "john.doe@railwayadmin.com"
+  password = "adminPass"
+}
+
+object admin2 {
+  adminID = 2
+  name = "Alice Johnson"
+  email = "alice.johnson@railwayadmin.com"
+  password = "adminPass2"
+}
+
+object passenger1 {
+  passengerID = 101
+  name = "Jane Smith"
+  email = "jane.smith@passenger.com"
+  password = "passengerPass"
+}
+
+object passenger2 {
+  passengerID = 102
+  name = "Mark Taylor"
+  email = "mark.taylor@passenger.com"
+  password = "passengerPass2"
+}
+
+object complaint1 {
+  complaintID = 1001
+  passengerID = 101
+  createdAt = "2024-09-18"
+  description = "Train delay at Station X"
+  status = "PENDING"
+  assignedOfficerID = 501
+}
+
+object complaint2 {
+  complaintID = 1002
+  passengerID = 102
+  createdAt = "2024-09-17"
+  description = "Poor hygiene on train"
+  status = "IN PROGRESS"
+  assignedOfficerID = 502
+}
+
+object complaint3 {
+  complaintID = 1003
+  passengerID = 101
+  createdAt = "2024-09-19"
+  description = "Incorrect ticket fare deduction"
+  status = "RESOLVED"
+  assignedOfficerID = 503
+}
+
+object input1 {
+  inputID = 301
+  complaintID = 1001
+  type = "Text"
+  data = "The train was delayed by 2 hours"
+}
+
+object input2 {
+  inputID = 302
+  complaintID = 1002
+  type = "Image"
+  data = "photo_of_unhygienic_condition.jpg"
+}
+
+department1 -down-> officer1 : supervises
+department1 -down-> officer2 : supervises
+department2 -down-> officer3 : supervises
+
+passenger1 --> complaint1 : creates
+passenger2 --> complaint2 : creates
+passenger1 --> complaint3 : creates
+
+officer1 --> complaint1 : assignedTo
+officer2 --> complaint2 : assignedTo
+officer3 --> complaint3 : assignedTo
+
+admin1 --> complaint1 : manages
+admin2 --> complaint2 : manages
+
+complaint1 --> input1 : contains
+complaint2 --> input2 : contains
+
+@enduml

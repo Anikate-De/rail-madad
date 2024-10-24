@@ -1,0 +1,36 @@
+@startuml
+!theme vibrant
+
+actor "IRCTC Passenger"
+actor "IRCTC Complaint Officer"  // Added space for consistency
+
+"IRCTC Passenger" --> (Login)
+"IRCTC Passenger" --> (Register / Create Account)
+
+(Login) --> (See Messages from Officer)
+(Login) --> (Register Complaint)  // Fixed spacing in action name
+
+(Register Complaint) --> (Submit Complaint)  // Fixed spacing in action name
+
+(Register / Create Account) --> (Submit Complaint)
+
+(View Assigned Complaints) --> (Process Complaint)  // Fixed spacing in action name
+
+"IRCTC Complaint Officer" --> (View Assigned Complaints)
+"IRCTC Complaint Officer" --> (Process Complaint)
+"IRCTC Complaint Officer" --> (Update Status)  // Fixed spacing in action name
+"IRCTC Complaint Officer" --> (Resolved)
+
+(Process Complaint) --> (Update Status)
+(Process Complaint) --> (Resolved)
+
+"Schedule Categorization Service" --> (Issue Fixed)
+"Schedule Categorization Service" --> (Keyword Analysis)  // Fixed spacing in action name
+"Schedule Categorization Service" --> (Categorize Complaint)
+
+(Keyword Analysis) --> (Categorize Complaint)
+(Categorize Complaint) --> (Assign To Officer)  // Fixed spacing in action name
+
+(Issue Fixed) --> (Resolved)
+
+@enduml

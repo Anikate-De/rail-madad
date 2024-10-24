@@ -1,0 +1,34 @@
+@startuml
+!theme vibrant
+
+actor "IRCTC Passenger"
+actor "IRCTC Complaint Officer"
+
+"IRCTC Passenger" --> (Web Application)
+"IRCTC Complaint Officer" --> (Web Application)
+
+(Web Application) --> (User Authentication Service)
+(Web Application) --> (Complaint Registration Service)
+
+(User Authentication Service) --> (User Repository)
+(Complaint Registration Service) --> (Complaint Repository)
+
+(User Repository) --> "User Database"
+
+node "User Database" {
+}
+
+(Complaint Repository) --> (Complaint Officer Interface)  // Capitalized "Interface" for consistency
+(Web Application) --> (Scheduled Categorization Service)
+
+(Complaint Officer Interface) --> (Status Update Service)
+(Scheduled Categorization Service) --> (Complaint Assignment)
+
+(Status Update Service) --> "Complaint Database"
+(Complaint Assignment) --> (Complaint Categorization)
+(Complaint Categorization) --> "Complaint Database"
+
+node "Complaint Database" {
+}
+
+@enduml

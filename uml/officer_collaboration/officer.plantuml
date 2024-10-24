@@ -1,0 +1,48 @@
+@startuml
+!theme vibrant
+object IRCTC_Officer {
+    IRCTC Officer
+}
+
+object Complaint_Portal {
+    Complaint Portal
+}
+
+object Authentication_Gateway {
+    Authentication Gateway
+}
+
+object Complaint_Gateway {
+    Complaint Gateway
+}
+
+object Authentication_Database {
+    Authentication Database
+}
+
+object Complaint_Database {
+    Complaint Database
+}
+
+IRCTC_Officer --> Complaint_Portal : Create a new Officer Account
+Complaint_Portal --> Authentication_Gateway : Add a new Officer Entity to Authentication Records
+Authentication_Gateway --> Authentication_Database : INSERT Officer & Department Details INTO Database
+Authentication_Database --> Authentication_Gateway : Officer Insertion Successful
+Authentication_Gateway --> Complaint_Portal : Officer Insertion Successful
+Complaint_Portal --> IRCTC_Officer : Account Created
+
+IRCTC_Officer --> Complaint_Portal : Check the assigned Complaints
+Complaint_Portal --> Complaint_Gateway : Fetch the Collection of Complaints assigned to the Officer
+Complaint_Gateway --> Complaint_Database : SELECT the Complaint Entities
+Complaint_Database --> Complaint_Gateway : Complaint Entity returned
+Complaint_Gateway --> Complaint_Portal : Optional List of Complaint Entities returned
+Complaint_Portal --> IRCTC_Officer : List of Assigned Complaints
+
+IRCTC_Officer --> Complaint_Portal : Update Complaint Status and messages
+Complaint_Portal --> Complaint_Gateway : Update the Complaint and add new status and messages
+Complaint_Gateway --> Complaint_Database : UPDATE the Complaint Entity SET new status and list of messages
+Complaint_Database --> Complaint_Gateway : Update Successful
+Complaint_Gateway --> Complaint_Portal : Status and Messages added to Complaint
+Complaint_Portal --> IRCTC_Officer : Complaint Updated Successfully
+
+@enduml
