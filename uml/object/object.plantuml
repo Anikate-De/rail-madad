@@ -1,126 +1,70 @@
 @startuml
 !theme vibrant
-object department1 {
-  departmentID = 201
-  name = "Customer Service"
-  head = "Head of Customer Service"
+
+object medicalDept {
+  id = 1
+  name = "Medical"
 }
 
-object department2 {
-  departmentID = 202
-  name = "Financial Services"
-  head = "Head of Financial Services"
+object medicalCategory {
+  id = 1
+  name = "Medical Assistance"
 }
 
-object officer1 {
-  officerID = 501
-  departmentID = 201
-  name = "Officer John"
-  email = "officer.john@railway.com"
-  password = "officerPass"
+object officerP {
+  id = 11
+  firstName = "Ashok"
+  lastName = "Menon"
+  passwordHash = "ph11"
+  dateRegistered = 2024-12-23 00:00:00
+  lastLogin = 2024-12-23 00:00:00
 }
 
-object officer2 {
-  officerID = 502
-  departmentID = 201
-  name = "Officer Sarah"
-  email = "officer.sarah@railway.com"
-  password = "officerPass2"
+object customerA {
+  id = 35
+  phoneNumber = 976543210
+  firstName = "Rajesh"
+  lastName = "Chandra"
+  passwordHash = "ph35"
+  dateRegistered = 2024-12-23 00:00:00
+  lastLogin = 2024-12-23 00:00:00
 }
 
-object officer3 {
-  officerID = 503
-  departmentID = 202
-  name = "Officer Mike"
-  email = "officer.mike@railway.com"
-  password = "officerPass3"
-}
-
-object admin1 {
-  adminID = 1
-  name = "John Doe"
-  email = "john.doe@railwayadmin.com"
-  password = "adminPass"
-}
-
-object admin2 {
-  adminID = 2
-  name = "Alice Johnson"
-  email = "alice.johnson@railwayadmin.com"
-  password = "adminPass2"
-}
-
-object passenger1 {
-  passengerID = 101
-  name = "Jane Smith"
-  email = "jane.smith@passenger.com"
-  password = "passengerPass"
-}
-
-object passenger2 {
-  passengerID = 102
-  name = "Mark Taylor"
-  email = "mark.taylor@passenger.com"
-  password = "passengerPass2"
-}
-
-object complaint1 {
-  complaintID = 1001
-  passengerID = 101
-  createdAt = "2024-09-18"
-  description = "Train delay at Station X"
+object medicalComplaint {
+  id = 1
+  title = "Medical assistance successful."
+  summary = "Medical help was not available after I felt unwell."
   status = "PENDING"
-  assignedOfficerID = 501
+  dateFiled = 2024-12-23 00:00:00
+  lastUpdated = 2024-12-23 00:00:00
 }
 
-object complaint2 {
-  complaintID = 1002
-  passengerID = 102
-  createdAt = "2024-09-17"
-  description = "Poor hygiene on train"
-  status = "IN PROGRESS"
-  assignedOfficerID = 502
+object media1 {
+  id = 103
+  mediaType = "IMAGE"
+  data = [21, 12, ...]
 }
 
-object complaint3 {
-  complaintID = 1003
-  passengerID = 101
-  createdAt = "2024-09-19"
-  description = "Incorrect ticket fare deduction"
-  status = "RESOLVED"
-  assignedOfficerID = 503
+object msg1 {
+  id = 405
+  body = "Medical assistance will be provided promptly."
+  dateCommented = 2024-12-23 00:00:00
 }
 
-object input1 {
-  inputID = 301
-  complaintID = 1001
-  type = "Text"
-  data = "The train was delayed by 2 hours"
-}
+officerP -up-> medicalDept : belongs to
 
-object input2 {
-  inputID = 302
-  complaintID = 1002
-  type = "Image"
-  data = "photo_of_unhygienic_condition.jpg"
-}
+medicalDept -down-> medicalCategory : manages
 
-department1 -down-> officer1 : supervises
-department1 -down-> officer2 : supervises
-department2 -down-> officer3 : supervises
+officerP --> msg1 : comments
 
-passenger1 --> complaint1 : creates
-passenger2 --> complaint2 : creates
-passenger1 --> complaint3 : creates
+msg1 -up-> medicalComplaint : attached to
 
-officer1 --> complaint1 : assignedTo
-officer2 --> complaint2 : assignedTo
-officer3 --> complaint3 : assignedTo
+media1 -up-> medicalComplaint : attached to
 
-admin1 --> complaint1 : manages
-admin2 --> complaint2 : manages
+customerA --> medicalComplaint : files
 
-complaint1 --> input1 : contains
-complaint2 --> input2 : contains
+customerA --> media1 : attaches
+
+officerP --> medicalComplaint : updates
 
 @enduml

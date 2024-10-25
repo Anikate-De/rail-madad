@@ -1,0 +1,230 @@
+<svg xmlns="http://www.w3.org/2000/svg" contentStyleType="text/css"
+     height="708px" preserveAspectRatio="none" style="width:800px;height:708px;background:#FFFFFF;" version="1.1"
+     viewBox="0 0 800 708" width="800px" zoomAndPan="magnify">
+    <defs/>
+    <g>
+        <g id="elem_medicalDept">
+            <rect fill="#F1F1F1" height="67.8633" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;"
+                  width="121.1563" x="396" y="7"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="77.8135"
+                  x="417.6714" y="24.1074">medicalDept
+            </text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="397" x2="516.1563" y1="29.6211" y2="29.6211"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="34.6377"
+                  x="402" y="48.7285">id = 1
+            </text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="109.1563"
+                  x="402" y="67.3496">name = "Medical"
+            </text>
+        </g>
+        <g id="elem_medicalCategory">
+            <rect fill="#F1F1F1" height="67.8633" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;"
+                  width="192.7422" x="313" y="200.5"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="105.0479"
+                  x="356.8472" y="217.6074">medicalCategory
+            </text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="314" x2="504.7422" y1="223.1211" y2="223.1211"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="34.6377"
+                  x="319" y="242.2285">id = 1
+            </text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="180.7422"
+                  x="319" y="260.8496">name = "Medical Assistance"
+            </text>
+        </g>
+        <g id="elem_officerP">
+            <rect fill="#F1F1F1" height="142.3477" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;"
+                  width="252.9053" x="541" y="163.5"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="47.4619"
+                  x="643.7217" y="180.6074">officerP
+            </text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="542" x2="792.9053" y1="186.1211" y2="186.1211"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="42.4238"
+                  x="547" y="205.2285">id = 11
+            </text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="124.7012"
+                  x="547" y="223.8496">firstName = "Ashok"
+            </text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="127.832"
+                  x="547" y="242.4707">lastName = "Menon"
+            </text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="149.6387"
+                  x="547" y="261.0918">passwordHash = "ph11"
+            </text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="240.9053"
+                  x="547" y="279.7129">dateRegistered = 2024-12-23 00:00:00
+            </text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="201.9951"
+                  x="547" y="298.334">lastLogin = 2024-12-23 00:00:00
+            </text>
+        </g>
+        <g id="elem_customerA">
+            <rect fill="#F1F1F1" height="160.9688" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;"
+                  width="252.9053" x="7" y="154"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="66.9102"
+                  x="99.9976" y="171.1074">customerA
+            </text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="258.9053" y1="176.6211" y2="176.6211"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="42.4238"
+                  x="13" y="195.7285">id = 35
+            </text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="174.7539"
+                  x="13" y="214.3496">phoneNumber = 976543210
+            </text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="129.3701"
+                  x="13" y="232.9707">firstName = "Rajesh"
+            </text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="138.7285"
+                  x="13" y="251.5918">lastName = "Chandra"
+            </text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="149.6387"
+                  x="13" y="270.2129">passwordHash = "ph35"
+            </text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="240.9053"
+                  x="13" y="288.834">dateRegistered = 2024-12-23 00:00:00
+            </text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="201.9951"
+                  x="13" y="307.4551">lastLogin = 2024-12-23 00:00:00
+            </text>
+        </g>
+        <g id="elem_medicalComplaint">
+            <rect fill="#F1F1F1" height="142.3477" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;"
+                  width="395.0586" x="211" y="394"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="111.2686"
+                  x="352.895" y="411.1074">medicalComplaint
+            </text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="212" x2="605.0586" y1="416.6211" y2="416.6211"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="34.6377"
+                  x="217" y="435.7285">id = 1
+            </text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="239.0938"
+                  x="217" y="454.3496">title = "Medical assistance successful."
+            </text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="383.0586"
+                  x="217" y="472.9707">summary = "Medical help was not available after I felt unwell."
+            </text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="127.0322"
+                  x="217" y="491.5918">status = "PENDING"
+            </text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="203.5469"
+                  x="217" y="510.2129">dateFiled = 2024-12-23 00:00:00
+            </text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="220.6709"
+                  x="217" y="528.834">lastUpdated = 2024-12-23 00:00:00
+            </text>
+        </g>
+        <g id="elem_media1">
+            <rect fill="#F1F1F1" height="86.4844" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;"
+                  width="152.2666" x="190.5" y="615"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="45.917"
+                  x="243.6748" y="632.1074">media1
+            </text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="191.5" x2="341.7666" y1="637.6211" y2="637.6211"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="50.21"
+                  x="196.5" y="656.7285">id = 103
+            </text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="140.2666"
+                  x="196.5" y="675.3496">mediaType = "IMAGE"
+            </text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="109.3545"
+                  x="196.5" y="693.9707">data = [21, 12, ...]
+            </text>
+        </g>
+        <g id="elem_msg1">
+            <rect fill="#F1F1F1" height="86.4844" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;"
+                  width="348.376" x="440.5" y="615"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="34.2344"
+                  x="597.5708" y="632.1074">msg1
+            </text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="441.5" x2="787.876" y1="637.6211" y2="637.6211"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="50.21"
+                  x="446.5" y="656.7285">id = 405
+            </text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="336.376"
+                  x="446.5" y="675.3496">body = "Medical assistance will be provided promptly."
+            </text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="249.457"
+                  x="446.5" y="693.9707">dateCommented = 2024-12-23 00:00:00
+            </text>
+        </g><!--reverse link medicalDept to officerP-->
+        <g id="link_medicalDept_officerP">
+            <path codeLine="53" d="M497.6941,79.3911 C524.3841,103.6011 557.01,133.23 590.11,163.26 " fill="none"
+                  id="medicalDept-backto-officerP" style="stroke:#454645;stroke-width:1.0;"/>
+            <polygon fill="#454645" points="493.25,75.36,497.2287,84.3694,496.9534,78.7193,502.6036,78.444,493.25,75.36"
+                     style="stroke:#454645;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="59.9917"
+                  x="543.5" y="120.0283">belongs to
+            </text>
+        </g><!--link medicalDept to medicalCategory-->
+        <g id="link_medicalDept_medicalCategory">
+            <path codeLine="55" d="M448.31,75.36 C439.71,110.4 427.7013,159.3632 419.1013,194.3732 " fill="none"
+                  id="medicalDept-to-medicalCategory" style="stroke:#454645;stroke-width:1.0;"/>
+            <polygon fill="#454645"
+                     points="417.67,200.2,423.7015,192.414,418.8628,195.3444,415.9325,190.5056,417.67,200.2"
+                     style="stroke:#454645;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="53.479"
+                  x="441.5" y="120.0283">manages
+            </text>
+        </g><!--link officerP to msg1-->
+        <g id="link_officerP_msg1">
+            <path codeLine="57" d="M658.69,305.58 C647.59,393.83 629.6289,536.6969 620.5289,609.0369 " fill="none"
+                  id="officerP-to-msg1" style="stroke:#454645;stroke-width:1.0;"/>
+            <polygon fill="#454645"
+                     points="619.78,614.99,624.872,606.5596,620.4041,610.0291,616.9346,605.5611,619.78,614.99"
+                     style="stroke:#454645;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="59.96"
+                  x="647.5" y="470.5283">comments
+            </text>
+        </g><!--reverse link medicalComplaint to msg1-->
+        <g id="link_medicalComplaint_msg1">
+            <path codeLine="59" d="M488.4396,540.1197 C516.9096,566.5197 544.01,591.65 568.93,614.74 " fill="none"
+                  id="medicalComplaint-backto-msg1" style="stroke:#454645;stroke-width:1.0;"/>
+            <polygon fill="#454645"
+                     points="484.04,536.04,487.9196,545.0926,487.7063,539.4397,493.3591,539.2265,484.04,536.04"
+                     style="stroke:#454645;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="64.3271"
+                  x="536.5" y="581.0283">attached to
+            </text>
+        </g><!--reverse link medicalComplaint to media1-->
+        <g id="link_medicalComplaint_media1">
+            <path codeLine="61" d="M352.8499,540.8548 C333.2199,567.2548 315.09,591.65 297.92,614.74 " fill="none"
+                  id="medicalComplaint-backto-media1" style="stroke:#454645;stroke-width:1.0;"/>
+            <polygon fill="#454645"
+                     points="356.43,536.04,347.8499,540.8755,353.4466,540.0524,354.2697,545.649,356.43,536.04"
+                     style="stroke:#454645;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="64.3271"
+                  x="334.5" y="581.0283">attached to
+            </text>
+        </g><!--link customerA to medicalComplaint-->
+        <g id="link_customerA_medicalComplaint">
+            <path codeLine="63" d="M229.3,315.1 C260.14,340.73 289.465,365.0957 319.435,389.9957 " fill="none"
+                  id="customerA-to-medicalComplaint" style="stroke:#454645;stroke-width:1.0;"/>
+            <polygon fill="#454645"
+                     points="324.05,393.83,319.6837,385.0019,320.2042,390.6348,314.5713,391.1552,324.05,393.83"
+                     style="stroke:#454645;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="23.1182"
+                  x="288.5" y="360.0283">files
+            </text>
+        </g><!--link customerA to media1-->
+        <g id="link_customerA_media1">
+            <path codeLine="65"
+                  d="M120.12,315.3 C113.25,378 111.81,466.11 142.5,536 C156.11,566.98 177.1203,590.2236 201.5403,610.8936 "
+                  fill="none" id="customerA-to-media1" style="stroke:#454645;stroke-width:1.0;"/>
+            <polygon fill="#454645"
+                     points="206.12,614.77,201.8348,605.9023,202.3036,611.5397,196.6662,612.0085,206.12,614.77"
+                     style="stroke:#454645;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="49.1436"
+                  x="143.5" y="470.5283">attaches
+            </text>
+        </g><!--link officerP to medicalComplaint-->
+        <g id="link_officerP_medicalComplaint">
+            <path codeLine="67" d="M588.03,305.61 C556.36,333.55 524.4697,361.691 492.7597,389.661 " fill="none"
+                  id="officerP-to-medicalComplaint" style="stroke:#454645;stroke-width:1.0;"/>
+            <polygon fill="#454645"
+                     points="488.26,393.63,497.6555,390.6763,492.0097,390.3225,492.3635,384.6767,488.26,393.63"
+                     style="stroke:#454645;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="46.2617"
+                  x="538.5" y="360.0283">updates
+            </text>
+        </g><!--SRC=[jLDDQzj04BthLqnzZem-x9OAKZ19cXfg4q9xAZsCf96qwMfNQ5OMflI_TzUn8zbnqbmAEYopRzwyfxVppbHK4sn4sg8odgVJ1yeCr9IB3EKrDGP-Um0YXqi8xK6XHL_2PFK8c7X_Jdkkq52fs-shVR1W5cnGPJIcq4KXCchlHhskkH0jc_MUOS6L_ZMnLOb3SKLAArTiaBdNRVu5kN8NJHM6hfvRLVTKsfdKaYEEWcZcXv4VnH04oUxRStxLfL0l80QfMST6rzGk1gtnt0cejA9rLwVKsjB73-_dipWAWrCNz_X0N9tQkAfGvIsUDnBF_ukHGsowRYGATPAt4KOU1OTFmG5tMKRCHIUdJXbtTOqszn6u8jb0ZmnA6y0D2ecffSF2YeSb52GDTAedkMSmQ3fs17Stw-lb-lPW-BEG__3wlN6u_4rkCHnv369xt5M_RPkTq-LgSNkpduosy2CABo2CBc0wdVuSKt4v8fe5BlrKvziN_bOlf8IKe6drHkHMgZtKZP7RwS6bZQ0czRgBmuBuNUD_EbhJn99BhKe6eprlVEFdkbS3-cb14wXHOKayvdKuPoo1x56ElTqLZYOEhoK1D0Qpoge-pCMtWeSTyi-Z2vixdyDXE70za_-Sfzkz3lR-0W00]-->
+    </g>
+</svg>
