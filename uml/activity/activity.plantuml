@@ -11,7 +11,7 @@ else (No)
 if (Passenger / Officer) then (Passenger)
   while (New Complaint?) is (Yes)
     :File New Complaint;
-  endwhile
+  endwhile (No)
   :Check Past Complaints;
   :Check Complaint Status;
   :Check Messages;
@@ -21,7 +21,7 @@ else (Officer)
     :Check Complaint Details;
     :Add Messages;
     :Process Complaint;
-  endwhile
+  endwhile (Yes)
   :Update Complaint Status;
   endif
 endif

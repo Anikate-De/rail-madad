@@ -2,19 +2,18 @@
 !theme vibrant
 
 start
-:Submitted;
+:Complaint Filed;
 :Keyword Analysis Complete;
-:Under Review;
-:Assign to Officer;
+:Complaint Categorized;
+:Assigned to Department;
+:Assigned to Officer;
 
-repeat
+while (Complaint Resolved?) is (No)
   :In Progress;
-  if (Issue Fixed?) then (yes)
-    :Resolved;
-    stop
-  else (no)
-    :Reassign to Officer;
-  endif
-repeat while (Reassigned?)
+  :Messages Added;
+endwhile (Yes)
+:Status set to "Resolved";
+
+stop
 
 @enduml
