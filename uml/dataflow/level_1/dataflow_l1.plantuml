@@ -2,31 +2,37 @@
 !theme vibrant
 
 actor "IRCTC Passenger"
-actor "IRCTC Complaint Officer"
+actor "IRCTC Officer"
 
 "IRCTC Passenger" --> (Web Application)
-"IRCTC Complaint Officer" --> (Web Application)
+"IRCTC Officer" --> (Web Application)
 
 (Web Application) --> (User Authentication Service)
 (Web Application) --> (Complaint Registration Service)
 
-(User Authentication Service) --> (User Repository)
+(User Authentication Service) --> (Customer Repository)
+(User Authentication Service) --> (Officer Repository)
 (Complaint Registration Service) --> (Complaint Repository)
+(Complaint Registration Service) --> (Media Repository)
 
-(User Repository) --> "User Database"
+(Customer Repository) --> "User Database"
+(Officer Repository) --> "User Database"
 
 node "User Database" {
 }
 
-(Complaint Repository) --> (Complaint Officer Interface)  // Capitalized "Interface" for consistency
+(Complaint Repository) --> (Complaint Officer Interface)
+(Media Repository) --> (Complaint Officer Interface)
 (Web Application) --> (Scheduled Categorization Service)
 
-(Complaint Officer Interface) --> (Status Update Service)
-(Scheduled Categorization Service) --> (Complaint Assignment)
+(Complaint Officer Interface) --> (Message Repository)
+(Message Repository) --> (Status Update Service)
+(Scheduled Categorization Service) --> (Category Repository)
+
+(Category Repository) --> (Department Repository)
+(Department Repository) --> "Complaint Database"
 
 (Status Update Service) --> "Complaint Database"
-(Complaint Assignment) --> (Complaint Categorization)
-(Complaint Categorization) --> "Complaint Database"
 
 node "Complaint Database" {
 }
