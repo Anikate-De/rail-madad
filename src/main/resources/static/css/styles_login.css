@@ -335,3 +335,57 @@ h1::after {
     transform: translateX(-50%);
     border-radius: 2px;
 }
+
+/* Mobile Responsive Styles */
+@media only screen and (max-width: 768px) {
+    #madadlogo {
+        width: 60px; /* Adjust logo size */
+    }
+
+    .wi {
+        width: 100%; /* Full width for buttons */
+    }
+
+    .navbar .nav-link {
+        font-size: 14px; /* Smaller font for nav links */
+    }
+
+    .container {
+        padding: 15px; /* Padding adjustments */
+    }
+
+    h3 {
+        font-size: 24px; /* Smaller heading */
+    }
+
+    .form-label {
+        font-size: 14px; /* Smaller label size */
+    }
+
+    input {
+        width: 100%; /* Full width for inputs */
+        max-width: none; /* Remove max-width */
+    }
+
+    .btn {
+        width: 100%; /* Full width for buttons */
+        margin: 5px 0; /* Margin adjustments */
+    }
+
+    .footerLinks {
+        flex-direction: column; /* Stack footer links vertically */
+        align-items: center; /* Center footer links */
+    }
+
+    .footerLinks li {
+        padding: 5px 0; /* Padding adjustments */
+    }
+
+    /* Adjust navbar toggler */
+    .navbar-toggler {
+        margin-left: auto; /* Align toggler to the right */
+    }
+
+    /* Additional adjustments can be made as needed */
+}
+
