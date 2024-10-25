@@ -155,7 +155,6 @@ function displayComplaints(complaints) {
         sendBtn.addEventListener("click", function () {
             const message = document.getElementById(`officerMessage_${complaint.id}`).value.trim();
             if (message) {
-                addMessage(message, complaint.id);
                 document.getElementById(`officerMessage_${complaint.id}`).value = "";
             }
             const status = document.getElementById(`statusDropdown_${complaint.id}`).value;
