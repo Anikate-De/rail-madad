@@ -1,0 +1,55 @@
+materialdesignicons F0004 "IRCTC Customer" as User
+participant "Complaint Portal (Rail Madad WebApp)" as Portal
+participant "Complaint Gateway" as CGateway
+participant "Authentication Gateway" as AuthGateway
+database "Complaint Database" as CDB
+database "Authentication Database" as AuthDB
+participant "Scheduled Categorization Service" as Batch
+
+autoactivation on
+activecolor #c0c0c0
+lifelinestyle #75002b
+
+# Creating a new User Account
+activate User
+User->Portal:Create a new Customer Account
+Portal->AuthGateway:Add a new Customer Entity to Authentication Records
+AuthGateway->AuthDB:INSERT Customer Details INTO Database
+AuthGateway<<--AuthDB:Customer Insertion Successful
+Portal<--AuthGateway:Customer Added to Authentication Records
+User<--Portal:Account Created
+deactivate User
+
+space 1
+
+# Registering a new Complaint
+activate User
+User->Portal:Register a new Complaint
+Portal->CGateway:Add a new Complaint Entity to the Records
+CGateway->CDB:INSERT Complaint Details INTO Database
+CGateway<<--CDB:Complaint Insertion Successful
+Portal<--CGateway:Complaint added to Records
+User<--Portal:Complaint Registered
+deactivate User
+
+# Batch Processing Unit Fetches Un-Assigned Complaints
+activate Batch
+Batch->CDB:SELECT all un-assigned Complaint Entities
+Batch<<--CDB:Optional List of un-assigned Complaint Entities
+
+# Batch Processing Unit Assigns a Department and an Officer
+note left of Batch:1. Process content within the Complaint Entity (text, media, etc.).\n2. Categorise the Complaint Entity.\n3. Assign a Department & Officer to the Complaint.\n4. Modify the Complaint List.
+
+# Batch Processing Unit Updates the Complaint Entity in the Database
+CDB<-Batch:UPDATE un-assigned Complaint Entities\nSET Departments and Officers
+CDB-->>Batch:Complaint Records Updated
+deactivate Batch
+
+# Checking the Status of a Complaint
+activate User
+User->Portal:Check the Status of the Complaint
+Portal->CGateway:Fetch the Complaint Entity created by Customer
+CGateway->CDB: SELECT the Complaint Entity
+CGateway<<--CDB:Complaint Entity returned
+Portal<--CGateway:Complaint Entity with updated fields returned
+User<<--Portal:Latest Complaint with updated\nstatus and messages returned
