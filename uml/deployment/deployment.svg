@@ -1,1 +1,144 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="528px" preserveAspectRatio="none" style="width:1149px;height:528px;background:#FFFFFF;" version="1.1" viewBox="0 0 1149 528" width="1149px" zoomAndPan="magnify"><defs/><g><!--cluster User Device--><g id="cluster_User Device"><rect fill="#FFFFFF" height="87.3" rx="3.5" ry="3.5" style="stroke:#000000;stroke-width:1.0;" width="144" x="266" y="7"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="93.8096" x="291.0952" y="21.9951">User Device</text></g><!--cluster SCRLWY Officer Device--><g id="cluster_SCRLWY Officer Device"><rect fill="#FFFFFF" height="87.3" rx="3.5" ry="3.5" style="stroke:#000000;stroke-width:1.0;" width="197" x="434" y="7"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="181.8018" x="441.5991" y="21.9951">SCRLWY Officer Device</text></g><!--cluster Application Server--><g id="cluster_Application Server"><rect fill="#FFFFFF" height="379.59" rx="3.5" ry="3.5" style="stroke:#000000;stroke-width:1.0;" width="540" x="7" y="143.3"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="146.1797" x="203.9102" y="158.2951">Application Server</text></g><!--cluster springBoot--><g id="cluster_springBoot"><rect fill="#FFFFFF" height="296.59" rx="3.5" ry="3.5" style="stroke:#000000;stroke-width:1.0;" width="476" x="39" y="194.3"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="93.2695" x="230.3652" y="209.2951">Spring Boot</text></g><!--cluster dataBase--><g id="cluster_dataBase"><rect fill="#FFFFFF" height="170.3" rx="3.5" ry="3.5" style="stroke:#000000;stroke-width:1.0;" width="495" x="579" y="344.59"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="131.3867" x="760.8066" y="359.5851">Database Server</text></g><!--cluster Supabase--><g id="cluster_Supabase"><rect fill="#FFFFFF" height="87.3" rx="3.5" ry="3.5" style="stroke:#000000;stroke-width:1.0;" width="423" x="611" y="395.59"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="76.8154" x="784.0923" y="410.5851">Supabase</text></g><!--cluster Web Services--><g id="cluster_Web Services"><rect fill="#FFFFFF" height="87.3" rx="3.5" ry="3.5" style="stroke:#000000;stroke-width:1.0;" width="429" x="655" y="7"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="106.3672" x="816.3164" y="21.9951">Web Services</text></g><!--entity userBrowser--><g id="elem_userBrowser"><rect fill="#FFFFFF" height="36.2969" rx="3.5" ry="3.5" style="stroke:#000000;stroke-width:0.5;" width="112.832" x="281.58" y="42"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="92.832" x="291.58" y="64.9951">Web Browser</text></g><!--entity officerBrowser--><g id="elem_officerBrowser"><rect fill="#FFFFFF" height="36.2969" rx="3.5" ry="3.5" style="stroke:#000000;stroke-width:0.5;" width="112.832" x="450.58" y="42"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="92.832" x="460.58" y="64.9951">Web Browser</text></g><!--entity Spring Web_Controllers--><g id="elem_Spring Web_Controllers"><rect fill="#FFFFFF" height="36.2969" rx="3.5" ry="3.5" style="stroke:#000000;stroke-width:0.5;" width="184.4385" x="62.78" y="237.3"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="164.4385" x="72.78" y="260.2951">Spring Web_Controllers</text></g><!--entity Authentication Gateway--><g id="elem_Authentication Gateway"><rect fill="#FFFFFF" height="36.2969" rx="3.5" ry="3.5" style="stroke:#000000;stroke-width:0.5;" width="189.0664" x="282.47" y="237.3"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="169.0664" x="292.47" y="260.2951">Authentication Gateway</text></g><!--entity Data JPA--><g id="elem_Data JPA"><rect fill="#FFFFFF" height="36.2969" rx="3.5" ry="3.5" style="stroke:#000000;stroke-width:0.5;" width="80.0264" x="114.99" y="430.59"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="60.0264" x="124.99" y="453.5851">Data JPA</text></g><!--entity Authentication Database--><g id="elem_Authentication Database"><rect fill="#FFFFFF" height="36.2969" rx="3.5" ry="3.5" style="stroke:#000000;stroke-width:0.5;" width="194.0225" x="626.99" y="430.59"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="174.0225" x="636.99" y="453.5851">Authentication Database</text></g><!--entity Complaint Database--><g id="elem_Complaint Database"><rect fill="#FFFFFF" height="36.2969" rx="3.5" ry="3.5" style="stroke:#000000;stroke-width:0.5;" width="162.8369" x="855.58" y="430.59"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="142.8369" x="865.58" y="453.5851">Complaint Database</text></g><!--entity complaint_Registering--><g id="elem_complaint_Registering"><rect fill="#FFFFFF" height="36.2969" rx="3.5" ry="3.5" style="stroke:#000000;stroke-width:0.5;" width="176.4268" x="670.79" y="42"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="156.4268" x="680.79" y="64.9951">complaint_Registering</text></g><!--entity Batch Processing Script--><g id="elem_Batch Processing Script"><rect fill="#FFFFFF" height="36.2969" rx="3.5" ry="3.5" style="stroke:#000000;stroke-width:0.5;" width="185.0605" x="882.47" y="42"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="165.0605" x="892.47" y="64.9951">Batch Processing Script</text></g><!--link userBrowser to springBoot--><g id="link_userBrowser_springBoot"><path d="M363.91,78.58 C386.95,93.39 422.01,114.27 455,127.3 C469.04,132.84 477.76,124.21 488,135.3 C496.9525,144.995 502.6494,157.1338 506.1508,169.9264 C507.9015,176.3227 509.1033,182.8825 509.8888,189.3821 C510.0852,191.007 509.7135,186.6526 509.8599,188.2665 " fill="none" id="userBrowser-to-springBoot" style="stroke:#454645;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#454645" points="510.4019,194.242,513.5725,184.9174,509.9502,189.2624,505.6052,185.6401,510.4019,194.242" style="stroke:#454645;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="42.5928" x="456" y="123.3669">&#171;http&#187;</text></g><!--link officerBrowser to springBoot--><g id="link_officerBrowser_springBoot"><path d="M507,78.64 C507,102.06 507,145.015 507,182.6013 C507,184.9504 507,187.2786 507,189.5797 C507,190.7302 507,191.874 507,193.0103 C507,193.2944 507,187.578 507,187.8611 " fill="none" id="officerBrowser-to-springBoot" style="stroke:#454645;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#454645" points="507,193.8611,511,184.8611,507,188.8611,503,184.8611,507,193.8611" style="stroke:#454645;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="42.5928" x="508" y="123.3669">&#171;http&#187;</text></g><!--link springBoot to dataBase--><g id="link_springBoot_dataBase"><path d="M515.2847,257.0283 C515.8221,257.0668 516.3843,257.1072 516.9707,257.1494 C518.1436,257.2339 519.4136,257.3257 520.7773,257.4249 C523.5048,257.6231 526.6069,257.8506 530.0563,258.1064 C543.8541,259.1297 563.2084,260.607 586.3625,262.4864 C632.6706,266.2453 694.1775,271.6131 756.8275,278.1763 C882.1275,291.3025 1012,309.21 1034,328.59 C1039.0625,333.05 1043.3636,338.2164 1047.014,343.8479 C1047.1281,344.0238 1044.0153,339.1415 1044.1281,339.3184 " fill="none" id="springBoot-to-dataBase" style="stroke:#454645;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#454645" points="1047.3543,344.3772,1045.8875,334.6381,1044.6658,340.1615,1039.1424,338.9398,1047.3543,344.3772" style="stroke:#454645;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="125.436" x="1016" y="316.6569">&#171;JDBC Connection&#187;</text></g><!--link complaint_Registering to springBoot--><g id="link_complaint_Registering_springBoot"><path d="M736.19,78.64 C705.66,102.06 649.6625,145.015 600.6625,182.6013 C576.1625,201.3944 553.4119,218.8453 536.4688,231.8411 C527.9972,238.339 520.9775,243.7231 515.917,247.6043 C515.7588,247.7256 520.3636,244.194 520.2093,244.3123 " fill="none" id="complaint_Registering-to-springBoot" style="stroke:#454645;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#454645" points="515.4483,247.9637,525.0241,245.6606,519.4158,244.9209,520.1555,239.3126,515.4483,247.9637" style="stroke:#454645;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="107.2881" x="692" y="123.3669">&#171;REST API&#187; calls</text></g><!--SRC=[ZPBHQi8m58RlynHdVG0VO4YXhMDC1XEx8RkI68ys69EGd2fZ-EvBwdGrkh6xdfCl__dpdzvHWrk4dLmuheanlv7QSiUtu50Grsk5yCa0IYusQsTQlQoCCWvcZIICVUEMw8wzKWM87HZxkPgzUNGmmfqKc7L2lRCPBg1qPX-G3BY7DdnyrubANKsVP-_mibe5dN_hcID-MxAmLad1IHeDDRfTl9FerTP9lGvFDDJf-QwEPKVUOeE5UMKqEQCKEf-bMD66l3MT1ZzomZt_kC96d3YC9qKyE2J6uzc2Upox3iwMeLV6Nlg2rdRirTCI7oVDx9AgpDOgBZLT0AcX67lq4hBsLuF4IM8-nRNqX36cP4p9IJGmSIO8-9XYBPoqbCKvlNy21eEyluDx60uR8fldx7BJVu2iruxKERZ8Z4Tb1M5xEbWBgKJy5_-t9amVwbSe9azv3e8hvRy0]--></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" contentStyleType="text/css"
+     height="575px" preserveAspectRatio="none" style="width:1204px;height:575px;background:#FFFFFF;" version="1.1"
+     viewBox="0 0 1204 575" width="1204px" zoomAndPan="magnify">
+    <defs/>
+    <g><!--cluster IRCTC Officer Device-->
+        <g id="cluster_IRCTC Officer Device">
+            <rect fill="none" height="92" rx="3.5" ry="3.5" style="stroke:#696969;stroke-width:1.0;" width="156" x="445"
+                  y="7"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing"
+                  textLength="140.8203" x="452.5898" y="24.1074">IRCTC Officer Device
+            </text>
+        </g><!--cluster IRCTC Customer Device-->
+        <g id="cluster_IRCTC Customer Device">
+            <rect fill="none" height="92" rx="3.5" ry="3.5" style="stroke:#696969;stroke-width:1.0;" width="177" x="644"
+                  y="7"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing"
+                  textLength="161.041" x="651.9795" y="24.1074">IRCTC Customer Device
+            </text>
+        </g><!--cluster Application Server-->
+        <g id="cluster_Application Server">
+            <rect fill="none" height="419" rx="3.5" ry="3.5" style="stroke:#696969;stroke-width:1.0;" width="679" x="7"
+                  y="150"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing"
+                  textLength="123.7031" x="284.6484" y="167.1074">Application Server
+            </text>
+        </g><!--cluster Containerized Application-->
+        <g id="cluster_Containerized Application">
+            <rect fill="none" height="350" rx="3.5" ry="3.5" style="stroke:#696969;stroke-width:1.0;" width="631" x="31"
+                  y="195"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing"
+                  textLength="172.6758" x="260.1621" y="212.1074">Containerized Application
+            </text>
+        </g><!--cluster springBoot-->
+        <g id="cluster_springBoot">
+            <rect fill="none" height="265" rx="3.5" ry="3.5" style="stroke:#696969;stroke-width:1.0;" width="567" x="63"
+                  y="248"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing"
+                  textLength="80.0967" x="306.4517" y="265.1074">Spring Boot
+            </text>
+        </g><!--cluster db-->
+        <g id="cluster_db">
+            <rect fill="none" height="108" rx="3.5" ry="3.5" style="stroke:#696969;stroke-width:1.0;" width="480"
+                  x="718" y="405"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing"
+                  textLength="109.7373" x="903.1313" y="422.1074">Database Server
+            </text>
+        </g><!--entity officer-->
+        <g id="elem_officer">
+            <rect fill="#F1F1F1" height="38.6211" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;"
+                  width="104.0205" x="471" y="44"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="84.0205"
+                  x="481" y="69.1074">Web Browser
+            </text>
+        </g><!--entity user-->
+        <g id="elem_user">
+            <rect fill="#F1F1F1" height="38.6211" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;"
+                  width="104.0205" x="668" y="44"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="84.0205"
+                  x="678" y="69.1074">Web Browser
+            </text>
+        </g><!--entity Spring Web Controllers-->
+        <g id="elem_Spring Web Controllers">
+            <rect fill="#F1F1F1" height="38.6211" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;"
+                  width="164.7236" x="87.5" y="293"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="144.7236"
+                  x="97.5" y="318.1074">Spring Web Controllers
+            </text>
+        </g><!--entity Web Portals-->
+        <g id="elem_Web Portals">
+            <rect fill="#F1F1F1" height="38.6211" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;"
+                  width="96.248" x="288" y="293"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="76.248"
+                  x="298" y="318.1074">Web Portals
+            </text>
+        </g><!--entity Authentication Gateway-->
+        <g id="elem_Authentication Gateway">
+            <rect fill="#F1F1F1" height="38.6211" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;"
+                  width="167.8682" x="419" y="293"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="147.8682"
+                  x="429" y="318.1074">Authentication Gateway
+            </text>
+        </g><!--entity Data JPA-->
+        <g id="elem_Data JPA">
+            <rect fill="#F1F1F1" height="38.6211" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;"
+                  width="79.1377" x="130.5" y="450"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="59.1377"
+                  x="140.5" y="475.1074">Data JPA
+            </text>
+        </g><!--entity Scheduled Categorization Service-->
+        <g id="elem_Scheduled Categorization Service">
+            <rect fill="#F1F1F1" height="38.6211" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;"
+                  width="230.9023" x="244.5" y="450"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="210.9023"
+                  x="254.5" y="475.1074">Scheduled Categorization Service
+            </text>
+        </g><!--entity Authentication related Tables-->
+        <g id="elem_Authentication related Tables">
+            <rect fill="#F1F1F1" height="38.6211" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;"
+                  width="201.3369" x="972.5" y="450"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="181.3369"
+                  x="982.5" y="475.1074">Authentication related Tables
+            </text>
+        </g><!--entity Complaint related Tables-->
+        <g id="elem_Complaint related Tables">
+            <rect fill="#F1F1F1" height="38.6211" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;"
+                  width="175.6338" x="761" y="450"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="155.6338"
+                  x="771" y="475.1074">Complaint related Tables
+            </text>
+        </g><!--link officer to springBoot-->
+        <g id="link_officer_springBoot">
+            <path d="M518.48,83.04 C515.86,98.75 515.22,120.78 528,134 C539.65,146.05 591.12,130.18 603,142 C629.455,168.31 634.47,209.7825 632.7412,245.1187 C632.3091,253.9528 631.4554,262.4034 630.4099,270.1376 C630.2792,271.1044 631.0028,266.1215 630.8665,267.0653 "
+                  fill="none" id="officer-to-springBoot"
+                  style="stroke:#454645;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+            <polygon fill="#454645"
+                     points="630.0092,273.0037,635.2541,264.6676,630.7236,268.055,627.3362,263.5245,630.0092,273.0037"
+                     style="stroke:#454645;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="155.3208"
+                  x="529" y="130.0283">&#171;HTTP / HTTPS requests&#187;
+            </text>
+        </g><!--link user to springBoot-->
+        <g id="link_user_springBoot">
+            <path d="M712.63,83.07 C701.415,111.34 679.285,167.1175 659.7013,216.4775 C649.9094,241.1575 640.7541,264.2331 633.918,281.4638 C633.0635,283.6176 632.2452,285.6801 631.4664,287.643 C631.0771,288.6244 630.6976,289.581 630.3284,290.5116 C630.2361,290.7442 632.357,285.3981 632.266,285.6275 "
+                  fill="none" id="user-to-springBoot"
+                  style="stroke:#454645;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+            <polygon fill="#454645"
+                     points="630.0534,291.2046,637.0904,284.314,631.8973,286.557,629.6543,281.3639,630.0534,291.2046"
+                     style="stroke:#454645;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="155.3208"
+                  x="699" y="130.0283">&#171;HTTP / HTTPS requests&#187;
+            </text>
+        </g><!--link springBoot to db-->
+        <g id="link_springBoot_db">
+            <path d="M630.0708,325.5203 C630.1823,325.6865 630.2948,325.8541 630.4083,326.0233 C630.6352,326.3615 630.866,326.7054 631.1006,327.0551 C631.5697,327.7544 632.054,328.4762 632.5527,329.2196 C634.5477,332.193 636.7735,335.5107 639.1841,339.1036 C648.8263,353.4753 661.4237,372.2519 674.02,391.0263 C686.6163,409.8006 699.2113,428.5728 708.8484,442.9358 C711.2577,446.5265 713.4822,449.8417 715.4755,452.8124 C715.9739,453.5551 716.4578,454.2763 716.9265,454.9748 C717.1609,455.3241 717.3915,455.6677 717.6182,456.0056 C717.7315,456.1745 714.5007,451.3597 714.6121,451.5257 "
+                  fill="none" id="springBoot-to-db" style="stroke:#454645;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+            <polygon fill="#454645"
+                     points="717.9553,456.508,716.262,446.8058,715.1693,452.3561,709.619,451.2634,717.9553,456.508"
+                     style="stroke:#454645;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="103.3271"
+                  x="665" y="377.0283">JDBC Connection
+            </text>
+        </g><!--SRC=[bP91JiCm44NtFiMG0vHzLLLg4WdeXeX4OkqaqzQIOmTxqWfGxyuuBP0qMS32iYo_FpF_stTqm0RXg4ed3GdXi29fzXeXUdf9YWIUTpjLeOCKZxn7y2a01j0hbX0xU_Be8f0Ux0KNvvbIIUV9Dd-lrVb9eKtRQbL9KjP0ZkuOo9igYJKabK6dFh26WU12ZjYyTShi8RQM-ew-FuVZbPsZmvYXYRDQe_FH50n4PXr9FNUxwJXpGzys7YJXIRxFWAaa2TjiCtELLmUiEyq64vRlBPlz3ILasqlE8gnnWg5eAJt-nCUsw_8sn9iP7MfkKqCXIuszfr7WJQivSPfWtFdw7s2nM0_JNS9gzLWK6Tn3s7AMldNeoQ_N8ZpxVtWnu8ACtInXcyP9U2N3Sx83yGK0]-->
+    </g>
+</svg>
