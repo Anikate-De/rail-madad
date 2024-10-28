@@ -1,0 +1,19 @@
+@startuml
+!theme vibrant
+
+start
+:Complaint Filed;
+:Keyword Analysis Complete;
+:Complaint Categorized;
+:Assigned to Department;
+:Assigned to Officer;
+
+while (Complaint Resolved?) is (No)
+  :In Progress;
+  :Messages Added;
+endwhile (Yes)
+:Status set to "Resolved";
+
+stop
+
+@enduml

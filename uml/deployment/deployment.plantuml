@@ -1,0 +1,34 @@
+@startuml
+!theme vibrant
+
+rectangle "IRCTC Officer Device" {
+  rectangle "Web Browser" as officer
+}
+
+rectangle "IRCTC Customer Device" {
+  rectangle "Web Browser" as user
+}
+
+rectangle "Application Server" {
+  rectangle "Containerized Application" {
+    rectangle "Spring Boot" as springBoot {
+      rectangle "Spring Web Controllers"
+      rectangle "Web Portals"
+      rectangle "Authentication Gateway"
+      rectangle "Data JPA"
+      rectangle "Scheduled Categorization Service"
+    }
+  }
+}
+
+rectangle "Database Server" as db {
+  rectangle "Authentication related Tables"
+  rectangle "Complaint related Tables"
+}
+
+officer ..> springBoot : <<HTTP / HTTPS requests>>
+user ..> springBoot : <<HTTP / HTTPS requests>>
+
+springBoot ..> db : JDBC Connection
+
+@enduml

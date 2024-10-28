@@ -1,0 +1,44 @@
+materialdesignicons F0CE3 "IRCTC Officer" as User
+participant "Complaint Portal (Rail Madad WebApp)" as Portal
+participant "Complaint Gateway" as CGateway
+participant "Authentication Gateway" as AuthGateway
+database "Complaint Database" as CDB
+database "Authentication Database" as AuthDB
+
+autoactivation on
+activecolor #c0c0c0
+lifelinestyle #75002b
+
+# Creating a new User Account
+activate User
+User->Portal:Create a new Officer Account
+Portal->AuthGateway:Add a new Officer Entity to Authentication Records
+AuthGateway->AuthDB:INSERT Officer & Department\nDetails INTO Database
+AuthGateway<<--AuthDB:Officer Insertion Successful
+Portal<--AuthGateway:Officer Added to Authentication Records
+User<--Portal:Account Created
+deactivate User
+
+space 1
+
+# Checking assigned Complaints
+activate User
+User->Portal:Check the assigned Complaints
+Portal->CGateway:Fetch the Collection of Complaints\nassigned to the Officer
+CGateway->CDB: SELECT the Complaint Entities
+CGateway<<--CDB:Complaint Entity returned
+Portal<--CGateway:Optional List of Complaint\nEntities returned
+User<<--Portal:List of Assigned Complaints
+deactivate User
+
+space 1
+
+# Updating the status and adding messages to the Complaints
+activate User
+User->Portal:Update Complaint Status and\nmessages.
+Portal->CGateway:Update the Complaint and add\nnew status and messages
+CGateway->CDB: UPDATE the Complaint Entity\nSET new status and list of messages
+CGateway<<--CDB:Update Successful
+Portal<--CGateway:Status and Messages added to Complaint
+User<<--Portal:Complaint Updated Succesfully
+deactivate User

@@ -1,0 +1,70 @@
+@startuml
+!theme vibrant
+
+object medicalDept {
+  id = 1
+  name = "Medical"
+}
+
+object medicalCategory {
+  id = 1
+  name = "Medical Assistance"
+}
+
+object officerP {
+  id = 11
+  firstName = "Ashok"
+  lastName = "Menon"
+  passwordHash = "ph11"
+  dateRegistered = 2024-12-23 00:00:00
+  lastLogin = 2024-12-23 00:00:00
+}
+
+object customerA {
+  id = 35
+  phoneNumber = 976543210
+  firstName = "Rajesh"
+  lastName = "Chandra"
+  passwordHash = "ph35"
+  dateRegistered = 2024-12-23 00:00:00
+  lastLogin = 2024-12-23 00:00:00
+}
+
+object medicalComplaint {
+  id = 1
+  title = "Medical assistance successful."
+  summary = "Medical help was not available after I felt unwell."
+  status = "PENDING"
+  dateFiled = 2024-12-23 00:00:00
+  lastUpdated = 2024-12-23 00:00:00
+}
+
+object media1 {
+  id = 103
+  mediaType = "IMAGE"
+  data = [21, 12, ...]
+}
+
+object msg1 {
+  id = 405
+  body = "Medical assistance will be provided promptly."
+  dateCommented = 2024-12-23 00:00:00
+}
+
+officerP -up-> medicalDept : belongs to
+
+medicalDept -down-> medicalCategory : manages
+
+officerP --> msg1 : comments
+
+msg1 -up-> medicalComplaint : attached to
+
+media1 -up-> medicalComplaint : attached to
+
+customerA --> medicalComplaint : files
+
+customerA --> media1 : attaches
+
+officerP --> medicalComplaint : updates
+
+@enduml

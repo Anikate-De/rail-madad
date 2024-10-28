@@ -1,0 +1,25 @@
+@startuml
+!theme vibrant
+skinparam componentstyle rectangle
+
+[IRCTC Officer] --> [Complaint Portal] : Create new Account
+[Complaint Portal] --> [Authentication Gateway] : Add new Entity to Auth Records
+[Authentication Gateway] --> [Authentication Database] : Insertion SQL
+[Authentication Database] --> [Authentication Gateway] : Insertion Successful
+[Authentication Gateway] --> [Complaint Portal] : Insertion Successful
+[Complaint Portal] --> [IRCTC Officer] : Account Created
+
+[IRCTC Officer] --> [Complaint Portal] : Check assigned Complaints
+[Complaint Portal] --> [Complaint Gateway] : Fetch Complaints assigned to Officer
+[Complaint Gateway] --> [Complaint Database] : Selection SQL
+[Complaint Database] --> [Complaint Gateway] : Complaints returned
+[Complaint Gateway] --> [Complaint Portal] : Complaint returned
+[Complaint Portal] --> [IRCTC Officer] : List of Assigned Complaints
+
+[IRCTC Officer] --> [Complaint Portal] : Update Complaint Status and messages
+[Complaint Portal] --> [Complaint Gateway] : Update the Complaint
+[Complaint Gateway] --> [Complaint Database] : Update SQL
+[Complaint Database] --> [Complaint Gateway] : Update Successful
+[Complaint Gateway] --> [Complaint Portal] : Status and Messages added
+[Complaint Portal] --> [IRCTC Officer] : Complaint Updated
+@enduml

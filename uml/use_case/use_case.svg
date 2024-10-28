@@ -1,0 +1,194 @@
+<svg xmlns="http://www.w3.org/2000/svg" contentStyleType="text/css"
+     height="409px" preserveAspectRatio="none" style="width:1228px;height:409px;background:#FFFFFF;" version="1.1"
+     viewBox="0 0 1228 409" width="1228px" zoomAndPan="magnify">
+    <defs/>
+    <g><!--entity IRCTC Passenger-->
+        <g id="elem_IRCTC Passenger">
+            <ellipse cx="226.7964" cy="14" fill="#454645" rx="8" ry="8" style="stroke:#454645;stroke-width:0.5;"/>
+            <path d="M226.7964,22 L226.7964,49 M213.7964,30 L239.7964,30 M226.7964,49 L213.7964,64 M226.7964,49 L239.7964,64 "
+                  fill="none" style="stroke:#454645;stroke-width:0.5;"/>
+            <text fill="#454645" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="113.5928"
+                  x="170" y="80.6074">IRCTC Passenger
+            </text>
+        </g><!--entity IRCTC Complaint Officer-->
+        <g id="elem_IRCTC Complaint Officer">
+            <ellipse cx="678.9033" cy="14" fill="#454645" rx="8" ry="8" style="stroke:#454645;stroke-width:0.5;"/>
+            <path d="M678.9033,22 L678.9033,49 M665.9033,30 L691.9033,30 M678.9033,49 L665.9033,64 M678.9033,49 L691.9033,64 "
+                  fill="none" style="stroke:#454645;stroke-width:0.5;"/>
+            <text fill="#454645" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="154.8066"
+                  x="601.5" y="80.6074">IRCTC Complaint Officer
+            </text>
+        </g>
+        <g id="elem_Create Account">
+            <ellipse cx="227.2157" cy="167.5431" fill="#F1F1F1" rx="75.7157" ry="17.5431"
+                     style="stroke:#181818;stroke-width:0.5;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="96.4961"
+                  x="175.9676" y="172.3468">Create Account
+            </text>
+        </g>
+        <g id="elem_File Complaint">
+            <ellipse cx="226.7859" cy="273.5572" fill="#F1F1F1" rx="73.2859" ry="17.0572"
+                     style="stroke:#181818;stroke-width:0.5;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="89.4756"
+                  x="179.0481" y="278.3609">File Complaint
+            </text>
+        </g>
+        <g id="elem_See messages from Officer">
+            <ellipse cx="111.0441" cy="379.9088" fill="#F1F1F1" rx="105.0441" ry="23.4088"
+                     style="stroke:#181818;stroke-width:0.5;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="169.6133"
+                  x="26.2375" y="383.7057">See messages from Officer
+            </text>
+        </g>
+        <g id="elem_View Filed Complaints">
+            <ellipse cx="342.7749" cy="379.755" fill="#F1F1F1" rx="91.7749" ry="20.755"
+                     style="stroke:#181818;stroke-width:0.5;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="138.4961"
+                  x="270.5269" y="384.5587">View Filed Complaints
+            </text>
+        </g>
+        <g id="elem_Access Account">
+            <ellipse cx="678.8175" cy="167.2635" fill="#F1F1F1" rx="76.8175" ry="17.7635"
+                     style="stroke:#181818;stroke-width:0.5;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="99.5996"
+                  x="626.0177" y="172.0672">Access Account
+            </text>
+        </g>
+        <g id="elem_View Assigned Complaints">
+            <ellipse cx="678.8271" cy="273.5654" fill="#F1F1F1" rx="103.3271" ry="23.0654"
+                     style="stroke:#181818;stroke-width:0.5;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="165.7441"
+                  x="595.79" y="277.4253">View Assigned Complaints
+            </text>
+        </g>
+        <g id="elem_Update Status">
+            <ellipse cx="543.0311" cy="380.0062" fill="#F1F1F1" rx="73.0311" ry="17.0062"
+                     style="stroke:#181818;stroke-width:0.5;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="88.7236"
+                  x="495.6693" y="384.8099">Update Status
+            </text>
+        </g>
+        <g id="elem_Add messages">
+            <ellipse cx="725.8584" cy="379.7717" fill="#F1F1F1" rx="74.3584" ry="17.2717"
+                     style="stroke:#181818;stroke-width:0.5;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="92.6064"
+                  x="676.5552" y="384.5754">Add messages
+            </text>
+        </g><!--entity Schedule Categorization Service-->
+        <g id="elem_Schedule Categorization Service">
+            <ellipse cx="988.0581" cy="14" fill="#454645" rx="8" ry="8" style="stroke:#454645;stroke-width:0.5;"/>
+            <path d="M988.0581,22 L988.0581,49 M975.0581,30 L1001.0581,30 M988.0581,49 L975.0581,64 M988.0581,49 L1001.0581,64 "
+                  fill="none" style="stroke:#454645;stroke-width:0.5;"/>
+            <text fill="#454645" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="203.1162"
+                  x="886.5" y="80.6074">Schedule Categorization Service
+            </text>
+        </g>
+        <g id="elem_Perform Keyword Analysis">
+            <ellipse cx="988.1306" cy="167.4261" fill="#F1F1F1" rx="102.6306" ry="22.9261"
+                     style="stroke:#181818;stroke-width:0.5;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="164.165"
+                  x="905.6928" y="171.3575">Perform Keyword Analysis
+            </text>
+        </g>
+        <g id="elem_Categorize Complaints">
+            <ellipse cx="988.0507" cy="273.5101" fill="#F1F1F1" rx="93.0507" ry="21.0101"
+                     style="stroke:#181818;stroke-width:0.5;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="141.6201"
+                  x="914.2407" y="278.3139">Categorize Complaints
+            </text>
+        </g>
+        <g id="elem_Assign to Department">
+            <ellipse cx="942.205" cy="379.941" fill="#F1F1F1" rx="90.205" ry="20.441"
+                     style="stroke:#181818;stroke-width:0.5;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="134.6201"
+                  x="871.895" y="384.7447">Assign to Department
+            </text>
+        </g>
+        <g id="elem_Assign to Officer">
+            <ellipse cx="1144.9353" cy="379.9871" fill="#F1F1F1" rx="77.9353" ry="17.9871"
+                     style="stroke:#181818;stroke-width:0.5;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="102.7031"
+                  x="1090.5838" y="384.7908">Assign to Officer
+            </text>
+        </g><!--link IRCTC Passenger to Create Account-->
+        <g id="link_IRCTC Passenger_Create Account">
+            <path d="M227,84.79 C227,106.81 227,127.22 227,143.93 " fill="none" id="IRCTC Passenger-to-Create Account"
+                  style="stroke:#454645;stroke-width:1.0;"/>
+            <polygon fill="#454645" points="227,149.93,231,140.93,227,144.93,223,140.93,227,149.93"
+                     style="stroke:#454645;stroke-width:1.0;"/>
+        </g><!--link Create Account to File Complaint-->
+        <g id="link_Create Account_File Complaint">
+            <path d="M227,185.21 C227,204.73 227,230.82 227,250.17 " fill="none" id="Create Account-to-File Complaint"
+                  style="stroke:#454645;stroke-width:1.0;"/>
+            <polygon fill="#454645" points="227,256.17,231,247.17,227,251.17,223,247.17,227,256.17"
+                     style="stroke:#454645;stroke-width:1.0;"/>
+        </g><!--link File Complaint to See messages from Officer-->
+        <g id="link_File Complaint_See messages from Officer">
+            <path d="M209.63,290.14 C189.91,307.91 162.0575,333.0037 139.8275,353.0337 " fill="none"
+                  id="File Complaint-to-See messages from Officer" style="stroke:#454645;stroke-width:1.0;"/>
+            <polygon fill="#454645"
+                     points="135.37,357.05,144.7338,353.9971,139.0846,353.7031,139.3786,348.0538,135.37,357.05"
+                     style="stroke:#454645;stroke-width:1.0;"/>
+        </g><!--link File Complaint to View Filed Complaints-->
+        <g id="link_File Complaint_View Filed Complaints">
+            <path d="M244.37,290.14 C264.84,308.59 294.4427,335.2534 316.6927,355.3034 " fill="none"
+                  id="File Complaint-to-View Filed Complaints" style="stroke:#454645;stroke-width:1.0;"/>
+            <polygon fill="#454645"
+                     points="321.15,359.32,317.1418,350.3237,317.4356,355.9729,311.7864,356.2667,321.15,359.32"
+                     style="stroke:#454645;stroke-width:1.0;"/>
+        </g><!--link IRCTC Complaint Officer to Access Account-->
+        <g id="link_IRCTC Complaint Officer_Access Account">
+            <path d="M679,84.79 C679,106.53 679,126.56 679,143.3 " fill="none"
+                  id="IRCTC Complaint Officer-to-Access Account" style="stroke:#454645;stroke-width:1.0;"/>
+            <polygon fill="#454645" points="679,149.3,683,140.3,679,144.3,675,140.3,679,149.3"
+                     style="stroke:#454645;stroke-width:1.0;"/>
+        </g><!--link Access Account to View Assigned Complaints-->
+        <g id="link_Access Account_View Assigned Complaints">
+            <path d="M679,185.67 C679,203.33 679,224.89 679,244.22 " fill="none"
+                  id="Access Account-to-View Assigned Complaints" style="stroke:#454645;stroke-width:1.0;"/>
+            <polygon fill="#454645" points="679,250.22,683,241.22,679,245.22,675,241.22,679,250.22"
+                     style="stroke:#454645;stroke-width:1.0;"/>
+        </g><!--link View Assigned Complaints to Update Status-->
+        <g id="link_View Assigned Complaints_Update Status">
+            <path d="M651.15,295.9 C625.04,315.96 591.3776,341.8241 568.0576,359.7441 " fill="none"
+                  id="View Assigned Complaints-to-Update Status" style="stroke:#454645;stroke-width:1.0;"/>
+            <polygon fill="#454645"
+                     points="563.3,363.4,572.8736,361.0879,567.2646,360.3534,567.9991,354.7444,563.3,363.4"
+                     style="stroke:#454645;stroke-width:1.0;"/>
+        </g><!--link View Assigned Complaints to Add messages-->
+        <g id="link_View Assigned Complaints_Add messages">
+            <path d="M688.85,296.41 C697.68,316.04 707.977,338.9388 716.017,356.7988 " fill="none"
+                  id="View Assigned Complaints-to-Add messages" style="stroke:#454645;stroke-width:1.0;"/>
+            <polygon fill="#454645"
+                     points="718.48,362.27,718.433,352.4213,716.4275,357.7107,711.1381,355.7052,718.48,362.27"
+                     style="stroke:#454645;stroke-width:1.0;"/>
+        </g><!--link Schedule Categorization Service to Perform Keyword Analysis-->
+        <g id="link_Schedule Categorization Service_Perform Keyword Analysis">
+            <path d="M988,84.79 C988,104.47 988,121.66 988,138.3 " fill="none"
+                  id="Schedule Categorization Service-to-Perform Keyword Analysis"
+                  style="stroke:#454645;stroke-width:1.0;"/>
+            <polygon fill="#454645" points="988,144.3,992,135.3,988,139.3,984,135.3,988,144.3"
+                     style="stroke:#454645;stroke-width:1.0;"/>
+        </g><!--link Perform Keyword Analysis to Categorize Complaints-->
+        <g id="link_Perform Keyword Analysis_Categorize Complaints">
+            <path d="M988,190.56 C988,208.8 988,228.51 988,246.24 " fill="none"
+                  id="Perform Keyword Analysis-to-Categorize Complaints" style="stroke:#454645;stroke-width:1.0;"/>
+            <polygon fill="#454645" points="988,252.24,992,243.24,988,247.24,984,243.24,988,252.24"
+                     style="stroke:#454645;stroke-width:1.0;"/>
+        </g><!--link Categorize Complaints to Assign to Department-->
+        <g id="link_Categorize Complaints_Assign to Department">
+            <path d="M979.13,294.65 C970.93,313.27 961.235,335.2875 953.105,353.7775 " fill="none"
+                  id="Categorize Complaints-to-Assign to Department" style="stroke:#454645;stroke-width:1.0;"/>
+            <polygon fill="#454645"
+                     points="950.69,359.27,957.9742,352.6413,952.7025,354.6929,950.6509,349.4212,950.69,359.27"
+                     style="stroke:#454645;stroke-width:1.0;"/>
+        </g><!--link Categorize Complaints to Assign to Officer-->
+        <g id="link_Categorize Complaints_Assign to Officer">
+            <path d="M1016.8,293.67 C1046.54,313.46 1087.4652,340.7055 1115.5152,359.3755 " fill="none"
+                  id="Categorize Complaints-to-Assign to Officer" style="stroke:#454645;stroke-width:1.0;"/>
+            <polygon fill="#454645"
+                     points="1120.51,362.7,1115.2342,354.3834,1116.3477,359.9296,1110.8015,361.0431,1120.51,362.7"
+                     style="stroke:#454645;stroke-width:1.0;"/>
+        </g><!--SRC=[ZL51Ri8m4Bpd5LjEvS0NAaMfAbKz597I-pRU14kn7Qqt87XzxJe428t4TMPdTcRtINPa2FRwXz5Abc4bZc7nlYc-2bYZzsGRuiKjNZZJjQYjm6TTwohosPq4LgiNU2wOK0ZogdAzbMKs1TBKcsxfuXgc9a2QAed0aFVOa8UQdJcldnDyQpf0PDI5yiinwtsD90lPmfQhp1FWoZptNZTsuZzF9UMsK_44fQ3q3updIesrO_Yosf7gOztWqZZM9nJjB9J4-z1YAB4chXqR-A3ZmR62t69xz3hkcwM6bvrjwRRL__YGyIyzY8DNwf35K7hsGvBnYxy0]-->
+    </g>
+</svg>

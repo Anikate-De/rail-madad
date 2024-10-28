@@ -1,0 +1,188 @@
+@startuml
+!theme vibrant
+
+skinparam Linetype polyline
+skinparam Linetype ortho
+
+skinparam shadowing false
+skinparam classMessageAlign left
+skinparam roundcorner 18
+skinparam classAttributeIconSize 0
+skinparam ArrowThickness 1.2
+
+skinparam ArrowFontSize 16
+skinparam ArrowFontName Roboto
+skinparam ClassBorderThickness 1
+skinparam classAttributeFontSize 18
+
+left to right direction
+
+
+class AuthService {
+  + AuthService(CustomerRepository, OfficerRepository):
+  + authenticate(String): UserClaims
+}
+class CategorizationService {
+  + CategorizationService(ComplaintRepository, CategoryRepository, OfficerRepository):
+  + initSearchIndex(): void
+  + categorizePendingComplaints(): void
+}
+class Category {
+  - name: String
+  - id: long
+  - complaints: List<Complaint>
+  - department: Department
+}
+interface CategoryRepository << interface >> {
+  + findByNameIgnoreCase(String): Optional<Category>
+}
+class Complaint {
+  - customer: Customer
+  - category: Category
+  - id: long
+  - title: String
+  - messages: List<Message>
+  - lastUpdated: Instant
+  - status: ComplaintStatus
+  - mediaList: List<Media>
+  - summary: String
+  - officer: Officer
+  - dateFiled: Instant
+}
+enum ComplaintCategory << enumeration >> {
+  - categoryName: String
+  + fromCategoryName(String): ComplaintCategory
+  + valueOf(String): ComplaintCategory
+  + values(): ComplaintCategory[]
+}
+interface ComplaintRepository << interface >> {
+  + findByCustomer_Id(String): List<Complaint>
+  + findByStatus(ComplaintStatus): List<Complaint>
+  + findByOfficer_Id(long): List<Complaint>
+}
+class ComplaintService {
+  + ComplaintService(ComplaintRepository, CustomerRepository, OfficerRepository, MediaRepository, MessageRepository):
+  + updateComplaintStatus(Long, ComplaintStatus, Long): Complaint
+  + getFiledComplaints(String): List<Complaint>
+  + getAssignedComplaints(Long): List<Complaint>
+  + addMessage(Long, Message, Long): Message
+  + postComplaint(String, Complaint): Complaint
+}
+enum ComplaintStatus << enumeration >> {
+  + ComplaintStatus():
+  + values(): ComplaintStatus[]
+  + valueOf(String): ComplaintStatus
+}
+class Customer {
+  - lastName: String
+  - dateRegistered: Instant
+  - firstName: String
+  - phoneNumber: long
+  - lastLogin: Instant
+  - passwordHash: String
+  - complaints: List<Complaint>
+  - id: String
+}
+interface CustomerRepository << interface >> {
+  + updateLastLoginById(Instant, String): int
+  + findByPhoneNumber(long): Optional<Customer>
+}
+class CustomerService {
+  + CustomerService(CustomerRepository):
+  + signup(Customer, String): void
+  + login(long, String): String
+}
+class Department {
+  ~ managedCategories: List<Category>
+  ~ officers: List<Officer>
+  - id: long
+  - name: String
+}
+class Media {
+  - complaint: Complaint
+  - mediaType: MediaType
+  - id: long
+  - data: byte[]
+}
+interface MediaRepository << interface >>
+enum MediaType << enumeration >> {
+  + MediaType():
+  + values(): MediaType[]
+  + valueOf(String): MediaType
+}
+class Message {
+  - id: long
+  - dateCommented: Instant
+  - officer: Officer
+  - body: String
+  - complaint: Complaint
+}
+interface MessageRepository << interface >>
+class Officer {
+  - messages: List<Message>
+  - complaints: List<Complaint>
+  - id: long
+  - firstName: String
+  - passwordHash: String
+  - lastName: String
+  - dateRegistered: Instant
+  - department: Department
+  - lastLogin: Instant
+}
+interface OfficerRepository << interface >> {
+  + findByDepartment_Id(long): List<Officer>
+  + updateLastLoginById(Instant, long): int
+}
+class OfficerService {
+  + OfficerService(OfficerRepository):
+  + signup(Officer, String): Officer
+  + login(long, String): String
+}
+interface User << interface >>
+class UserClaims {
+  - role: UserRole
+  - id: String
+  - user: User
+}
+enum UserRole << enumeration >> {
+  + UserRole():
+  + valueOf(String): UserRole
+  + values(): UserRole[]
+}
+
+AuthService                "1" *--> "1" CustomerRepository
+AuthService                "1" *--> "1" OfficerRepository
+CategorizationService      "1" *-> "1" CategoryRepository
+CategorizationService      "1" *--> "1" ComplaintRepository
+CategorizationService      "1" *--> "1" OfficerRepository
+Category                   "1" *-> "*" Complaint
+Category                   "1" *-> "1" Department
+Complaint                  "1" *-> "1" Category
+Complaint                  "1" *-> "1" ComplaintStatus
+Complaint                  "1" *--> "1" Customer
+Complaint                  "1" *--> "*" Media
+Complaint                  "1" *--> "*" Message
+Complaint                  "1" *--> "1" Officer
+ComplaintCategory          "1" *-> "*" ComplaintCategory
+ComplaintService           "1" *-> "1" ComplaintRepository
+ComplaintService           "1" *--> "1" CustomerRepository
+ComplaintService           "1" *-[norank]-> "1" MediaRepository
+ComplaintService           "1" *-> "1" MessageRepository
+ComplaintService           "1" *--> "1" OfficerRepository
+Customer                   "1" *--> "*" Complaint
+Customer                    -[#008200,dashed]-^  User
+CustomerService            "1" *-> "1" CustomerRepository
+Department                 "1" *-> "*" Category
+Department                 "1" *--> "*" Officer
+Media                      "1" *--> "1" Complaint
+Media                      "1" *--> "1" MediaType
+Message                    "1" *--> "1" Complaint
+Message                    "1" *-> "1" Officer
+Officer                    "1" *--> "*" Complaint
+Officer                    "1" *--> "1" Department
+Officer                    "1" *-> "*" Message
+Officer                     -[#008200,dashed]-^  User
+OfficerService             "1" *-> "1" OfficerRepository
+UserClaims                 "1" *-> "1" User
+UserClaims                 "1" *-> "1" UserRole
+@enduml

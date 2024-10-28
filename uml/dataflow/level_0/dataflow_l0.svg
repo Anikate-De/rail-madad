@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" contentStyleType="text/css"
+     height="531px" preserveAspectRatio="none" style="width:538px;height:531px;background:#FFFFFF;" version="1.1"
+     viewBox="0 0 538 531" width="538px" zoomAndPan="magnify">
+    <defs/>
+    <g><!--entity Database-->
+        <g id="elem_Database">
+            <polygon fill="#F1F1F1"
+                     points="109.92,475.5,119.92,465.5,209.8507,465.5,209.8507,504.1211,199.8507,514.1211,109.92,514.1211,109.92,475.5"
+                     style="stroke:#181818;stroke-width:0.5;"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="199.8507" x2="209.8507" y1="475.5" y2="465.5"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="109.92" x2="199.8507" y1="475.5" y2="475.5"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="199.8507" x2="199.8507" y1="475.5" y2="514.1211"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="59.9307"
+                  x="124.92" y="500.6074">Database
+            </text>
+        </g><!--entity IRCTC Passenger-->
+        <g id="elem_IRCTC Passenger">
+            <ellipse cx="175.7164" cy="14" fill="#454645" rx="8" ry="8" style="stroke:#454645;stroke-width:0.5;"/>
+            <path d="M175.7164,22 L175.7164,49 M162.7164,30 L188.7164,30 M175.7164,49 L162.7164,64 M175.7164,49 L188.7164,64 "
+                  fill="none" style="stroke:#454645;stroke-width:0.5;"/>
+            <text fill="#454645" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="113.5928"
+                  x="118.92" y="80.6074">IRCTC Passenger
+            </text>
+        </g><!--entity IRCTC Officer-->
+        <g id="elem_IRCTC Officer">
+            <ellipse cx="311.8648" cy="14" fill="#454645" rx="8" ry="8" style="stroke:#454645;stroke-width:0.5;"/>
+            <path d="M311.8648,22 L311.8648,49 M298.8648,30 L324.8648,30 M311.8648,49 L298.8648,64 M311.8648,49 L324.8648,64 "
+                  fill="none" style="stroke:#454645;stroke-width:0.5;"/>
+            <text fill="#454645" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="87.8896"
+                  x="267.92" y="80.6074">IRCTC Officer
+            </text>
+        </g>
+        <g id="elem_Web Application">
+            <ellipse cx="243.7994" cy="162.3759" fill="#F1F1F1" rx="77.3794" ry="17.8759"
+                     style="stroke:#181818;stroke-width:0.5;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="101.165"
+                  x="190.2169" y="167.1796">Web Application
+            </text>
+        </g>
+        <g id="elem_Complaint Registration Service">
+            <ellipse cx="160.1287" cy="265.9417" fill="#F1F1F1" rx="115.2087" ry="25.4417"
+                     style="stroke:#181818;stroke-width:0.5;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="192.1924"
+                  x="64.0325" y="269.7386">Complaint Registration Service
+            </text>
+        </g>
+        <g id="elem_User Authentication Service">
+            <ellipse cx="425.8627" cy="378.6885" fill="#F1F1F1" rx="106.4427" ry="23.6885"
+                     style="stroke:#181818;stroke-width:0.5;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="172.751"
+                  x="339.4872" y="382.4854">User Authentication Service
+            </text>
+        </g>
+        <g id="elem_Scheduled Categorization Service">
+            <ellipse cx="159.7029" cy="378.6566" fill="#F1F1F1" rx="123.7829" ry="27.1566"
+                     style="stroke:#181818;stroke-width:0.5;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="210.9023"
+                  x="54.2518" y="382.4535">Scheduled Categorization Service
+            </text>
+        </g><!--link IRCTC Passenger to Web Application-->
+        <g id="link_IRCTC Passenger_Web Application">
+            <path d="M198.75,84.78 C210.71,105.1 221.7054,123.7698 230.9154,139.4098 " fill="none"
+                  id="IRCTC Passenger-to-Web Application" style="stroke:#454645;stroke-width:1.0;"/>
+            <polygon fill="#454645"
+                     points="233.96,144.58,232.8399,134.795,231.4229,140.2715,225.9464,138.8545,233.96,144.58"
+                     style="stroke:#454645;stroke-width:1.0;"/>
+        </g><!--link IRCTC Officer to Web Application-->
+        <g id="link_IRCTC Officer_Web Application">
+            <path d="M289.09,84.78 C277.13,105.1 266.1346,123.7698 256.9246,139.4098 " fill="none"
+                  id="IRCTC Officer-to-Web Application" style="stroke:#454645;stroke-width:1.0;"/>
+            <polygon fill="#454645"
+                     points="253.88,144.58,261.8936,138.8545,256.4171,140.2715,255.0001,134.795,253.88,144.58"
+                     style="stroke:#454645;stroke-width:1.0;"/>
+        </g><!--link Web Application to Complaint Registration Service-->
+        <g id="link_Web Application_Complaint Registration Service">
+            <path d="M230.05,180.26 C216.44,196.7 199.3753,217.3275 183.9253,235.9975 " fill="none"
+                  id="Web Application-to-Complaint Registration Service" style="stroke:#454645;stroke-width:1.0;"/>
+            <polygon fill="#454645"
+                     points="180.1,240.62,188.9195,236.2364,183.2877,236.7679,182.7562,231.1361,180.1,240.62"
+                     style="stroke:#454645;stroke-width:1.0;"/>
+        </g><!--link Web Application to User Authentication Service-->
+        <g id="link_Web Application_User Authentication Service">
+            <path d="M258.2,180.29 C290.72,218.52 366.3835,307.4889 403.0035,350.5589 " fill="none"
+                  id="Web Application-to-User Authentication Service" style="stroke:#454645;stroke-width:1.0;"/>
+            <polygon fill="#454645"
+                     points="406.89,355.13,404.1076,345.6823,403.6512,351.3208,398.0128,350.8644,406.89,355.13"
+                     style="stroke:#454645;stroke-width:1.0;"/>
+        </g><!--link Complaint Registration Service to Scheduled Categorization Service-->
+        <g id="link_Complaint Registration Service_Scheduled Categorization Service">
+            <path d="M159.92,291.52 C159.92,309.2 159.92,327.03 159.92,345.12 " fill="none"
+                  id="Complaint Registration Service-to-Scheduled Categorization Service"
+                  style="stroke:#454645;stroke-width:1.0;"/>
+            <polygon fill="#454645" points="159.92,351.12,163.92,342.12,159.92,346.12,155.92,342.12,159.92,351.12"
+                     style="stroke:#454645;stroke-width:1.0;"/>
+        </g><!--link User Authentication Service to Database-->
+        <g id="link_User Authentication Service_Database">
+            <path d="M377.44,399.46 C330.09,418.95 263.8783,446.206 215.8783,465.966 " fill="none"
+                  id="User Authentication Service-to-Database" style="stroke:#454645;stroke-width:1.0;"/>
+            <polygon fill="#454645"
+                     points="210.33,468.25,220.1751,468.5228,214.9536,466.3466,217.1297,461.1251,210.33,468.25"
+                     style="stroke:#454645;stroke-width:1.0;"/>
+        </g><!--link Scheduled Categorization Service to Database-->
+        <g id="link_Scheduled Categorization Service_Database">
+            <path d="M159.92,405.73 C159.92,423.82 159.92,441.69 159.92,459.23 " fill="none"
+                  id="Scheduled Categorization Service-to-Database" style="stroke:#454645;stroke-width:1.0;"/>
+            <polygon fill="#454645" points="159.92,465.23,163.92,456.23,159.92,460.23,155.92,456.23,159.92,465.23"
+                     style="stroke:#454645;stroke-width:1.0;"/>
+        </g><!--link Complaint Registration Service to Database-->
+        <g id="link_Complaint Registration Service_Database">
+            <path d="M97.42,287.54 C67.74,300.8 35.08,321.32 17.92,351.5 C6.06,372.36 6,384.67 17.92,405.5 C37.52,439.76 71.6576,459.1764 104.1276,471.7964 "
+                  fill="none" id="Complaint Registration Service-to-Database" style="stroke:#454645;stroke-width:1.0;"/>
+            <polygon fill="#454645"
+                     points="109.72,473.97,102.7804,466.9813,105.0596,472.1587,99.8823,474.4379,109.72,473.97"
+                     style="stroke:#454645;stroke-width:1.0;"/>
+        </g><!--SRC=[ZP6n3e8m48RtFiN990ElO49mSTA0nlc00vf0Izg3GUEx2w89GX3N__xlkrwwuO8gWbR61XKBJ5WRS0vXS0xWXDQIoiaut_anosJIfs9M1C_RmVPACVXrNSe4MMhbYWcuq1ApQ2W6kgfBb8eXf5nQDgyXH6JQJkSkOHTB1locEr3nUp9YLgI38aeAIfkIKWYGATT6tYOUyNFDODaZOuostxegd1B_FTJv0DsVA9tIA82xU3m1]-->
+    </g>
+</svg>

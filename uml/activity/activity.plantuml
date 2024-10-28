@@ -1,0 +1,29 @@
+@startuml
+!theme vibrant
+start
+if (Scheduled Categorization Service) then (Yes)
+    :Keyword Analysis;
+    :Complaint Categorization;
+    :Department Assignment;
+    :Officer Assignment;
+else (No)
+  :Login;
+if (Passenger / Officer) then (Passenger)
+  while (New Complaint?) is (Yes)
+    :File New Complaint;
+  endwhile (No)
+  :Check Past Complaints;
+  :Check Complaint Status;
+  :Check Messages;
+else (Officer)
+  :View Assigned Complaints;
+  while (Complaint Resolved?) is (No)
+    :Check Complaint Details;
+    :Add Messages;
+    :Process Complaint;
+  endwhile (Yes)
+  :Update Complaint Status;
+  endif
+endif
+stop
+@enduml

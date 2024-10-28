@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" contentStyleType="text/css"
+     height="445px" preserveAspectRatio="none" style="width:632px;height:445px;background:#FFFFFF;" version="1.1"
+     viewBox="0 0 632 445" width="632px" zoomAndPan="magnify">
+    <defs/>
+    <g><!--entity Customer Portal-->
+        <g id="elem_Customer Portal">
+            <rect fill="#F1F1F1" height="48.6211" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;"
+                  width="141.1445" x="73.02" y="7"/>
+            <rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="194.1645" y="12"/>
+            <rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="192.1645" y="14"/>
+            <rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="192.1645" y="18"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="101.1445"
+                  x="88.02" y="42.1074">Customer Portal
+            </text>
+        </g><!--entity Complaint Service-->
+        <g id="elem_Complaint Service">
+            <rect fill="#F1F1F1" height="48.6211" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;"
+                  width="153.5996" x="107.52" y="135"/>
+            <rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="241.1196" y="140"/>
+            <rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="239.1196" y="142"/>
+            <rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="239.1196" y="146"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="113.5996"
+                  x="122.52" y="170.1074">Complaint Service
+            </text>
+        </g><!--entity Media Service-->
+        <g id="elem_Media Service">
+            <rect fill="#F1F1F1" height="48.6211" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;"
+                  width="128.7031" x="61.02" y="263"/>
+            <rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="169.7231" y="268"/>
+            <rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="167.7231" y="270"/>
+            <rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="167.7231" y="274"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="88.7031"
+                  x="76.02" y="298.1074">Media Service
+            </text>
+        </g><!--entity Scheduled Categorization Service-->
+        <g id="elem_Scheduled Categorization Service">
+            <rect fill="#F1F1F1" height="48.6211" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;"
+                  width="250.9023" x="225.02" y="263"/>
+            <rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="455.9223" y="268"/>
+            <rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="453.9223" y="270"/>
+            <rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="453.9223" y="274"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="210.9023"
+                  x="240.02" y="298.1074">Scheduled Categorization Service
+            </text>
+        </g><!--entity Department Service-->
+        <g id="elem_Department Service">
+            <rect fill="#F1F1F1" height="48.6211" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;"
+                  width="163.7168" x="268.52" y="391"/>
+            <rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="412.2368" y="396"/>
+            <rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="410.2368" y="398"/>
+            <rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="410.2368" y="402"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="123.7168"
+                  x="283.52" y="426.1074">Department Service
+            </text>
+        </g><!--entity Officer Portal-->
+        <g id="elem_Officer Portal">
+            <rect fill="#F1F1F1" height="48.6211" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;"
+                  width="121.6895" x="323.52" y="7"/>
+            <rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="425.2095" y="12"/>
+            <rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="423.2095" y="14"/>
+            <rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="423.2095" y="18"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="81.6895"
+                  x="338.52" y="42.1074">Officer Portal
+            </text>
+        </g><!--entity Authentication Service-->
+        <g id="elem_Authentication Service">
+            <rect fill="#F1F1F1" height="48.6211" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;"
+                  width="179.3027" x="376.02" y="135"/>
+            <rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="535.3227" y="140"/>
+            <rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="533.3227" y="142"/>
+            <rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="533.3227" y="146"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="139.3027"
+                  x="391.02" y="170.1074">Authentication Service
+            </text>
+        </g><!--link Customer Portal to Complaint Service-->
+        <g id="link_Customer Portal_Complaint Service">
+            <path d="M72.87,49.08 C37.6,60.9 6,79.28 24.52,105 C43.61,131.5 70.5625,143.7702 101.5225,150.6402 "
+                  fill="none" id="Customer Portal-to-Complaint Service" style="stroke:#454645;stroke-width:1.0;"/>
+            <polygon fill="#454645"
+                     points="107.38,151.94,99.4602,146.0853,102.4987,150.8569,97.7272,153.8953,107.38,151.94"
+                     style="stroke:#454645;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="117.0444"
+                  x="25.52" y="101.0283">Registers Complaint
+            </text>
+        </g><!--link Customer Portal to Authentication Service-->
+        <g id="link_Customer Portal_Authentication Service">
+            <path d="M149.22,56.01 C154.4,72.27 163.72,93.05 179.52,105 C195.24,116.88 292.0663,133.2602 369.9563,144.9402 "
+                  fill="none" id="Customer Portal-to-Authentication Service" style="stroke:#454645;stroke-width:1.0;"/>
+            <polygon fill="#454645"
+                     points="375.89,145.83,367.5827,140.5396,370.9453,145.0885,366.3963,148.4511,375.89,145.83"
+                     style="stroke:#454645;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="114.1943"
+                  x="180.52" y="101.0283">Authenticates Login
+            </text>
+        </g><!--link Complaint Service to Media Service-->
+        <g id="link_Complaint Service_Media Service">
+            <path d="M173.43,184.2 C162.88,206.73 149.6442,234.9861 139.1142,257.4761 " fill="none"
+                  id="Complaint Service-to-Media Service" style="stroke:#454645;stroke-width:1.0;"/>
+            <polygon fill="#454645"
+                     points="136.57,262.91,144.0089,256.4553,138.6902,258.3818,136.7637,253.063,136.57,262.91"
+                     style="stroke:#454645;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="76.5908"
+                  x="160.52" y="229.0283">Stores Media
+            </text>
+        </g><!--link Complaint Service to Scheduled Categorization Service-->
+        <g id="link_Complaint Service_Scheduled Categorization Service">
+            <path d="M215.75,184.2 C245.42,206.73 285.0308,236.7924 314.6608,259.2824 " fill="none"
+                  id="Complaint Service-to-Scheduled Categorization Service" style="stroke:#454645;stroke-width:1.0;"/>
+            <polygon fill="#454645"
+                     points="319.44,262.91,314.6896,254.2825,315.4573,259.887,309.8528,260.6548,319.44,262.91"
+                     style="stroke:#454645;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="211.7197"
+                  x="277.52" y="229.0283">Sends Complaints for Categorization
+            </text>
+        </g><!--link Scheduled Categorization Service to Department Service-->
+        <g id="link_Scheduled Categorization Service_Department Service">
+            <path d="M350.52,312.2 C350.52,334.73 350.52,362.42 350.52,384.91 " fill="none"
+                  id="Scheduled Categorization Service-to-Department Service" style="stroke:#454645;stroke-width:1.0;"/>
+            <polygon fill="#454645" points="350.52,390.91,354.52,381.91,350.52,385.91,346.52,381.91,350.52,390.91"
+                     style="stroke:#454645;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="131.5044"
+                  x="351.52" y="357.0283">Assigns to Department
+            </text>
+        </g><!--link Officer Portal to Complaint Service-->
+        <g id="link_Officer Portal_Complaint Service">
+            <path d="M362,56.14 C346.56,71.43 325.04,91.01 303.52,105 C285.95,116.42 271.043,124.1561 252.133,132.4661 "
+                  fill="none" id="Officer Portal-to-Complaint Service" style="stroke:#454645;stroke-width:1.0;"/>
+            <polygon fill="#454645"
+                     points="246.64,134.88,256.4888,134.9212,251.2175,132.8684,253.2702,127.5971,246.64,134.88"
+                     style="stroke:#454645;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="160.4053"
+                  x="327.52" y="101.0283">Views Assigned Complaints
+            </text>
+        </g><!--link Officer Portal to Authentication Service-->
+        <g id="link_Officer Portal_Authentication Service">
+            <path d="M445.83,44.73 C468.55,52.56 492.05,65.31 505.52,86 C515.8,101.78 509.0837,115.9311 496.1737,130.3411 "
+                  fill="none" id="Officer Portal-to-Authentication Service" style="stroke:#454645;stroke-width:1.0;"/>
+            <polygon fill="#454645"
+                     points="492.17,134.81,501.1547,130.7758,495.5064,131.086,495.1963,125.4376,492.17,134.81"
+                     style="stroke:#454645;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="114.1943"
+                  x="510.52" y="101.0283">Authenticates Login
+            </text>
+        </g><!--SRC=[bL5BRi903DtFASm1k02BIeWkGQ16OeDOJ1CdM4h6o7P0wkax0GG39D3kPco_Zvz7jiC6uK3VueCvjvcrQjoWm8h5VBsD5MxsjQTWaA4SACTOMs11Flbd-GwBjiO2PjwmOg4VRyGX6Vd4lHThy8vdMPRnaOXDssWe6EKFy6TZC1v_G8yvcC0NLgI6ed1j3-47z299qa65ELSKN5yOPvxxG28yCvQ8EzM7OMzpwvWm5Cac2YNBmxZxmmNEWZrNw7PLfIee6CDjm3sTvqNaQyAZNdWw3rUt0oJ_o_qN]-->
+    </g>
+</svg>

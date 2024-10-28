@@ -1,0 +1,23 @@
+@startuml
+!theme vibrant
+
+[Customer Portal]
+[Complaint Service]
+[Media Service]
+[Scheduled Categorization Service]
+[Department Service]
+[Officer Portal]
+[Authentication Service]
+
+[Customer Portal] --> [Complaint Service] : Registers Complaint
+[Customer Portal] --> [Authentication Service] : Authenticates Login
+
+[Complaint Service] --> [Media Service] : Stores Media
+[Complaint Service] --> [Scheduled Categorization Service] : Sends Complaints for Categorization
+
+[Scheduled Categorization Service] --> [Department Service] : Assigns to Department
+
+[Officer Portal] --> [Complaint Service] : Views Assigned Complaints
+[Officer Portal] --> [Authentication Service] : Authenticates Login
+
+@enduml

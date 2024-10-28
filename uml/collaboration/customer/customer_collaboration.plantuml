@@ -1,0 +1,29 @@
+@startuml
+!theme vibrant
+skinparam componentstyle rectangle
+
+[IRCTC Customer] --> [Complaint Portal] : Create new Account
+[Complaint Portal] --> [Authentication Gateway] : Add new Entity to Auth Records
+[Authentication Gateway] --> [Authentication Database] : Insertion SQL
+[Authentication Database] --> [Authentication Gateway] : Insertion Successful
+[Authentication Gateway] --> [Complaint Portal] : Insertion Successful
+[Complaint Portal] --> [IRCTC Customer] : Account Created
+
+[IRCTC Customer] --> [Complaint Portal] : Register new Complaint
+[Complaint Portal] --> [Complaint Gateway] : Add new Entity to the Records
+[Complaint Gateway] --> [Complaint Database] : Insertion SQL
+[Complaint Database] --> [Complaint Gateway] : Insertion Successful
+[Complaint Gateway] --> [Complaint Portal] : Complaint returned
+[Complaint Portal] --> [IRCTC Customer] : Complaint Registered
+
+[Complaint Database] --> [Scheduled Categorization Service] : Get all un-assigned Complaints
+[Scheduled Categorization Service] --> [Complaint Database] : Update SQL
+[Complaint Database] --> [Scheduled Categorization Service] : Complaints Updated
+
+[Complaint Portal] --> [IRCTC Customer] : Check Status of Complaint
+[Complaint Gateway] --> [Complaint Database] : Selection SQL
+[Complaint Database] --> [Complaint Gateway] : Complaint returned
+[Complaint Gateway] --> [Complaint Portal] : Complaint returned
+[Complaint Portal] --> [IRCTC Customer] : Latest Complaint returned
+
+@enduml
