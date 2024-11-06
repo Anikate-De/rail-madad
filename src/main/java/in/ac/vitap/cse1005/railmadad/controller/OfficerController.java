@@ -125,7 +125,7 @@ public class OfficerController {
    * @param request the HttpServletRequest containing officer ID and role
    * @return a ResponseEntity with the officer details or an error message
    */
-  @GetMapping("/officer")
+  @GetMapping("/getOfficer")
   public ResponseEntity<Map<String, Object>> getCustomers(HttpServletRequest request) {
     UserRole role = UserRole.valueOf(request.getAttribute("role").toString());
 

@@ -1,86 +1,76 @@
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8"/>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-        <title>Officer Dashboard</title>
-        <script src="https://cdn.tailwindcss.com"></script>
-        <style>
-            .crop-area {
-                width: 100px;
-                height: 100px;
-                position: relative;
-                overflow: hidden;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                border: 2px dashed gray;
-                aspect-ratio: 0.5/0.5;
-            }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Officer Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .crop-area {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px dashed gray;
+            aspect-ratio: 1/1;
+        }
 
-            .crop-area img {
-                max-width: 100%;
-                max-height: 100%;
-                object-fit: cover;
-            }
+        .crop-area img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+        }
 
-            .separator {
-                border-top: 1px solid gray;
-                margin-top: 1rem;
-                margin-bottom: 1rem;
-            }
+        .separator {
+            border-top: 1px solid gray;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
 
-        </style>
-    </head>
-
-    <body
-            class="min-h-screen flex items-center justify-center overflow-y-auto"
-            style="
-          background: linear-gradient(0deg, #1b0d6d 0%, #001641 50%, #160e4e 92%);
-        "
-    >
-    <div
-            class="max-w-[90vw] w-[90vw] bg-white shadow-lg rounded-lg flex overflow-y-auto"
-            style="min-height: 85vh; max-height: 85vh"
-    >
-        <!-- Profile Section -->
-        <div class="w-1/3 p-8 bg-white border-r flex flex-col justify-between">
-            <div class="mb-10 mt-6">
-                <h2 class="text-2xl font-bold text-gray-900" id="officerName"></h2>
-                <p class="text-md text-gray-600" id="officeId"></p>
-                <p class="text-xs text-gray-500 mt-1" id="lastLogin"></p>
-                <p class="text-xs text-gray-500 mt-1" id="dateRegistered"></p>
-            </div>
-
-            <!-- Complaint Summary -->
-            <div class="mb-16">
-                <h3 class="text-lg font-bold text-gray-900 mb-1">
-                    Complaint Summary
-                </h3>
-                <p class="text-xs text-gray-500">Last Filed: 12-09-2024</p>
-                <p class="text-xs text-gray-500">
-                    Last Assigned Complaint Status:
-                    <span id="lastComplaintStatus">Pending</span>
-                </p>
-                <div id="logoutBtn" class="mt-4"> <!-- Add margin for spacing -->
-                    <button
-                            class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                            onclick="logout()">
-                        Logout
-                    </button>
-                </div>
-            </div>
-
-
-
+<body
+        class="min-h-screen flex items-center justify-center overflow-y-auto"
+        style="background: linear-gradient(0deg, #1b0d6d 0%, #001641 50%, #160e4e 92%);"
+>
+<div
+        class="max-w-[90vw] w-[90vw] bg-white shadow-lg rounded-lg flex overflow-y-auto"
+        style="min-height: 85vh; max-height: 85vh"
+>
+    <!-- Profile Section -->
+    <div class="w-1/3 p-8 bg-white border-r flex flex-col justify-between">
+        <div class="mb-10 mt-6">
+            <h2 class="text-2xl font-bold text-gray-900" id="officerName"></h2>
+            <p class="text-md text-gray-600" id="officeId"></p>
+            <p class="text-xs text-gray-500 mt-1" id="lastLogin"></p>
+            <p class="text-xs text-gray-500 mt-1" id="dateRegistered"></p>
         </div>
 
-        <!-- Complaint Section -->
-        <div class="w-2/3 p-8 bg-white-50 overflow-y-auto" id="complaintSection">
+        <!-- Complaint Summary -->
+        <div class="mb-16">
+            <h3 class="text-lg font-bold text-gray-900 mb-1">Complaint Summary</h3>
+            <p class="text-xs text-gray-500">Last Filed: 12-09-2024</p>
+            <p class="text-xs text-gray-500">
+                Last Assigned Complaint Status:
+                <span id="lastComplaintStatus">Pending</span>
+            </p>
+            <div id="logoutBtn" class="mt-4">
+                <button
+                        class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                        onclick="logout()">
+                    Logout
+                </button>
+            </div>
         </div>
-
-
     </div>
-    <script src="js/officer_script.js"></script>
-    </body>
-    </html>
+
+    <!-- Complaint Section -->
+    <div class="w-2/3 p-8 bg-white-50 overflow-y-auto" id="complaintSection">
+    </div>
+</div>
+<script src="js/officer_script.js"></script>
+</body>
+</html>

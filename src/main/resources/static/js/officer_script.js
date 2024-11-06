@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const dateRegisteredElement = document.getElementById("dateRegistered");
     const complaintSection = document.getElementById("complaintSection");
 
-    fetch("/officer", {
+    fetch("/getOfficer", {
         method: 'GET',
         headers: {
             'Authorization': getToken(),
