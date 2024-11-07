@@ -2,18 +2,21 @@ package in.ac.vitap.cse1005.railmadad.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import in.ac.vitap.cse1005.railmadad.domain.entity.Officer;
+import in.ac.vitap.cse1005.railmadad.domain.enums.UserRole;
 import in.ac.vitap.cse1005.railmadad.exceptions.IncompleteDetailsException;
 import in.ac.vitap.cse1005.railmadad.exceptions.PasswordMismatchException;
 import in.ac.vitap.cse1005.railmadad.exceptions.WeakPasswordException;
 import in.ac.vitap.cse1005.railmadad.service.OfficerService;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -108,11 +111,38 @@ public class OfficerController {
     }
 
     Cookie cookie = new Cookie("token", token);
-    cookie.setMaxAge(60);
+    cookie.setMaxAge(3600);
     cookie.setPath("/");
     response.addCookie(cookie);
 
     return new ResponseEntity<>(
         Map.of("message", "Officer login successful", "token", token), HttpStatus.ACCEPTED);
+  }
+
+  /**
+   * Endpoint for retrieving officer details.
+   *
+   * @param request the HttpServletRequest containing officer ID and role
+   * @return a ResponseEntity with the officer details or an error message
+   */
+  @GetMapping("/getOfficer")
+  public ResponseEntity<Map<String, Object>> getOfficer(HttpServletRequest request) {
+    UserRole role = UserRole.valueOf(request.getAttribute("role").toString());
+
+    if (role == UserRole.CUSTOMER) {
+      return new ResponseEntity<>(
+          Map.of("message", "Only officers can request details."), HttpStatus.FORBIDDEN);
+    }
+
+    Officer officer;
+    try {
+      officer = (Officer) request.getAttribute("user");
+    } catch (Exception e) {
+      return new ResponseEntity<>(
+          Map.of("message", "An internal Server Error Occurred."),
+          HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+    return new ResponseEntity<>(Map.of("officer", officer), HttpStatus.OK);
   }
 }
