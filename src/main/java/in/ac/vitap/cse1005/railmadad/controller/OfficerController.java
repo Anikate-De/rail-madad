@@ -126,7 +126,7 @@ public class OfficerController {
    * @return a ResponseEntity with the officer details or an error message
    */
   @GetMapping("/getOfficer")
-  public ResponseEntity<Map<String, Object>> getCustomers(HttpServletRequest request) {
+  public ResponseEntity<Map<String, Object>> getOfficer(HttpServletRequest request) {
     UserRole role = UserRole.valueOf(request.getAttribute("role").toString());
 
     if (role == UserRole.CUSTOMER) {
